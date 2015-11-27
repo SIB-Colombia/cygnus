@@ -1,0 +1,55 @@
+{
+  "name": "cygnus",
+  "version": "0.0.1",
+  "description": "New catalogue of biodiversity by SIB Colombia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valegrajales/cygnus.git"
+  },
+  "keywords": [
+    "biodiversity",
+    "catalogue",
+    "webapp",
+    "sib",
+    "sibcolombia"
+  ],
+  "author": "Valentina Grajales",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valegrajales/cygnus/issues"
+  },
+  "homepage": "https://github.com/valegrajales/cygnus#readme",
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "jspm": "^0.16.15"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src/public"
+    },
+    "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.6",
+      "maxmx/bootstrap-stylus": "github:maxmx/bootstrap-stylus@^5.0.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "app-module-path": "^1.0.4",
+    "express": "^4.13.3"
+  }
+}
