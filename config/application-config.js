@@ -1,13 +1,13 @@
 'use strict';
 
 // dependencies
-//var convict = require('convict');
-//var util = require('util');
-//var debug = require('debug')('bon-in-a-box-frontend:configuration');
-//var validator = require('validator');
+var convict = require('convict');
+var util = require('util');
+var debug = require('debug')('bon-in-a-box-frontend:configuration');
+var validator = require('validator');
 
 // catch all error without handler
-/*process.on('uncaughtException', function(error) {
+process.on('uncaughtException', function(error) {
 	debug('Caught exception without specific handler: ' + util.inspect(error));
 	debug(error.stack, 'error');
 	process.exit(1);
@@ -23,7 +23,7 @@ var config = module.exports = convict({
 	service: {
 		name: {
 			doc: 'The name of your service/platform.',
-			default: 'Bon in a box',
+			default: 'Catalogo de la biodiversidad',
 			env: 'SERVICE_NAME'
 		}
 	},
@@ -36,17 +36,17 @@ var config = module.exports = convict({
 	},
 	locales: {
 		doc: 'List of valid languages',
-		default: ['es', 'pt', 'en'],
+		default: ['es', 'en'],
 		env: 'LANGUAGES'
 	},
 	initialeDefault: {
 		doc: 'Default language',
-		default: 'en',
+		default: 'es',
 		env: 'LANGUAGE_DEFAULT'
 	},
 	logs: {
 		doc: 'Log save location',
-		default: 'logs/dataportal-explorer.log',
+		default: 'logs/catalogo.log',
 		env: 'LOG'
 	},
 	server: {
@@ -105,13 +105,6 @@ var config = module.exports = convict({
 		}
 	},
 	database: {
-		mongo: {
-			url: {
-				doc: 'MongoDB url to connect to (including db reference)',
-				default: 'mongodb://localhost/bon-in-a-box-app',
-				env: 'MONGO_URL'
-			}
-		},
 		redis: {
 			url: {
 				doc: 'Redis url to connect to (including auth string)',
@@ -223,6 +216,3 @@ debug(util.inspect(process.env, {
 
 // perform the config validation
 config.validate();
-*/
-
-export var config = "hola mundo cruel";

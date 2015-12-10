@@ -23,33 +23,118 @@
     "url": "https://github.com/valegrajales/cygnus/issues"
   },
   "homepage": "https://github.com/valegrajales/cygnus#readme",
-  "devDependencies": {
-    "babel": "^6.1.18",
-    "babel-cli": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18",
-    "jspm": "^0.16.15"
-  },
-  "jspm": {
-    "directories": {
-      "baseURL": "src/public"
+  "contributors": [
+    {
+      "name": "Javier Gamboa",
+      "email": "email de Javier"
     },
-    "dependencies": {
-      "bootstrap": "github:twbs/bootstrap@^3.3.6",
-      "maxmx/bootstrap-stylus": "github:maxmx/bootstrap-stylus@^5.0.2"
+    {
+      "name": "David",
+      "email": "email de David"
     },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+    {
+      "name": "Juan Benites",
+      "email": "email de Juan"
+    },
+    {
+      "name": "Hugo Escobar",
+      "email": "hescobar@humboldt.org.co"
+    },
+    {
+      "name": "Valentina Grajales",
+      "email": "valegrajales@gmail.com",
+      "url": "https://github.com/valegrajales"
     }
+  ],
+  "bugs": {
+    "url": "https://github.com/valegrajales/cygnus/issues",
+    "email": "valegrajales@gmail.com"
   },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
+  "scripts": {
+    "start": "nodemon -e jade,js app.js",
+    "test": "gulp test"
   },
   "dependencies": {
     "app-module-path": "^1.0.4",
-    "express": "^4.13.3"
+    "async": "^1.4.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "~1.13.3",
+    "colors": "^1.1.2",
+    "compression": "^1.5.2",
+    "connect-redis": "^2.5.1",
+    "convict": "^1.0.1",
+    "cookie-parser": "~1.3.5",
+    "crypto": "0.0.3",
+    "events": "^1.1.0",
+    "express": "~4.13.3",
+    "express-flash": "0.0.2",
+    "express-session": "^1.11.3",
+    "i18n": "^0.5.0",
+    "jade": "~1.11.0",
+    "mandrill-send": "^0.1.0",
+    "method-override": "^2.3.5",
+    "morgan": "~1.6.1",
+    "multer": "^1.1.0",
+    "passport": "^0.3.0",
+    "passport-facebook": "^2.0.0",
+    "passport-google-oauth": "^0.2.0",
+    "passport-linkedin-oauth2": "^1.2.1",
+    "passport-local": "^1.0.0",
+    "passport-remember-me": "valegrajales/passport-remember-me",
+    "serve-favicon": "~2.3.0",
+    "serve-static": "^1.10.0",
+    "socket.io": "^1.3.7",
+    "socket.io-handshake": "0.0.10",
+    "util": "^0.10.3",
+    "validator": "^4.0.6",
+    "winston": "^1.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.6",
+    "debug": "^2.2.0",
+    "del": "^2.0.0",
+    "errorhandler": "^1.4.2",
+    "gulp": "^3.9.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-csso": "^1.0.0",
+    "gulp-debug": "^2.1.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-inject": "^1.5.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-replace": "^0.5.4",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.2",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.6",
+    "gulp-uglify": "^1.4.0",
+    "gulp-useref": "^1.3.0",
+    "gulp-util": "^3.0.6",
+    "ink-docstrap": "^0.5.2",
+    "jsdoc": "^3.3.3",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-requirejs": "^0.2.2",
+    "lodash": "^3.10.1",
+    "main-bower-files": "^2.9.0",
+    "mocha": "^2.3.0",
+    "phantomjs": "^1.9.18",
+    "requirejs": "^2.1.20",
+    "should": "latest",
+    "stylus": "^0.52.0",
+    "supertest": "latest",
+    "wiredep": "^3.0.0-beta",
+    "wrench": "^1.5.8"
+  },
+  "engines": {
+    "node": ">=0.10.4"
   }
 }

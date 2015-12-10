@@ -31,3 +31,9 @@ dist
 
 # Frontend libraries
 src/public/jspm_packages
+
+# Source UI design files
+diseno
+
+# Remove bower components folder
+/src/public/bower_components
