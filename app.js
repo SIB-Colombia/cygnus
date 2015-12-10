@@ -11,10 +11,12 @@ var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var http = require('http');
 var socketio = require('socket.io')();
+var mongoose = require('mongoose');
 
 // config and setup helpers
 var config = require('application-config');
 var setup = require('./src/app/setup');
+var packageJSON = require('./package.json');
 
 // setup session store
 var sessionStore = setup.sessions({
@@ -47,7 +49,8 @@ var app = setup.createExpressApp({
 	logs: config.get('logs'),
 	cookieName: 'locale',
 	translationDir: __dirname + '/src/app/resources/locales',
-	defaultLocale: config.get('initialeDefault')
+	defaultLocale: config.get('initialeDefault'),
+	codeVersion: packageJSON.version
 });
 
 // mail module
@@ -58,3 +61,20 @@ var mailer = require('modules/mailer')({
 	senderAddress: config.get('mandrill.sender'),
 	verificationRoute: config.get('email.verification.route')
 });
+
+// http and socket.io server(s)
+var server = http.createServer(app);
+var io = socketio.attach(server);
+
+// configure socket.io
+setup.configureSockets(io, {
+	cookieParser: cookieParser,
+	sessionStore: sessionStore,
+	sessionKey: config.get('session.key'),
+	sessionSecret: config.get('server.secret'),
+});
+
+// app dependencies (app specific)
+var ipc = require('./src/app/modules/ipc')(0);
+var models = require('./src/app/models')(mongoose);
+var services = require('./src/app/services')(models);
