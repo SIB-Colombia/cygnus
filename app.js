@@ -78,3 +78,17 @@ setup.configureSockets(io, {
 var ipc = require('./src/app/modules/ipc')(0);
 var models = require('./src/app/models')(mongoose);
 var services = require('./src/app/services')(models);
+var authentication = require('modules/authentication')(models, mailer);
+
+// setup application
+setup.connectToDatabase(mongoose, config.get('database.mongo.url'));
+
+// express error handling
+setup.handleExpressError(app);
+
+// app specific modules
+// Passport credentials management library
+require('modules/passport')(passport, authentication, models);
+
+// run application
+setup.run(server, config.get('server.port'));

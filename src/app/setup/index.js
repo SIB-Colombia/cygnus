@@ -152,3 +152,89 @@ module.exports.configureSockets = function(io, options) {
 		parser: options.cookieParser()
 	}));
 };
+
+// connect to backend store (db)
+module.exports.connectToDatabase = function(mongoose, urlString) {
+	function connect() {
+		mongoose.connect(urlString);
+	}
+
+	// connection is open and ready
+	mongoose.connection.on('open', function(ref) {
+		debug('Open connection to mongo server.');
+	});
+
+	// mongoose is connected to server
+	mongoose.connection.on('connected', function(ref) {
+		debug('Connected to mongo server.');
+	});
+
+	// mongoose has disconnected
+	mongoose.connection.on('disconnected', function(ref) {
+		debug('Disconnected from mongo server.');
+
+		debug('Retrying connection in 2 seconds..');
+		setTimeout(function() {
+			connect();
+		}.bind(this), 2000);
+	});
+
+	// mongoose connection has closed
+	mongoose.connection.on('close', function(ref) {
+		debug('Closed connection to mongo server');
+	});
+
+	// error has occured for mongoose connection
+	mongoose.connection.on('error', function(err) {
+		debug('Error connecting to mongo server!');
+		debug(err);
+	});
+
+	// mongoose is reconnecting
+	mongoose.connection.on('reconnect', function(ref) {
+		debug('Reconnecting to mongo server.');
+	});
+
+	// initial connect
+	connect();
+};
+
+// handle express errors
+module.exports.handleExpressError = function(app) {
+	// handle 404 not found
+	app.use(function(req, res, next) {
+		res.status(404);
+
+		// respond with html page
+		if (req.accepts('html')) {
+			res.render('404', {
+				url: req.url
+			});
+			return;
+		}
+
+		// respond with json
+		if (req.accepts('json')) {
+			res.send({
+				error: 'Not found'
+			});
+			return;
+		}
+
+		// default to plain-text. send()
+		res.type('txt').send('Not found');
+	});
+
+	// handling other errors
+	app.use(function(err, req, res, next) {
+		console.error(err.stack);
+		res.status(500).send('Something broke!');
+	});
+};
+
+// run application
+module.exports.run = function(server, port) {
+	server.listen(port, function() {
+		debug('listening on port %d'.green, server.address().port);
+	});
+};
