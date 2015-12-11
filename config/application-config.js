@@ -105,6 +105,20 @@ var config = module.exports = convict({
 		}
 	},
 	database: {
+		mongo: {
+			url: {
+				doc: 'MongoDB url to connect to (including db reference)',
+				default: 'mongodb://localhost/bon-in-a-box-app',
+				env: 'MONGO_URL'
+			}
+		},
+		elasticSearch: {
+			url: {
+				doc: 'ElasticSearch url to connect to (including db reference)',
+				default: 'localhost:9200',
+				env: 'ELASTICSEARCH_URL'
+			}
+		},
 		redis: {
 			url: {
 				doc: 'Redis url to connect to (including auth string)',
