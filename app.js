@@ -90,5 +90,10 @@ setup.handleExpressError(app);
 // Passport credentials management library
 require('modules/passport')(passport, authentication, models);
 
+// load controllers
+require(__dirname + '/src/app/routes/routers')(app, services, {
+	verbose: true
+});
+
 // run application
 setup.run(server, config.get('server.port'));
