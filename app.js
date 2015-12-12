@@ -91,7 +91,7 @@ setup.handleExpressError(app);
 require('modules/passport')(passport, authentication, models);
 
 // load controllers
-require(__dirname + '/src/app/routes/routers')(app, services, {
+require(__dirname + '/src/app/routes/index')(app, services, {
 	verbose: true
 });
 

@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 
 var browserSync = require('browser-sync');
 
-gulp.task('server', ['watch', 'browser-sync'], function () {
+gulp.task('server', ['browser-sync'], function () {
 
 });
 
@@ -24,7 +24,7 @@ gulp.task('nodemon', function() {
 		script: 'app.js',
 		ext: 'json',
 		env: {
-			'DEBUG': 'bon-in-a-box-frontend:*'
+			'DEBUG': 'catalogue:*'
 		}
 	})
 	.on('start', function() {
