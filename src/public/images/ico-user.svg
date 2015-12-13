@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-user</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ico-user" sketch:type="MSLayerGroup">
+            <path d="M30.5,15.5 C30.5,23.784 23.784,30.5 15.5,30.5 C7.216,30.5 0.5,23.784 0.5,15.5 C0.5,7.216 7.216,0.5 15.5,0.5 C23.784,0.5 30.5,7.216 30.5,15.5 L30.5,15.5 Z" id="Stroke-1" stroke="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M18.491,20.8714 C17.839,20.7394 17.347,20.1624 17.347,19.4764 C17.347,18.9724 18.96,17.4684 18.949,17.4574 C20.613,15.7354 21.505,12.9384 21.505,10.7884 C21.505,7.4484 18.817,4.7374 15.5,4.7374 C12.183,4.7374 9.495,7.4484 9.495,10.7884 C9.495,12.9504 10.364,15.7644 12.046,17.4854 C12.046,17.4854 13.653,18.9724 13.653,19.4764 C13.653,20.2024 13.104,20.8084 12.394,20.8944 C8.854,21.2664 6.738,22.3814 5.097,24.5204 C4.862,24.8264 4.68,25.2854 4.554,25.7514 C7.291,28.6724 11.181,30.5004 15.5,30.5004 C19.819,30.5004 23.709,28.6724 26.446,25.7514 C26.32,25.2854 26.138,24.8264 25.903,24.5204 C24.245,22.3524 22.106,21.2314 18.491,20.8714" id="Fill-3" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-close-modal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M0,0 L15,0 L15,15 L0,15 L0,0 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ico-close-modal" sketch:type="MSLayerGroup">
+            <mask id="mask-2" sketch:name="Clip 2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+            <path d="M10.2365,7.5002 L14.3535,3.3832 C15.1695,2.5672 15.2195,1.2882 14.4655,0.5342 C13.7115,-0.2198 12.4335,-0.1698 11.6175,0.6472 L7.5005,4.7642 L3.3835,0.6472 C2.5665,-0.1698 1.2885,-0.2198 0.5345,0.5342 C-0.2195,1.2882 -0.1695,2.5672 0.6465,3.3832 L4.7635,7.5002 L0.6465,11.6172 C-0.1695,12.4332 -0.2195,13.7112 0.5345,14.4652 C1.2885,15.2202 2.5665,15.1702 3.3835,14.3532 L7.5005,10.2362 L11.6175,14.3532 C12.4335,15.1702 13.7115,15.2202 14.4655,14.4652 C15.2195,13.7112 15.1695,12.4332 14.3535,11.6172 L10.2365,7.5002 Z" id="Fill-1" fill="#1D1D1B" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

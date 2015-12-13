@@ -1,13 +1,21 @@
 doctype html
-html(data-ng-app="bonInABoxHome" data-ng-controller="bonInABoxHomeCtrl as bonCtrl" data-ng-init="bonCtrl.init('#{username}')")
+html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl")
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		title #{__("pageTitle")}
 		meta(name='description', content='')
 		meta(name='viewport', content='width=device-width,initial-scale=1')
-		link(href='https://fonts.googleapis.com/css?family=Oswald:400,700,300', rel='stylesheet')
-		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700,900', rel='stylesheet')
+		meta(name='description', content='Acceso libre a la información sobre biodiversidad de Colombia! Open access to Colombian biodiversity information!')
+		meta(property='og:title', content='Sistema de Información sobre Biodiversidad en Colombia')
+		meta(property='og:type', content='website')
+		meta(property='og:description', content='Acceso libre a la información sobre biodiversidad de Colombia! Open access to Colombian biodiversity information!')
+		meta(property='og:url', content='http://www.biodiversidad.co/')
+		meta(property='og:image', content='http://www.biodiversidad.co/images/logo_sib_s200x200.jpg')
+		meta(property='og:site_name', content='Catalogo de especies de la biodiversidad de Colombia')
+		meta(property='og:locale', content='es_ES')
+		meta(name="google-site-verification" content="nm1-g-rVHscAi_K7O9e-s3EE7rEDorSu9OFagozmx3Q")
+
 		<!-- build:css(src/public) stylesheets/final/vendor.css -->
 		//- bower:css
 		//- run `gulp inject` to automatically populate bower styles dependencies
@@ -22,9 +30,15 @@ html(data-ng-app="bonInABoxHome" data-ng-controller="bonInABoxHomeCtrl as bonCtr
 
 	body
 		.wrapper
-			block header
-			block content
-			block footer
+			.ribbon-wrapper-green
+				.ribbon-green BETA
+		#wrapper
+			section#top-zone
+				block header
+			#content-wrapper
+				block content
+			section#footer-zone
+				block footer
 
 		<!-- build:js(src/public) javascripts/final/vendor.js -->
 		//- bower:js

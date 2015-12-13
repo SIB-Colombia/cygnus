@@ -1,0 +1,26 @@
+block header
+	header.cat-header(data-ng-controller="SearchOptionsCtrl")
+		.top-bar
+			.container
+				.row
+					.col-sm-6
+						.logo-cont
+							a(class="brand", title="Catálogo de la Biodiversidad", href="/")
+								img(src='images/logo-sib.svg', alt='Catalogo SiB')
+					.col-sm-6
+						.sm-cont.align-right
+							a(href='https://www.facebook.com/SibColombia', target='_blank')
+								img(src='images/ico-fb.svg', alt='Facebook')
+							a(href='https://twitter.com/sibcolombia', target='_blank')
+								img(src='images/ico-tw.svg', alt='Twitter')
+							a(href='http://www.youtube.com/user/sibcolombia', target='_blank')
+								img(src='images/ico-yt.svg', alt='YouTube')
+							a(href='#', target='_blank', data-toggle='modal', data-target='#loginModal')
+								img(src='images/ico-user.svg', alt='User account')
+		.search-box
+			.search-field
+				.search-field-cont
+					form(data-ng-submit="go() | trackEvent:'Búsqueda realizada':'Button clicked':'Condición búsqueda':currentTextSearch")
+						.form-group
+							input.search-input(type="text", name="q", x-webkit-speech, data-ng-model="currentTextSearch", placeholder="Buscar especies")
+						button.visible-large-screen.hide-btn(type="button", data-ng-click="go() | trackEvent:'Búsqueda realizada':'Button clicked':'Condición búsqueda':currentTextSearch")

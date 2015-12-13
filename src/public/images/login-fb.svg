@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="55px" height="55px" viewBox="0 0 55 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>login-fb</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="login-fb" sketch:type="MSLayerGroup">
+            <path d="M52,55 L3,55 C1.35,55 0,53.65 0,52 L0,3 C0,1.35 1.35,0 3,0 L52,0 C53.65,0 55,1.35 55,3 L55,52 C55,53.65 53.65,55 52,55" id="Fill-1" fill="#365999" sketch:type="MSShapeGroup"></path>
+            <path d="M38.7251,48.3985 L30.0791,48.3985 L30.0791,27.4995 L25.7581,27.4995 L25.7581,20.2955 L30.0791,20.2955 L30.0791,15.9725 C30.0791,10.0955 32.5191,6.6015 39.4481,6.6015 L45.2191,6.6015 L45.2191,13.8045 L41.6141,13.8045 C38.9151,13.8045 38.7361,14.8125 38.7361,16.6905 L38.7251,20.2955 L45.2601,20.2955 L44.4961,27.4995 L38.7251,27.4995 L38.7251,48.3985 Z" id="Fill-3" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
