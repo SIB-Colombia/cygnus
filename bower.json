@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "bootstrap": "~3.3.6",
-    "bootstrap-stylus": "~5.0.2",
+    "bootstrap-stylus": "~4.0.5",
     "jquery": "~2.1.4",
     "lodash": "~3.10.1",
     "angular": "~1.4.8",
