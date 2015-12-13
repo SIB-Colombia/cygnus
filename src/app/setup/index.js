@@ -116,17 +116,6 @@ module.exports.createExpressApp = function(options) {
 		});
 	}
 
-	// Initialize app local variables
-	app.use(function(req, res, next) {
-		if ((typeof req.cookies.locale) === 'undefined') {
-			res.locals.currentLocale = i18n.getLocale();
-		} else {
-			res.locals.currentLocale = req.cookies.locale;
-		}
-		res.locals.locales = options.locales;
-		next();
-	});
-
 	i18n.configure({
 		// setup some locales - other locales default to en silently
 		locales: options.locales,
@@ -139,7 +128,19 @@ module.exports.createExpressApp = function(options) {
 
 	app.use(i18n.init);
 
-	logger.info("Bon in a box - Frontend: initial configuration loaded.");
+	// Initialize app local variables
+	app.use(function(req, res, next) {
+		if ((typeof req.cookies.locale) === 'undefined') {
+			res.locals.currentLocale = i18n.getLocale();
+			res.setLocale('es');
+		} else {
+			res.locals.currentLocale = req.cookies.locale;
+		}
+		res.locals.locales = options.locales;
+		next();
+	});
+
+	logger.info("Catalog of biodiversity - Frontend: initial configuration loaded.");
 	return app;
 };
 

@@ -5,3 +5,130 @@ block header
 
 block footer
 	include ../../layouts/includes/home/footer
+
+block content
+	.site-navigation(data-spy='affix', data-offset-top='450')
+		.container-fluid
+			.row
+				.sidebar-display
+					a.filter-display
+						img(src='images/ico-menu.png')
+						span FILTROS
+				.right-display
+					div
+						.col-md-8
+							ul.tag-list
+								li
+									a(href='#') Páramo
+								li
+									a(href='#') Cundinamarca
+								li
+									a(href='#') Aves
+						.col-md-4
+							.item-count.align-right
+								img(src='images/ico-right.png')
+								|  mostrando
+								strong {{catalogue.loadedRegisters}}
+								|  de
+								strong {{catalogue.totalregisters}}
+								|  fichas
+	.container-fluid
+		.row
+			.sidebar
+				aside
+					#accordion.panel-group
+						.panel.panel-default
+							.panel-heading
+								h4.panel-title
+									a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapse1')
+										img(src='images/ico-grupos.svg')
+										|  Grupos biológicos
+							#collapse1.panel-collapse.collapse.in
+								.panel-body
+									ul.side-nav-menu
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'insecta'}")
+											a(data-ng-click="switchTaxon('insecta') | trackEvent:'Categoria insectos':'Button clicked'", data-ng-href="/#/insectos{{searchOptions.getCurrentURLWithoutTaxon()}}") Insectos
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'aves'}")
+											a(data-ng-click="switchTaxon('aves') | trackEvent:'Categoria aves':'Button clicked'", data-ng-href="/#/aves{{searchOptions.getCurrentURLWithoutTaxon()}}") Aves
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'plantae'}")
+											a(data-ng-click="switchTaxon('plantae') | trackEvent:'Categoria plantas':'Button clicked'", data-ng-href="/#/plantas{{searchOptions.getCurrentURLWithoutTaxon()}}") Plantas
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'mammal'}")
+											a(data-ng-click="switchTaxon('mammal') | trackEvent:'Categoria mamíferos':'Button clicked'", data-ng-href="/#/mamiferos{{searchOptions.getCurrentURLWithoutTaxon()}}") Mamíferos
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'reptilia'}")
+											a(data-ng-click="switchTaxon('reptilia') | trackEvent:'Categoria reptiles':'Button clicked'", data-ng-href="/#/reptiles{{searchOptions.getCurrentURLWithoutTaxon()}}") Reptiles
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'amphibia'}")
+											a(data-ng-click="switchTaxon('amphibia') | trackEvent:'Categoria anfibios':'Button clicked'", data-ng-href="/#/anfibios{{searchOptions.getCurrentURLWithoutTaxon()}}") Anfibios
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'fungi'}")
+											a(data-ng-click="switchTaxon('fungi') | trackEvent:'Categoria hongos':'Button clicked'", data-ng-href="/#/hongos{{searchOptions.getCurrentURLWithoutTaxon()}}") Hongos
+						.panel.panel-default
+							.panel-heading
+								h4.panel-title
+									a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapse2')
+										img(src='images/ico-zonas.svg')
+										|  Zonas geográficas
+							#collapse2.panel-collapse.collapse
+								.panel-body
+									ul.side-nav-menu
+										li
+											a(data-ng-href="/paramos") Páramos
+										li
+											a(data-ng-href="/humedales") Humedales
+						.panel.panel-default
+							.panel-heading
+								h4.panel-title
+									a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#collapse3')
+										img(src='images/ico-colecciones.svg')
+										|  Colecciones
+							#collapse3.panel-collapse.collapse
+								.panel-body
+									ul.side-nav-menu
+										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'all'}")
+											a(data-ng-click="switchTaxon('all') | trackEvent:'Categorias todas las fichas':'Button clicked'", data-ng-href="/#/{{searchOptions.getCurrentURLWithoutTaxon()}}") Todos
+										li(data-ng-class="{active: searchOptions.getShowRecordsWithPicture()}")
+											a(data-ng-click="switchShowRecordsWithPicture() | trackEvent:'Se eligió mostrar primero fichas con foto':'Button clicked'", data-ng-href="/#{{searchOptions.getCurrentURL()}}") Fichas con foto
+			.main-content
+				.content-wrapper
+					.row
+						.col-sm-11
+							//Filtros de búsqueda. Aparecen solo en vista de lista
+							.search-filters
+								.search-filters-top
+									| Tu búsqueda por
+									span.search-term
+										|  XXXXXX
+									| :
+									span.search-results
+										|  888.888
+									|  resultados
+								.search-filters-bottom
+									.search-filters-bottom-block
+										| Resultados por página
+										a.result-number.active
+											| 10
+										| &nbsp;&nbsp;
+										a.result-number
+											| 20
+										| &nbsp;&nbsp;
+										a.result-number
+											| 50
+										| &nbsp;&nbsp;
+										a.result-number
+											| 100
+									.search-filters-bottom-block.middle-block.order-block
+										a.order-items
+											| A/Z
+									.search-filters-bottom-block
+										span.dropdown-wrapper
+											select
+												option(value='foo') Mejor coincidencia
+												option(value='bar') otros
+							//Fin de filtros de búsqueda.
+							//span #{data}
+							script.
+								dataVar = !{data};
+								dataVarRandomImages = !{dataRandom};
+								//console.log(dataVar);
+
+							section#catalogWallSection(data-ng-view)
+						.col-sm-1
+							a.toggle-list.toggle-view

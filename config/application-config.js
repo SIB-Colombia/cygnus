@@ -36,7 +36,7 @@ var config = module.exports = convict({
 	},
 	locales: {
 		doc: 'List of valid languages',
-		default: ['es', 'en'],
+		default: ['en', 'es'],
 		env: 'LANGUAGES'
 	},
 	initialeDefault: {

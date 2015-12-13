@@ -25,11 +25,16 @@
     "bootstrap-stylus": "valegrajales/bootstrap-stylus#master"
   },
   "overrides": {
-    "masonry": {
+    "outlayer": {
       "main": [
-        "./dist/masonry.pkgd.js"
-      ],
-      "dependencies": {}
+        "item.js",
+        "outlayer.js"
+      ]
+    },
+    "get-style-property": {
+    	"main": [
+    		"get-style-property.js"
+    	]
     }
   },
   "resolutions": {

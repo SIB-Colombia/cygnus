@@ -24,7 +24,8 @@ gulp.task('nodemon', function() {
 		script: 'app.js',
 		ext: 'json',
 		env: {
-			'DEBUG': 'catalog:*'
+			'DEBUG': 'catalog:*',
+			'LANGUAGE_DEFAULT': 'es'
 		}
 	})
 	.on('start', function() {
