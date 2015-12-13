@@ -10,7 +10,6 @@
   "validthis": true,
   "jasmine": true,
   "node": true,
-  "esnext": true,
   "globals": {
     "angular": false,
     "inject": false,

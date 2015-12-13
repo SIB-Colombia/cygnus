@@ -1,6 +1,6 @@
 'use strict';
 
-var debug = require('debug')('catalogue:profile:update');
+var debug = require('debug')('catalog:profile:update');
 var async = require('async');
 var formatName = require('helpers').common.formatName;
 

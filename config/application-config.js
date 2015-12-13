@@ -3,7 +3,7 @@
 // dependencies
 var convict = require('convict');
 var util = require('util');
-var debug = require('debug')('bon-in-a-box-frontend:configuration');
+var debug = require('debug')('catalog:configuration');
 var validator = require('validator');
 
 // catch all error without handler
@@ -23,7 +23,7 @@ var config = module.exports = convict({
 	service: {
 		name: {
 			doc: 'The name of your service/platform.',
-			default: 'Catalogo de la biodiversidad',
+			default: 'Catálogo de la Biodiversidad',
 			env: 'SERVICE_NAME'
 		}
 	},
@@ -46,7 +46,7 @@ var config = module.exports = convict({
 	},
 	logs: {
 		doc: 'Log save location',
-		default: 'logs/catalogo.log',
+		default: 'logs/catalog.log',
 		env: 'LOG'
 	},
 	server: {
@@ -91,7 +91,7 @@ var config = module.exports = convict({
 		},
 		sender: {
 			doc: 'The "from" field for the verification emails',
-			default: 'Bon in a box administrator <someuser@company.com>',
+			default: 'Catalog of Biodiversity administrator <someuser@company.com>',
 			env: 'MANDRILL_SENDER'
 		}
 	},
@@ -105,18 +105,18 @@ var config = module.exports = convict({
 		}
 	},
 	database: {
-		mongo: {
-			url: {
-				doc: 'MongoDB url to connect to (including db reference)',
-				default: 'mongodb://localhost/bon-in-a-box-app',
-				env: 'MONGO_URL'
-			}
-		},
 		elasticSearch: {
 			url: {
 				doc: 'ElasticSearch url to connect to (including db reference)',
 				default: 'localhost:9200',
 				env: 'ELASTICSEARCH_URL'
+			}
+		},
+		mongo: {
+			url: {
+				doc: 'MongoDB url to connect to (including db reference)',
+				default: 'mongodb://localhost/catalog',
+				env: 'MONGO_URL'
 			}
 		},
 		redis: {

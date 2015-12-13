@@ -1,7 +1,7 @@
 'use strict';
 
 // common dependencies
-var debug = require('debug')('catalogue:setup');
+var debug = require('debug')('catalog:setup');
 var util = require('util');
 var url = require('url');
 var colors = require('colors');
@@ -139,8 +139,41 @@ module.exports.createExpressApp = function(options) {
 
 	app.use(i18n.init);
 
-	logger.info('Catalogue of biodiversity ' + options.codeVersion + ' - Frontend: initial configuration loaded.');
+	logger.info("Bon in a box - Frontend: initial configuration loaded.");
 	return app;
+};
+
+// handle express errors
+module.exports.handleExpressError = function(app) {
+	// handle 404 not found
+	app.use(function(req, res, next) {
+		res.status(404);
+
+		// respond with html page
+		if (req.accepts('html')) {
+			res.render('404', {
+				url: req.url
+			});
+			return;
+		}
+
+		// respond with json
+		if (req.accepts('json')) {
+			res.send({
+				error: 'Not found'
+			});
+			return;
+		}
+
+		// default to plain-text. send()
+		res.type('txt').send('Not found');
+	});
+
+	// handling other errors
+	app.use(function(err, req, res, next) {
+		console.error(err.stack);
+		res.status(500).send('Something broke!');
+	});
 };
 
 // configure socket.io
@@ -197,39 +230,6 @@ module.exports.connectToDatabase = function(mongoose, urlString) {
 
 	// initial connect
 	connect();
-};
-
-// handle express errors
-module.exports.handleExpressError = function(app) {
-	// handle 404 not found
-	app.use(function(req, res, next) {
-		res.status(404);
-
-		// respond with html page
-		if (req.accepts('html')) {
-			res.render('404', {
-				url: req.url
-			});
-			return;
-		}
-
-		// respond with json
-		if (req.accepts('json')) {
-			res.send({
-				error: 'Not found'
-			});
-			return;
-		}
-
-		// default to plain-text. send()
-		res.type('txt').send('Not found');
-	});
-
-	// handling other errors
-	app.use(function(err, req, res, next) {
-		console.error(err.stack);
-		res.status(500).send('Something broke!');
-	});
 };
 
 // run application

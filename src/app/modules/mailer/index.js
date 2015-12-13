@@ -1,6 +1,6 @@
 'use strict';
 
-var debug = require('debug')('catalogue:mailer');
+var debug = require('debug')('catalog:mailer');
 var Templates = require('./templates');
 var mandrillEmail = require('mandrill-send');
 

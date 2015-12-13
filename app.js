@@ -16,7 +16,6 @@ var mongoose = require('mongoose');
 // config and setup helpers
 var config = require('application-config');
 var setup = require('./src/app/setup');
-var packageJSON = require('./package.json');
 
 // setup session store
 var sessionStore = setup.sessions({
@@ -49,8 +48,7 @@ var app = setup.createExpressApp({
 	logs: config.get('logs'),
 	cookieName: 'locale',
 	translationDir: __dirname + '/src/app/resources/locales',
-	defaultLocale: config.get('initialeDefault'),
-	codeVersion: packageJSON.version
+	defaultLocale: config.get('initialeDefault')
 });
 
 // mail module
@@ -83,17 +81,16 @@ var authentication = require('modules/authentication')(models, mailer);
 // setup application
 setup.connectToDatabase(mongoose, config.get('database.mongo.url'));
 
-// express error handling
-setup.handleExpressError(app);
-
 // app specific modules
-// Passport credentials management library
 require('modules/passport')(passport, authentication, models);
 
 // load controllers
-require(__dirname + '/src/app/routes/index')(app, services, {
+require(__dirname + '/src/app/routes/routers')(app, services, {
 	verbose: true
 });
+
+// express error handling
+setup.handleExpressError(app);
 
 // run application
 setup.run(server, config.get('server.port'));

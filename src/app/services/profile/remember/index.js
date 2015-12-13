@@ -1,6 +1,5 @@
 'use strict';
 
-var debug = require('debug')('catalogue:profile:remember');
 var async = require('async');
 
 exports = module.exports = function() {
