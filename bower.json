@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "dependencies": {
     "bootstrap": "~3.3.6",
-    "bootstrap-stylus": "~4.0.5",
     "jquery": "~2.1.4",
     "lodash": "~3.10.1",
     "angular": "~1.4.8",
@@ -22,7 +21,8 @@
     "animate.css": "~3.4.0",
     "install": "~1.0.4",
     "select2": "~4.0.1",
-    "angular-masonry": "~0.14.1"
+    "angular-masonry": "~0.14.1",
+    "bootstrap-stylus": "valegrajales/bootstrap-stylus#master"
   },
   "overrides": {
     "masonry": {
