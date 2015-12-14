@@ -22,7 +22,9 @@
     "install": "~1.0.4",
     "select2": "~4.0.1",
     "angular-masonry": "~0.14.1",
-    "bootstrap-stylus": "valegrajales/bootstrap-stylus#master"
+    "bootstrap-stylus": "valegrajales/bootstrap-stylus#master",
+    "leaflet.markercluster": "~0.4.0",
+    "mapbox.js": "~2.1.9"
   },
   "overrides": {
     "outlayer": {
