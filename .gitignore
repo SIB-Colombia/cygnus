@@ -19,3 +19,9 @@ logs
 
 # Design source folder
 diseno
+
+# Catalogue images, maps, videos and sounds folders
+src/public/imagen
+src/public/video
+src/public/sonido
+src/public/mapa
