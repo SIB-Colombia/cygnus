@@ -74,9 +74,9 @@ module.exports = function(parent, services, options) {
 					path = '/';
 					break;
 				case 'show':
-		          	method = 'get';
-		          	path = '/' + name + '/:' + '_id';
-		          	break;
+					method = 'get';
+					path = '/' + name + '/:' + '_id';
+					break;
 				default:
 					throw new Error('unrecognized route: ' + name + '.' + key);
 			}
