@@ -7,5 +7,6 @@ angular.module('catalogHome', ['ngAnimate',
 		'angular-loading-bar',
 		'ngTable',
 		'sweetalert',
-		'wu.masonry'
+		'wu.masonry',
+		'ngSanitize'
 ]);

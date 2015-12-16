@@ -1,5 +1,5 @@
 block header
-	header.cat-header(data-ng-controller="SearchOptionsCtrl")
+	header.cat-header
 		.top-bar
 			.container
 				.row
@@ -20,7 +20,7 @@ block header
 		.search-box
 			.search-field
 				.search-field-cont
-					form(data-ng-submit="go() | trackEvent:'Búsqueda realizada':'Button clicked':'Condición búsqueda':currentTextSearch")
+					form(data-ng-submit="go()")
 						.form-group
 							input.search-input(type="text", name="q", x-webkit-speech, data-ng-model="currentTextSearch", placeholder="Buscar especies")
-						button.visible-large-screen.hide-btn(type="button", data-ng-click="go() | trackEvent:'Búsqueda realizada':'Button clicked':'Condición búsqueda':currentTextSearch")
+						button.visible-large-screen.hide-btn(type="button", data-ng-click="go()")

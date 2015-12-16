@@ -1,5 +1,5 @@
 doctype html
-html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl")
+html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" data-ng-init="catCtrl.init(#{data})")
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')

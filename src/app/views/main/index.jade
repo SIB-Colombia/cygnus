@@ -17,7 +17,7 @@ block content
 				.right-display
 					div
 						.col-md-8
-							ul.tag-list
+							//-ul.tag-list
 								li
 									a(href='#') Páramo
 								li
@@ -27,11 +27,7 @@ block content
 						.col-md-4
 							.item-count.align-right
 								img(src='images/ico-right.png')
-								|  mostrando
-								strong {{catalogue.loadedRegisters}}
-								|  de
-								strong {{catalogue.totalregisters}}
-								|  fichas
+								span(data-ng-bind-html="'mostrando <strong>' + catCtrl.registersData.length + '</strong> de <strong>' + catCtrl.totalRegisters + '</strong> fichas'")
 	.container-fluid
 		.row
 			.sidebar
@@ -45,11 +41,11 @@ block content
 										|  Grupos biológicos
 							#collapse1.panel-collapse.collapse.in
 								.panel-body
-									ul.side-nav-menu
+									//-ul.side-nav-menu
 										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'insecta'}")
-											a(data-ng-click="switchTaxon('insecta') | trackEvent:'Categoria insectos':'Button clicked'", data-ng-href="/#/insectos{{searchOptions.getCurrentURLWithoutTaxon()}}") Insectos
+											a(data-ng-click="switchTaxon('insecta')") Insectos
 										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'aves'}")
-											a(data-ng-click="switchTaxon('aves') | trackEvent:'Categoria aves':'Button clicked'", data-ng-href="/#/aves{{searchOptions.getCurrentURLWithoutTaxon()}}") Aves
+											a(data-ng-click="switchTaxon('aves')") Aves
 										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'plantae'}")
 											a(data-ng-click="switchTaxon('plantae') | trackEvent:'Categoria plantas':'Button clicked'", data-ng-href="/#/plantas{{searchOptions.getCurrentURLWithoutTaxon()}}") Plantas
 										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'mammal'}")
@@ -68,7 +64,7 @@ block content
 										|  Zonas geográficas
 							#collapse2.panel-collapse.collapse
 								.panel-body
-									ul.side-nav-menu
+									//-ul.side-nav-menu
 										li
 											a(data-ng-href="/paramos") Páramos
 										li
@@ -81,7 +77,7 @@ block content
 										|  Colecciones
 							#collapse3.panel-collapse.collapse
 								.panel-body
-									ul.side-nav-menu
+									//-ul.side-nav-menu
 										li(data-ng-class="{active: searchOptions.getCurrentTaxon() == 'all'}")
 											a(data-ng-click="switchTaxon('all') | trackEvent:'Categorias todas las fichas':'Button clicked'", data-ng-href="/#/{{searchOptions.getCurrentURLWithoutTaxon()}}") Todos
 										li(data-ng-class="{active: searchOptions.getShowRecordsWithPicture()}")
@@ -91,17 +87,12 @@ block content
 					.row
 						.col-sm-11
 							//Filtros de búsqueda. Aparecen solo en vista de lista
-							.search-filters
+							.search-filters(data-ng-show="catCtrl.isSearchActive")
 								.search-filters-top
-									| Tu búsqueda por
-									span.search-term
-										|  XXXXXX
-									| :
-									span.search-results
-										|  888.888
-									|  resultados
-								.search-filters-bottom
-									.search-filters-bottom-block
+									span(data-ng-bind-html="'Búsqueda por <strong>' + catCtrl.searchCondition + '</strong> retornó ' + catCtrl.registersData.length + ' resultados'" data-ng-show="catCtrl.isSearchActive")
+									//-span.search-results(data-ng-bind="catCtrl.registersData.length de")
+								//-.search-filters-bottom
+									.search-filters-bottom-block(data-ng-show="catCtrl.isSearchActive")
 										| Resultados por página
 										a.result-number.active
 											| 10
@@ -123,12 +114,58 @@ block content
 												option(value='foo') Mejor coincidencia
 												option(value='bar') otros
 							//Fin de filtros de búsqueda.
-							//span #{data}
-							script.
-								dataVar = !{data};
-								dataVarRandomImages = !{dataRandom};
-								//console.log(dataVar);
 
-							section#catalogWallSection(data-ng-view)
+							#content-list
+								.row(data-ng-repeat="specie in catCtrl.registersData")
+									.col-sm-2
+										img(data-ng-src='{{ specie._source.imagenesExternas[0].url }}')
+									.col-sm-10
+										span.taxonName(data-ng-bind="specie._source.taxonNombre")
+
+							//-section#catalogWallSection
+								#wall-container-wrapper
+									div.wallCounter
+										span mostrando
+										strong {{catalogue.loadedRegisters}}
+										| de
+										strong {{catalogue.totalregisters}}
+										| fichas
+									div(infinite-scroll='catalogue.nextPage()', infinite-scroll-disabled='catalogue.busy', infinite-scroll-distance='2')
+										div(id="isotopeContainer", isotope-container, refreshIsotope)
+											div(ng-repeat="specie in catalogue.species", isotope-item, class="element ficha")
+												.amenaza-sp
+													.wrapper
+													a(ng-href='/fichas/{{specie.id}}')
+														img(ng-src='{{ specie.currentImage }}')
+													.imageCopyright(ng-if="specie.imageRights")
+														| &copy;
+														span.imageRights(ng-bind-html="specie.imageRightsHolder")
+														span.imageLicense
+															a(ng-href='{{specie.imageLicense}}', target="_blank") Licencia
+															|  -
+															a(ng-href='{{specie.imageSource}}', target="_blank") Fuente
+												.ficha-muro-datos
+													.ficha-muro-taxonnombre
+														span.ficha-id {{specie.id}}
+														br
+														a(ng-href='/fichas/{{specie.id}}')
+															span(data-ng-bind-html="specie.taxon_nombre.trim()")
+													.ficha-muro-autor
+														span(data-ng-bind-html="specie.autor.trim()")
+													.ficha-muro-nombrescomunes(ng-if="specie.nombres_comunes.length > 0")
+														strong.com-name Nombres comunes
+														br
+														span(ng-repeat="nombre_comun in specie.nombres_comunes")
+															span(data-ng-bind-html="nombre_comun.nombre.trim()")
+															span(ng-if="!$last") ,
+															span(ng-if="$last") .
+													.ficha-muro-bottom
+														.wrapper(ng-if="specie.atributos['Estado de amenaza según categorías UICN']['En Colombia'].length > 0")
+															.ribbon-threat-status(ng-repeat="threatStatus in specie.atributos['Estado de amenaza según categorías UICN']['En Colombia']")
+																.ribbon-threat(ng-show="threatStatus == 'CR (en peligro crítico)'", class="threat-red") CR
+																.ribbon-threat(ng-show="threatStatus == 'EN (en peligro)'", class="threat-orange") EN
+																.ribbon-threat(ng-show="threatStatus == 'VU (vulnerable)'", class="threat-yellow") VU
+													.ficha-muro-readmore
+														a.readmore-link(ng-href='/fichas/{{specie.id}}') +
 						.col-sm-1
 							a.toggle-list.toggle-view
