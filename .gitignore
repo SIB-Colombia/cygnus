@@ -12,7 +12,7 @@ src/public/javascripts
 src/public/stylesheets
 !src/public/stylesheets/fonts
 src/app/layouts/final
-src/public/template
+src/public/templates
 src/public/views
 src/public/uploads
 logs

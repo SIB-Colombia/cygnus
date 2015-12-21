@@ -11,7 +11,7 @@ function isOnlyChange(event) {
 }
 
 gulp.task('watch', ['inject', 'jadetohtml'], function () {
-	gulp.watch([path.join(conf.paths.src, '/app/layouts/layout.jade'), 'bower.json'], ['inject']);
+	//gulp.watch([path.join(conf.paths.src, '/app/layouts/layout.jade'), 'bower.json'], ['inject']);
 
 	gulp.watch([
 		path.join(conf.paths.src, '/app/**/*.css'),
@@ -24,6 +24,12 @@ gulp.task('watch', ['inject', 'jadetohtml'], function () {
 		}
 	});
 
+	gulp.watch([
+		path.join(conf.paths.src, '/app/layouts/**/layout.jade')
+	], function(event) {
+		gulp.start('inject');
+	});
+
 	gulp.watch(path.join(conf.paths.src, '/app/**/*.js'), function(event) {
 		if(isOnlyChange(event)) {
 			gulp.start('scripts');
@@ -32,11 +38,8 @@ gulp.task('watch', ['inject', 'jadetohtml'], function () {
 		}
 	});
 
-	gulp.watch([path.join(conf.paths.src, '/app/views/dashboard/template/*.jade'), path.join(conf.paths.src, '/app/views/dashboard/angular_partials/*.jade')], function(event) {
+	/*gulp.watch([path.join(conf.paths.src, '/app/views/dashboard/template/*.jade'), path.join(conf.paths.src, '/app/views/dashboard/angular_partials/*.jade')], function(event) {
 		gulp.start('jadetohtml');
-	});
+	});*/
 
-	//gulp.watch(path.join(conf.paths.src, '/app/resources/locales/*.json'), function(event) {
-	//	browserSync.reload(event.path);
-	//});
 });

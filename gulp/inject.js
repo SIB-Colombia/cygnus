@@ -28,9 +28,9 @@ gulp.task('inject', ['scripts', 'styles'], function () {
 		name: 'home'
 	};
 
-	return gulp.src(path.join(conf.paths.src, '/app/layouts/layout.jade'))
+	return gulp.src(path.join(conf.paths.src, '/app/layouts/home/layout.jade'))
 		.pipe($.inject(injectStylesHome, injectOptionsHome))
 		.pipe($.inject(injectScriptsHome, injectOptionsHome))
 		.pipe(wiredep(_.extend({ignorePath: ['../../public']}, conf.wiredep)))
-		.pipe(gulp.dest(path.join(conf.paths.src, '/app/layouts/final')));
+		.pipe(gulp.dest(path.join(conf.paths.src, '/app/layouts/home/final')));
 });

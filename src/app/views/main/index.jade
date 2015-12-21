@@ -1,12 +1,12 @@
-extends ../../layouts/final/layout
-
-block header
-	include ../../layouts/includes/home/header
-
-block footer
-	include ../../layouts/includes/home/footer
+extends ../../layouts/home/final/layout
 
 block content
+	section#top-zone(ui-view)
+
+//-block footer
+	include ../../layouts/home/includes/footer
+
+//-block content
 	.site-navigation(data-spy='affix', data-offset-top='450')
 		.container-fluid
 			.row

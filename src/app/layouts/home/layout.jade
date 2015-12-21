@@ -16,6 +16,8 @@ html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" d
 		meta(property='og:locale', content='es_ES')
 		meta(name="google-site-verification" content="nm1-g-rVHscAi_K7O9e-s3EE7rEDorSu9OFagozmx3Q")
 
+		base(href="/")
+
 		<!-- build:css(src/public) stylesheets/final/vendor.css -->
 		//- bower:css
 		//- run `gulp inject` to automatically populate bower styles dependencies
@@ -28,16 +30,18 @@ html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" d
 		//- endinject
 		<!-- endbuild -->
 
-	body
-		.wrapper
+	body(data-ng-class="{'sw-toggled': catCtrl.layoutType === true, 'modal-open': catCtrl.sidebarToggle.left === true }")
+		//- Cinta beta de cat{alogo anterior
+		//-.wrapper-ribbon
 			.ribbon-wrapper-green
 				.ribbon-green BETA
 		#wrapper
-			section#top-zone
+			block content
+			//-section#top-zone
 				block header
-			#content-wrapper
+			//-#content-wrapper
 				block content
-			section#footer-zone
+			//-section#footer-zone
 				block footer
 
 		<!-- build:js(src/public) javascripts/final/vendor.js -->
