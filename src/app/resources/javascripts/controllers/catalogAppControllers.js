@@ -9,8 +9,14 @@ angular.module('catalogHome')
 		// Default status of left sidebar always active = true
 		this.layoutType = true;
 
-		// Status of left sidebar active = true
-		this.sidebarToggle = true;
+		//Welcome Message
+		growlService.growl('Bienvenido al catálogo de la biodiversidad', 'inverse');
+
+		// By default Sidbars are hidden in boxed layout and in wide layout only the right sidebar is hidden.
+		this.sidebarToggle = {
+			left: false,
+			right: false
+		};
 
 		this.init = function(data) {
 			// Current user full name

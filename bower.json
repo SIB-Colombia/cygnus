@@ -24,7 +24,10 @@
     "angular-masonry": "~0.14.1",
     "bootstrap-stylus": "valegrajales/bootstrap-stylus#master",
     "leaflet.markercluster": "~0.4.0",
-    "mapbox.js": "~2.1.9"
+    "mapbox.js": "~2.1.9",
+    "angular-translate": "~2.8.1",
+    "angular-translate-storage-cookie": "~2.8.1",
+    "angular-translate-storage-local": "~2.8.1"
   },
   "overrides": {
     "outlayer": {
@@ -34,9 +37,9 @@
       ]
     },
     "get-style-property": {
-    	"main": [
-    		"get-style-property.js"
-    	]
+      "main": [
+        "get-style-property.js"
+      ]
     }
   },
   "resolutions": {

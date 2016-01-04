@@ -44,7 +44,7 @@ gulp.task('clean', function (done) {
 	$.del([path.join(conf.paths.src, '/public/stylesheets/style.css')], done);
 	$.del([path.join(conf.paths.src, '/app/layouts/final')], done);
 	$.del([path.join(conf.paths.src, '/public/views')], done);
-	$.del([path.join(conf.paths.src, '/public/template')], done);
+	$.del([path.join(conf.paths.src, '/public/templates')], done);
 });
 
 gulp.task('build', ['clean', 'html', 'fonts']);

@@ -2,8 +2,9 @@ extends ../../layouts/home/final/layout
 
 block content
 	#wrapper(ui-view)
-		section#top-zone(ui-view="header")
-		section#footer-zone(ui-view="footer")
+		header#top-zone(ui-view="header")
+		section#content-zone(ui-view="content")
+		//-footer#footer-zone(ui-view="footer")
 
 //-block footer
 	include ../../layouts/home/includes/footer

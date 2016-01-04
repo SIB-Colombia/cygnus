@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 
 $( ".toggle-partners" ).click(function() {
   $( "#modal-socios" ).toggleClass( "display-footer-modal" );
@@ -20,3 +20,4 @@ $( ".toggle-view" ).click(function() {
   $( ".isotope" ).toggleClass( "card-view" );
   $( ".toggle-list" ).toggleClass( "view-mode" );
 });
+*/

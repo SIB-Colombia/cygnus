@@ -42,4 +42,8 @@ gulp.task('watch', ['inject', 'jadetohtml'], function () {
 		gulp.start('jadetohtml');
 	});
 
+	gulp.watch([path.join(conf.paths.src, '/app/resources/locales/*.json')], function(event) {
+		gulp.start('copylocales');
+	});
+
 });

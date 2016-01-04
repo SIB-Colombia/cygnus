@@ -10,6 +10,7 @@ dist/
 src/public/bower_components
 src/public/javascripts
 src/public/stylesheets
+src/public/locales
 !src/public/stylesheets/fonts
 src/app/layouts/final
 src/public/templates

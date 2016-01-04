@@ -1,1 +1,21 @@
-p Test
+.site-navigation(data-spy='affix', data-offset-top='450')
+	.container-fluid
+		.row
+			.sidebar-display
+				a.filter-display
+					img(src='images/ico-menu.png')
+					span FILTROS
+			.right-display
+				div
+					.col-md-8
+						ul.tag-list
+							li
+								a(href='#') Páramo
+							li
+								a(href='#') Cundinamarca
+							li
+								a(href='#') Aves
+					.col-md-4
+						.item-count.align-right
+							img(src='images/ico-right.png')
+							span(data-ng-bind-html="'mostrando <strong>' + catCtrl.registersData.length + '</strong> de <strong>' + catCtrl.totalRegisters + '</strong> fichas'")

@@ -11,5 +11,6 @@ gulp.task('jadetohtml', function () {
 		.pipe($.jade({
 			pretty: true
 		}))
+		.pipe($.debug({title: 'jadetohtml:'}))
 		.pipe(gulp.dest(path.join(conf.paths.src, '/public/templates')));
 });

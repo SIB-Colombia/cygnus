@@ -20,6 +20,9 @@ angular.module('catalogHome')
 					templateUrl: '/templates/header.html',
 					controller: 'headerCtrl as hCtrl'
 				},
+				'content': {
+					templateUrl: '/templates/home.html'
+				},
 				'footer': {
 					templateUrl: '/templates/footer.html'
 				}
