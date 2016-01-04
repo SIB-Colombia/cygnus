@@ -6,7 +6,15 @@
  *  of the tasks
  */
 
+// simplify modules location
+require('app-module-path').addPath(__dirname + '/config');
+
 var gutil = require('gulp-util');
+
+// config and setup helpers
+var config = require('../config/application-config');
+
+exports.assetsLocation = config.get('assetsLocation');
 
 /**
  *  The main paths of your project handle these with care

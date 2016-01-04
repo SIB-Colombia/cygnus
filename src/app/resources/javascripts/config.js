@@ -17,7 +17,11 @@ angular.module('catalogHome')
 			templateUrl: '/templates/home.html',
 			views: {
 				'header': {
-					templateUrl: '/templates/header.html'
+					templateUrl: '/templates/header.html',
+					controller: 'headerCtrl as hCtrl'
+				},
+				'footer': {
+					templateUrl: '/templates/footer.html'
 				}
 			}
 		});

@@ -81,6 +81,11 @@ var config = module.exports = convict({
 			env: 'CLIENT_DOMAIN'
 		}
 	},
+	assetsLocation: {
+		doc: 'Location of app assets.',
+		default: 'https://s3.amazonaws.com/catalog-assets',
+		env: 'ASSETS_LOCATION'
+	},
 	mandrill: {
 		api: {
 			key: {

@@ -38,8 +38,8 @@ gulp.task('watch', ['inject', 'jadetohtml'], function () {
 		}
 	});
 
-	/*gulp.watch([path.join(conf.paths.src, '/app/views/dashboard/template/*.jade'), path.join(conf.paths.src, '/app/views/dashboard/angular_partials/*.jade')], function(event) {
+	gulp.watch([path.join(conf.paths.src, '/app/views/**/templates/*.jade')], function(event) {
 		gulp.start('jadetohtml');
-	});*/
+	});
 
 });

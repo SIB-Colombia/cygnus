@@ -2,6 +2,11 @@
 @import unquote('url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300italic,400italic)')
 
 *
+	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
 	-webkit-transition all 0.4s ease
 	-moz-transition all 0.4s ease
 	-ms-transition all 0.4s ease
@@ -10,6 +15,8 @@
 	outline none !important
   -webkit-tap-highlight-color rgba(0, 0, 0, 0) !important
 	//border red 1px solid
+	:focus
+		outline 0
 body
 	background #f2eee3 url("/images/noise1.png") repeat 0 0 !important
 	font-family 'Open Sans', Helvetica, sans-serif
@@ -24,3 +31,168 @@ a
 		text-decoration none
 .wrapper
 	margin 0 auto
+
+::-webkit-input-placeholder
+	color #999
+	font-weight normal
+	font-style italic
+:-moz-placeholder
+	color #999
+	font-weight normal
+	font-style italic
+::-moz-placeholder
+	color #999
+	font-weight normal
+	font-style italic
+:-ms-input-placeholder
+	color #999
+	font-weight normal
+	font-style italic
+
+@media (min-width: 768px)
+	.container
+		width calc(100% - 30px)
+	.top-menu
+		& > li
+			&:not(#toggle-width)
+				position relative
+
+@media (min-width: 992px)
+	.container
+		width calc(100% - 30px)
+
+@media (min-width 1200px)
+	.container
+		width 1170px
+	.sw-toggled
+		#header
+			padding-left 0px
+
+.align-right
+	text-align right
+
+.pull-right
+	float right !important
+
+.top-menu
+	list-style none
+	padding 0
+	& > li
+		display inline-block
+		margin 0 1px
+		& > a
+			display inline-block
+			background-position center
+			background-repeat no-repeat
+			position relative
+			z-index 1
+			&.tm-settings
+				background-image url(/images/icons/ellipsis.png)
+				height 35px
+				min-width 30px
+				vertical-align middle
+				&:hover
+					opacity 0.7
+
+#header
+	.top-bar
+		background-color rgba(0,0,0,0.3)
+		.logo-cont
+			padding 10px 0
+			img
+				max-width 100%
+				//min-width 80%
+				height auto
+		.sm-cont
+			padding 25px 0
+			img
+				margin 0 10px
+				opacity 1
+				&:hover
+					opacity 0.7
+		ul
+			margin-bottom 0px
+			margin-top 0px
+			list-style none
+	.search-box
+		height 370px
+		position relative
+		@media (max-width: 600px)
+			height 140px
+		.search-field
+			position absolute
+			left 0
+			top 100px
+			text-align center
+			width 100%
+			padding 0 20px
+			@media (max-width: 600px)
+				top 20px
+			.search-field-cont
+				.search-form-wrapper
+					max-width 960px
+					padding 15px
+					margin auto
+					background #444
+					background rgba(0,0,0,.2)
+					-moz-border-radius 10px
+					-webkit-border-radius 10px
+					border-radius 10px
+					-moz-box-shadow 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2)
+					-webkit-box-shadow 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2)
+					box-shadow 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2)
+					.form-group
+						margin-bottom 0px
+					input.search-input
+						border 0
+						-moz-border-radius 3px 0 0 3px
+						-webkit-border-radius 3px 0 0 3px
+						border-radius 3px 0 0 3px
+						padding 15px 15px 15px 15px
+						width -moz-calc(100% - 60px)
+						width -webkit-calc(100% - 60px)
+						width calc(100% - 60px)
+						@media (max-width: 768px)
+							font-size 1.1em
+						@media (min-width: 768px)
+							font-size 1.5em
+						&:focus
+							outline 0
+							-moz-box-shadow 0 0 2px rgba(0,0,0,.8) inset
+							-webkit-box-shadow 0 0 2px rgba(0,0,0,.8) inset
+							box-shadow 0 0 2px rgba(0,0,0,.8) inset
+					button
+						overflow visible
+						position relative
+						float right
+						border 0
+						padding 0
+						cursor pointer
+						width 60px
+						height 60px
+						-moz-border-radius 0 3px 3px 0
+						-webkit-border-radius 0 3px 3px 0
+						border-radius 0 3px 3px 0
+						background-color white
+						text-shadow 0 -1px 0 rgba(0, 0 ,0, .3)
+						@media (max-width: 768px)
+							height 51px
+				/*max-width 960px
+				margin auto
+				input.search-input
+					width 100%
+					border none
+					background url(../images/ico-search.svg) right 12px center no-repeat
+					background-color: rgba(255,255,255,0.95)
+					padding 15px 50px 15px 15px
+					@media (max-width: 996px)
+						font-size 1.3em
+					@media (min-width: 996px)
+						font-size 1.8em*/
+
+
+							/*width 100%
+						border none
+						background url(../images/ico-search.svg) right 12px center no-repeat
+						background-color: rgba(255,255,255,0.95)
+						padding 15px 50px 15px 15px*/

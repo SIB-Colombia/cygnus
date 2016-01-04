@@ -14,6 +14,5 @@ gulp.task('scripts', function () {
 		.pipe($.jshint())
 		.pipe($.jshint.reporter('jshint-stylish'))
 		.pipe(gulp.dest(path.join(conf.paths.src, '/public/javascripts/')))
-		.pipe(browserSync.reload({ stream: true }))
 		.pipe($.size());
 });
