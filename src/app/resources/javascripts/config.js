@@ -1,7 +1,21 @@
 'use strict';
 
 angular.module('catalogHome')
-	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
+
+		/* Translation provider configuration */
+		// Static language translation files
+		$translateProvider.useStaticFilesLoader({
+			prefix: '/locales/',
+			suffix: '.json'
+		});
+		// Default language
+		$translateProvider.preferredLanguage('es');
+		// remember language
+		$translateProvider.useLocalStorage();
+		// Sanitize translation text
+		$translateProvider.useSanitizeValueStrategy('sanitize');
+
 		$urlRouterProvider.otherwise("/");
 
 		$locationProvider.html5Mode(true).hashPrefix('');
@@ -25,6 +39,9 @@ angular.module('catalogHome')
 				},
 				'footer': {
 					templateUrl: '/templates/footer.html'
+				},
+				'filterSideMenu': {
+					templateUrl: '/templates/filterMenu.html'
 				}
 			}
 		});

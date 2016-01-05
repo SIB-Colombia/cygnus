@@ -22,11 +22,11 @@ header.cat-header#header
 								img(src='images/ico-user.svg', alt='User account')
 						li.dropdown.hide(uib-dropdown='')
 							a.tm-settings(uib-dropdown-toggle='', href='')
-							ul.uib-dropdown-menu.dm-icon.pull-right
+							ul.dm-icon.pull-right.dropdown-menu
 								li.hidden-xs
-									a(data-ng-click='hctrl.fullScreen()', href='')
+									a(data-ng-click='hCtrl.fullScreen()', href='')
 										i.zmdi.zmdi-fullscreen
-										| Toggle Fullscreen
+										| {{'toggleFullScreen' | translate}}
 								li.visible-xs
 									a(href='https://www.facebook.com/SibColombia', target='_blank')
 										img(src='images/ico-fb.svg', alt='Facebook')
@@ -41,6 +41,6 @@ header.cat-header#header
 			.search-field-cont
 				form.search-form-wrapper
 					.form-group
-						input.search-input(type="search" name="q" x-webkit-speech data-ng-model="hCtrl.currentTextSearch" placeholder="Buscar especies")
+						input.search-input(type="search" name="q" x-webkit-speech data-ng-model="hCtrl.currentTextSearch" placeholder="{{ 'searchInputPlaceholder' | translate }}")
 						button.visible-large-screen.hide-btn(type="button")
 							img(src='/images/ico-search.svg')

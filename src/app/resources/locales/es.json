@@ -1,3 +1,6 @@
 {
-	"pageTitle": "Catálogo de la Biodiversidad"
+	"pageTitle": "Catálogo de la Biodiversidad",
+	"welcomeMessage": "Bienvenido al Catálogo de la Biodiversidad de Colombia",
+	"searchInputPlaceholder": "Buscar especies",
+	"toggleFullScreen": "Pantalla completa"
 }

@@ -1,6 +1,11 @@
 @import unquote('url(http://fonts.googleapis.com/css?family=Economica:400,700,400italic)')
 @import unquote('url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300italic,400italic)')
 
+@font-face
+	font-family 'Glyphicons Halflings'
+	src url('../../bower_components/bootstrap-stylus/fonts/glyphicons-halflings-regular.eot')
+	src url('../../bower_components/bootstrap-stylus/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../bower_components/bootstrap-stylus/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../../bower_components/bootstrap-stylus/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../../bower_components/bootstrap-stylus/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
+
 *
 	-webkit-box-sizing border-box
 	-moz-box-sizing border-box
@@ -17,6 +22,11 @@
 	//border red 1px solid
 	:focus
 		outline 0
+
+*
+	margin 0
+	padding 0
+
 body
 	background #f2eee3 url("/images/noise1.png") repeat 0 0 !important
 	font-family 'Open Sans', Helvetica, sans-serif
@@ -192,3 +202,104 @@ a
 		float left
 		border-right 1px solid #FFF
 		background url(../images/ico-left.svg) right 10px center no-repeat
+
+.dropdown-menu
+	position absolute
+	top 100%
+	left 0
+	z-index 9
+	display none
+	float left
+	min-width 160px
+	padding 5px 0
+	margin 2px 0 0
+	list-style none
+	font-size 13px
+	text-align left
+	background-color #fff
+	border 1px solid transparent
+	border-radius 2px
+	-webkit-box-shadow 0 6px 12px rgba(0,0,0,0.175)
+	box-shadow 0 6px 12px rgba(0,0,0,0.175)
+	background-clip padding-box
+	& > li
+		& > a
+			display block
+			padding 3px 20px
+			clear both
+			font-weight 400
+			line-height 1.42857143
+			color #333
+			white-space nowrap
+
+.dropdown-menu
+	box-shadow 0 2px 10px rgba(0,0,0,0.2)
+	-webkit-transition all
+	-o-transition all
+	transition all
+	-webkit-transition-duration 250ms
+	transition-duration 250ms
+	-webkit-backface-visibility hidden
+	-moz-backface-visibility hidden
+	backface-visibility hidden
+	& > ul
+		margin-top 0
+		margin-bottom 9px
+		margin-top 1px
+	& > li
+		& > a
+			padding 8px 17px
+			-webkit-transition background-color
+			-o-transition background-color
+			transition background-color
+			-webkit-transition-duration 300ms
+			transition-duration 300ms
+	&.dm-icon
+		& > li
+			& > a
+				& > .zmdi
+					line-height 100%
+					vertical-align top
+					font-size 18px
+					width 20px
+					text-align center
+					margin-right 10px
+				& > .glyphicon
+					line-height 100%
+					vertical-align top
+					width 20px
+					text-align center
+					margin-right 10px
+	&:not([class*="bgm-"])
+		& > li
+			& > a
+				&:hover
+					color #000
+					background-color rgba(0,0,0,0.15)
+					text-decoration none
+
+.open
+	& > a
+		outline 0
+	.line-wrap
+		-webkit-transform rotate(180deg)
+		-ms-transform rotate(180deg)
+		-o-transform rotate(180deg)
+		transform rotate(180deg)
+		.line.top
+			width 12px
+			transform translateX(8px) translateY(1px) rotate(45deg)
+			-webkit-transform translateX(8px) translateY(1px) rotate(45deg)
+		.line.bottom
+			width 12px
+			transform translateX(8px) translateY(-1px) rotate(-45deg)
+			-webkit-transform translateX(8px) translateY(-1px) rotate(-45deg)
+
+.zmdi
+	display inline-block
+	font normal normal normal 14px/1 'Material-Design-Iconic-Font'
+	font-size inherit
+	text-rendering auto
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+

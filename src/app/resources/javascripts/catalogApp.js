@@ -8,5 +8,7 @@ angular.module('catalogHome', ['ngAnimate',
 		'ngTable',
 		'sweetalert',
 		'wu.masonry',
-		'ngSanitize'
+		'ngSanitize',
+		'ngCookies',
+		'pascalprecht.translate'
 ]);

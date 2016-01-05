@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('catalogHome')
-	.controller('catalogHomeCtrl', ['$timeout', '$state', function($timeout, $state){
+	.controller('catalogHomeCtrl', ['$timeout', '$state', 'growlService', '$translate', function($timeout, $state, growlService, $translate){
 
 		this.isSearchActive = false;
 		this.searchCondition = '';
@@ -10,7 +10,9 @@ angular.module('catalogHome')
 		this.layoutType = true;
 
 		//Welcome Message
-		growlService.growl('Bienvenido al catálogo de la biodiversidad', 'inverse');
+		$translate('welcomeMessage').then(function (welcomeMessage) {
+			growlService.growl(welcomeMessage, 'inverse');
+		});
 
 		// By default Sidbars are hidden in boxed layout and in wide layout only the right sidebar is hidden.
 		this.sidebarToggle = {
