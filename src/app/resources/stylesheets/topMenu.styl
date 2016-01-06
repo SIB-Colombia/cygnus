@@ -1,0 +1,24 @@
+/* Home content section style */
+.site-navigation
+	color #FFFFFF
+	background-color #EC5244
+	font-size 12px
+	z-index 100
+	height 40px
+	a
+		&:hover
+			text-decoration none
+	.sidebar-display
+		width 45px
+		float left
+		border-right 1px solid #FFF
+		line-height 40px
+		span.filter-display
+			display none
+
+@media (min-width 1200px)
+	.site-navigation
+		.sidebar-display
+			width 280px
+			span.filter-display
+				display initial

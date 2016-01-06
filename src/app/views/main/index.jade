@@ -3,7 +3,10 @@ extends ../../layouts/home/final/layout
 block content
 	#wrapper(ui-view)
 		header#top-zone(ui-view="header")
-		section#content-zone(ui-view="content")
+		nav#content-zone(ui-view="topNavigation")
+		section#main
+			aside#sidebar(data-ng-class="{ 'toggled': catCtrl.sidebarToggle.left === true }" ui-view="filterSideMenu" data-spy='affix' data-offset-top='450')
+			section#content(ui-view="content" data-spy='affix' data-offset-top='450')
 		//-footer#footer-zone(ui-view="footer")
 
 //-block footer

@@ -34,14 +34,17 @@ angular.module('catalogHome')
 					templateUrl: '/templates/header.html',
 					controller: 'headerCtrl as hCtrl'
 				},
-				'content': {
-					templateUrl: '/templates/home.html'
+				'topNavigation': {
+					templateUrl: '/templates/topNavigation.html'
 				},
 				'footer': {
 					templateUrl: '/templates/footer.html'
 				},
 				'filterSideMenu': {
 					templateUrl: '/templates/filterMenu.html'
+				},
+				'content': {
+					templateUrl: '/templates/contentHome.html'
 				}
 			}
 		});
