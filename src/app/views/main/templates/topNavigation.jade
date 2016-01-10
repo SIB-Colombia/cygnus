@@ -1,6 +1,11 @@
 .site-navigation(data-spy='affix', data-offset-top='450')
-	.sidebar-display
-		span.filter-display FILTROS
+	.sidebar-display(data-ng-class="{ 'open': catCtrl.sidebarToggle.left === true }")
+		#menu-trigger(data-target='mainmenu' data-toggle-sidebar data-model-left='catCtrl.sidebarToggle.left' data-model-layout-type='catCtrl.layoutType')
+			.line-wrap
+				.line.top
+				.line.center
+				.line.bottom
+		.filter-display FILTROS
 	//-.right-display
 		div
 			.col-md-8

@@ -35,7 +35,8 @@ angular.module('catalogHome')
 					controller: 'headerCtrl as hCtrl'
 				},
 				'topNavigation': {
-					templateUrl: '/templates/topNavigation.html'
+					templateUrl: '/templates/topNavigation.html',
+					ontroller: 'catalogHomeCtrl as hCtrl'
 				},
 				'footer': {
 					templateUrl: '/templates/footer.html'

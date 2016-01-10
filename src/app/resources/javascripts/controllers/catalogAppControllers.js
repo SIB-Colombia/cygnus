@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('catalogHome')
-	.controller('catalogHomeCtrl', ['$timeout', '$state', 'growlService', '$translate', function($timeout, $state, growlService, $translate){
+	.controller('catalogHomeCtrl', ['$timeout', '$state', 'growlService', '$translate', '$window', function($timeout, $state, growlService, $translate, $window){
 
 		this.isSearchActive = false;
 		this.searchCondition = '';
 
-		// Default status of left sidebar always active = true
+		// Default status of left sidebar always active = true (always true for width >= 1200px)
 		this.layoutType = true;
 
 		//Welcome Message
@@ -16,7 +16,7 @@ angular.module('catalogHome')
 
 		// By default Sidbars are hidden in boxed layout and in wide layout only the right sidebar is hidden.
 		this.sidebarToggle = {
-			left: false,
+			left: true,
 			right: false
 		};
 
@@ -24,6 +24,11 @@ angular.module('catalogHome')
 			// Current user full name
 			this.totalRegisters = data.total;
 			this.registersData = data.hits;
+
+			if($window.innerWidth < 1200) {
+				this.layoutType = false;
+				this.sidebarToggle.left = false;
+			}
 		};
 
 		this.selectRandomImage = function(images) {
