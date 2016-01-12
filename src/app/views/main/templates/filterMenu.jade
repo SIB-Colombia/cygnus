@@ -1,32 +1,41 @@
 .sidebar-inner.c-overflow
 	ul.main-menu
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-home
-				| Home
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-accounts-alt
-				| Users
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-case
-				| Tools
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-library
-				| Directory
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-comments
-				| Forums
+		li.sub-menu.toggled.slide
+			a(toggle-submenu)
+				i
+					img(src='images/ico-grupos.svg')
+				| Grupos biológicos
+			ul(style='display: block;')
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Insectos
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Aves
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Plantas
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Mamíferos
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Reptiles
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Anfibios
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Hongos
+		li.sub-menu.toggled
+			a(toggle-submenu)
+				i
+					img(src='images/ico-zonas.svg')
+				| Zonas geográficas
+			ul(style='display: block;')
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Páramos
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Humedales
 
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-comments
-				| toolreview
-
-		li(data-ui-sref-active='active')
-			a
-				i.zmdi.zmdi-comments
-				| direcreview
+		li.sub-menu.toggled
+			a(toggle-submenu)
+				i
+					img(src='images/ico-colecciones.svg')
+				| Colecciones
+			ul(style='display: block;')
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Fichas con foto

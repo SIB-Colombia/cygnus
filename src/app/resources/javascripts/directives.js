@@ -65,26 +65,6 @@ angular.module('catalogHome')
 							})
 						}
 					}
-					/*if (element.data('target') === 'mainmenu') {
-						if (scope.modelLeft === false) {
-							scope.$apply(function(){
-								scope.modelLeft = true;
-							})
-						}
-						else {
-							scope.$apply(function(){
-								scope.modelLeft = false;
-							})
-						}
-					}
-
-					if($window.innerWidth < 1200) {
-						scope.modelLayoutType = false
-					} else {
-						scope.modelLayoutType = true
-					}
-
-					console.log(scope.modelLayoutType);*/
 
 					// Future chat sidebar
 					/*if (element.data('target') === 'chat') {
@@ -104,4 +84,21 @@ angular.module('catalogHome')
 			}
 		}
 
+	})
+
+	// =========================================================================
+	// SUBMENU TOGGLE
+	// =========================================================================
+
+	.directive('toggleSubmenu', function(){
+
+		return {
+			restrict: 'A',
+			link: function(scope, element, attrs) {
+				element.click(function(){
+					element.next().slideToggle(200);
+					element.parent().toggleClass('toggled');
+				});
+			}
+		}
 	});
