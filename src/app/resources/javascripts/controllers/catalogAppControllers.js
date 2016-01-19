@@ -36,7 +36,7 @@ angular.module('catalogHome')
 
 		this.onSearchFormSubmit = function() {
 			console.log("sopas");
-			$state.go('/home', {q: this.searchCondition});
+			$state.go('home', {q: this.searchCondition});
 		};
 
 	}]);
