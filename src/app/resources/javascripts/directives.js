@@ -22,24 +22,24 @@ angular.module('catalogHome')
 						localStorage.setItem('ma-layout-status', 1);
 						scope.$apply(function(){
 							scope.changeLayout = '1';
-						})
+						});
 					}
 					else {
 						localStorage.setItem('ma-layout-status', 0);
 						scope.$apply(function(){
 							scope.changeLayout = '0';
-						})
+						});
 					}
-				})
+				});
 			}
-		}
+		};
 	})
 
 	// =========================================================================
 	// MAINMENU COLLAPSE
 	// =========================================================================
 
-	.directive('toggleSidebar', function($window){
+	.directive('toggleSidebar', function(){
 
 		return {
 			restrict: 'A',
@@ -57,12 +57,12 @@ angular.module('catalogHome')
 							scope.$apply(function(){
 								scope.modelLayoutType = false;
 								scope.modelLeft = false;
-							})
+							});
 						} else if (scope.modelLayoutType === false && scope.modelLeft === false) {
 							scope.$apply(function(){
 								scope.modelLayoutType = true;
 								scope.modelLeft = true;
-							})
+							});
 						}
 					}
 
@@ -80,9 +80,9 @@ angular.module('catalogHome')
 						}
 					}*/
 
-				})
+				});
 			}
-		}
+		};
 
 	})
 
@@ -100,5 +100,5 @@ angular.module('catalogHome')
 					element.parent().toggleClass('toggled');
 				});
 			}
-		}
+		};
 	});

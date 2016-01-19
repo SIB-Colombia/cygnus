@@ -27,7 +27,7 @@ angular.module('catalogHome')
 		//------------------------------
 
 		.state('home', {
-			url: '/',
+			url: '/?q',
 			templateUrl: '/templates/home.html',
 			views: {
 				'header': {

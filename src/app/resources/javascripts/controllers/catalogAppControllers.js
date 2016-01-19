@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('catalogHome')
-	.controller('catalogHomeCtrl', ['$timeout', '$state', 'growlService', '$translate', '$window', function($timeout, $state, growlService, $translate, $window){
+	.controller('catalogHomeCtrl', ['$timeout', '$state', 'growlService', '$translate', '$window', '$stateParams', function($timeout, $state, growlService, $translate, $window, $stateParams){
+
+		console.log($stateParams);
 
 		this.isSearchActive = false;
 		this.searchCondition = '';
@@ -25,14 +27,16 @@ angular.module('catalogHome')
 			this.totalRegisters = data.total;
 			this.registersData = data.hits;
 
+			// Set initial configuration for small screens
 			if($window.innerWidth < 1200) {
 				this.layoutType = false;
 				this.sidebarToggle.left = false;
 			}
 		};
 
-		this.selectRandomImage = function(images) {
-
+		this.onSearchFormSubmit = function() {
+			console.log("sopas");
+			$state.go('/home', {q: this.searchCondition});
 		};
 
 	}]);
