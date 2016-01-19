@@ -5,18 +5,8 @@
 				.line.top
 				.line.center
 				.line.bottom
-		.filter-display FILTROS
+		.filter-display {{ 'toggleFilterMenu' | translate }}
 	.right-display
-		div
-			.col-md-8
-				ul.tag-list
-					li
-						a(href='#') Páramo
-					li
-						a(href='#') Cundinamarca
-					li
-						a(href='#') Aves
-			.col-md-4
-				.item-count.align-right
-					img(src='images/ico-right.png')
-					span(data-ng-bind-html="'mostrando <strong>' + catCtrl.registersData.length + '</strong> de <strong>' + catCtrl.totalRegisters + '</strong> fichas'")
+		.item-count.align-right
+			img(src='images/ico-right.png')
+			span(data-ng-bind-html="'totalFoundSheets' | translate:'{current: '+catCtrl.registersData.length+', total: '+catCtrl.totalRegisters+'}'")

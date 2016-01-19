@@ -4,38 +4,38 @@
 			a(toggle-submenu)
 				i
 					img(src='images/ico-grupos.svg')
-				| Grupos biológicos
+				span(data-ng-bind-html="'filterBiologicalGroups' | translate")
 			ul(style='display: block;')
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Insectos
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsInsects' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Aves
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsBirds' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Plantas
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsPlants' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Mamíferos
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsMammals' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Reptiles
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsReptiles' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Anfibios
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsAmphibians' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Hongos
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsMushrooms' | translate")
 		li.sub-menu.toggled
 			a(toggle-submenu)
 				i
 					img(src='images/ico-zonas.svg')
-				| Zonas geográficas
+				span(data-ng-bind-html="'filterGeographicZones' | translate")
 			ul(style='display: block;')
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Páramos
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterfilterGeographicZonesBadlands' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Humedales
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterfilterGeographicZonesWetlands' | translate")
 
 		li.sub-menu.toggled
 			a(toggle-submenu)
 				i
 					img(src='images/ico-colecciones.svg')
-				| Colecciones
+				span(data-ng-bind-html="'filterCollections' | translate")
 			ul(style='display: block;')
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Fichas con foto
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsSheetsWithPhoto' | translate")

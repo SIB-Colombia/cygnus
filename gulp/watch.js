@@ -10,7 +10,7 @@ function isOnlyChange(event) {
 	return event.type === 'changed';
 }
 
-gulp.task('watch', ['inject', 'jadetohtml'], function () {
+gulp.task('watch', ['inject', 'jadetohtml', 'copylocales'], function () {
 	//gulp.watch([path.join(conf.paths.src, '/app/layouts/layout.jade'), 'bower.json'], ['inject']);
 
 	gulp.watch([

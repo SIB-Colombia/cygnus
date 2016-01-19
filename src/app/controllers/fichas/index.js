@@ -1,4 +1,4 @@
-
+'use strict';
 
 /**
  * Resolves URL /
@@ -19,7 +19,7 @@ exports.show = function() {
 						method: 'GET',
 						json: true
 					}, function(error, response, body) {
-						if (!error && response.statusCode == 200) {
+						if (!error && response.statusCode === 200) {
 							callback(error, body);
 						} else {
 							res.send(body);
@@ -27,16 +27,16 @@ exports.show = function() {
 					});
 				},
 				function(arg1, callback) {
-					result = JSON.parse(arg1.replace(/^\s+|\s+$/g, ''));
+					var result = JSON.parse(arg1.replace(/^\s+|\s+$/g, ''));
 					result[registerID].currentImages = [];
 					request({
 						url: 'http://www.biodiversidad.co:3000/index.php/api/external_images?taxon_nombre='+encodeURIComponent(result[registerID].info_taxonomica.taxonnombre),
 						method: 'GET',
 						json: true
 					}, function(error, response, body) {
-						if (!error && response.statusCode == 200) {
+						if (!error && response.statusCode === 200) {
 							if(body.length > 0) {
-								for (i = 0; i < body.length; i++) {
+								for (var i = 0; i < body.length; i++) {
 									result[registerID].currentImages[i] = {};
 									result[registerID].currentImages[i].imageURL = body[i].imageurl;
 									result[registerID].currentImages[i].imageLicense = body[i].imagelicense;
@@ -54,19 +54,20 @@ exports.show = function() {
 				}
 			], function(err, result) {
 
-					if(err)
+					if(err) {
 						res.send(err);
+					}
 
 					var metaTagOgImage;
-					if (typeof result[registerID].atributos != "undefined" && typeof result[registerID].atributos.imagenThumb270 != "undefined") {
+					if (typeof result[registerID].atributos !== "undefined" && typeof result[registerID].atributos.imagenThumb270 !== "undefined") {
 						for( var i = 0; i < result[registerID].atributos.imagenThumb270.length; i++) {
 							result[registerID].currentImages[result[registerID].currentImages.length] = {};
-							result[registerID].currentImages[result[registerID].currentImages.length-1].imageURL = result[registerID].atributos.imagenThumb270[i];	
-						} 
-					} else if (typeof result[registerID].atributos != "undefined" && typeof result[registerID].atributos.imagenThumb140 != "undefined") {
+							result[registerID].currentImages[result[registerID].currentImages.length-1].imageURL = result[registerID].atributos.imagenThumb270[i];
+						}
+					} else if (typeof result[registerID].atributos !== "undefined" && typeof result[registerID].atributos.imagenThumb140 !== "undefined") {
 							for( var i = 0; i < result[registerID].atributos.imagenThumb140.length; i++) {
 								result[registerID].currentImages[result[registerID].currentImages.length] = {};
-								result[registerID].currentImages[result[registerID].currentImages.length-1].imageURL = result[registerID].atributos.imagenThumb140[i];	
+								result[registerID].currentImages[result[registerID].currentImages.length-1].imageURL = result[registerID].atributos.imagenThumb140[i];
 							}
 					} else {
 						if(result[registerID].currentImages.length < 1){

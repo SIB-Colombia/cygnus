@@ -2,5 +2,20 @@
 	"pageTitle": "Catálogo de la Biodiversidad",
 	"welcomeMessage": "Bienvenido al Catálogo de la Biodiversidad de Colombia",
 	"searchInputPlaceholder": "Buscar especies",
-	"toggleFullScreen": "Pantalla completa"
+	"toggleFullScreen": "Pantalla completa",
+	"filterBiologicalGroups": "Grupos biológicos",
+	"filterGeographicZones": "Zonas geográficas",
+	"filterCollections": "Colecciones",
+	"filterBiologicalGroupsInsects": "Insectos",
+	"filterBiologicalGroupsBirds": "Aves",
+	"filterBiologicalGroupsPlants": "Plantas",
+	"filterBiologicalGroupsMammals": "Mamíferos",
+	"filterBiologicalGroupsReptiles": "Reptiles",
+	"filterBiologicalGroupsAmphibians": "Anfibios",
+	"filterBiologicalGroupsMushrooms": "Hongos",
+	"filterfilterGeographicZonesBadlands": "Páramos",
+	"filterfilterGeographicZonesWetlands": "Humedales",
+	"filterCollectionsSheetsWithPhoto": "Fichas con foto",
+	"toggleFilterMenu": "FILTROS",
+	"totalFoundSheets": "mostrando <strong>{{current}}</strong> de <strong>{{total}}</strong> fichas"
 }
