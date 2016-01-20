@@ -18,7 +18,7 @@ angular.module('catalogHome')
 
 		$urlRouterProvider.otherwise("/");
 
-		$locationProvider.html5Mode(true).hashPrefix('');
+		//$locationProvider.html5Mode(true).hashPrefix('');
 
 		$stateProvider
 
@@ -27,16 +27,15 @@ angular.module('catalogHome')
 		//------------------------------
 
 		.state('home', {
-			url: '/?q',
-			templateUrl: '/templates/home.html',
+			url: '/:foo?q',
 			views: {
 				'header': {
 					templateUrl: '/templates/header.html',
-					controller: 'headerCtrl as hCtrl'
+					controller: 'headerController as hCtrl'
 				},
 				'topNavigation': {
 					templateUrl: '/templates/topNavigation.html',
-					ontroller: 'catalogHomeCtrl as hCtrl'
+					controller: 'contentController as contentCtrl'
 				},
 				'footer': {
 					templateUrl: '/templates/footer.html'

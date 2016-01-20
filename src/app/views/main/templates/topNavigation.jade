@@ -1,6 +1,6 @@
 .site-navigation(data-spy='affix', data-offset-top='450')
-	.sidebar-display(data-ng-class="{ 'open': catCtrl.sidebarToggle.left === true }")
-		#menu-trigger(data-target='mainmenu' data-toggle-sidebar data-model-left='catCtrl.sidebarToggle.left' data-model-layout-type='catCtrl.layoutType')
+	.sidebar-display(data-ng-class="{ 'open': initCtrl.sidebarToggle.left === true }")
+		#menu-trigger(data-target='mainmenu' data-toggle-sidebar data-model-left='initCtrl.sidebarToggle.left' data-model-layout-type='initCtrl.layoutType')
 			.line-wrap
 				.line.top
 				.line.center
@@ -9,4 +9,4 @@
 	.right-display
 		.item-count.align-right
 			img(src='images/ico-right.png')
-			span(data-ng-bind-html="'totalFoundSheets' | translate:'{current: '+catCtrl.registersData.length+', total: '+catCtrl.totalRegisters+'}'")
+			span(data-ng-bind-html="'totalFoundSheets' | translate:'{current: '+contentCtrl.currentRegistersData()+', total: '+contentCtrl.totalRegisters()+'}'")

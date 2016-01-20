@@ -1,5 +1,5 @@
 doctype html
-html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" data-ng-init="catCtrl.init(#{data})")
+html(data-ng-app="catalogHome" data-ng-controller="initController as initCtrl" data-ng-init="initCtrl.init(#{data})")
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -30,7 +30,7 @@ html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" d
 		//- endinject
 		<!-- endbuild -->
 
-	body(data-ng-class="{'sw-toggled': catCtrl.layoutType === true}")
+	body(data-ng-class="{'sw-toggled': initCtrl.layoutType === true}")
 		//- Cinta beta de cat{alogo anterior
 		//-.wrapper-ribbon
 			.ribbon-wrapper-green

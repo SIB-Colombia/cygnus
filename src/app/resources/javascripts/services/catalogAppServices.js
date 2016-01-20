@@ -43,4 +43,14 @@ angular.module('catalogHome')
 		};
 
 		return gs;
+	})
+
+	//==============================================
+	// Application data
+	//==============================================
+	.service('appDataService', function(){
+		this.data = {
+			totalRegisters: 0,
+			registersData: null
+		};
 	});

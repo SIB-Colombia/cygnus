@@ -42,5 +42,5 @@ header.cat-header#header
 				form.search-form-wrapper(data-ng-submit="catCtrl.onSearchFormSubmit()")
 					.form-group
 						input.search-input(type="search" name="q" x-webkit-speech data-ng-model="catCtrl.searchCondition" placeholder="{{ 'searchInputPlaceholder' | translate }}")
-						button.visible-large-screen.hide-btn(type="button")
+						button.visible-large-screen.hide-btn(type="submit")
 							img(src='/images/ico-search.svg')

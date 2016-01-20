@@ -1,5 +1,5 @@
 doctype html
-html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" data-ng-init="catCtrl.init(#{data})")
+html(data-ng-app="catalogHome" data-ng-controller="initController as initCtrl" data-ng-init="initCtrl.init(#{data})")
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -37,7 +37,7 @@ html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" d
 		//- endinject
 		<!-- endbuild -->
 
-	body(data-ng-class="{'sw-toggled': catCtrl.layoutType === true}")
+	body(data-ng-class="{'sw-toggled': initCtrl.layoutType === true}")
 		//- Cinta beta de cat{alogo anterior
 		//-.wrapper-ribbon
 			.ribbon-wrapper-green
@@ -93,10 +93,10 @@ html(data-ng-app="catalogHome" data-ng-controller="catalogHomeCtrl as catCtrl" d
 
 		<!-- build:js(src/public) javascripts/final/app.js -->
 		//- home:js
-		script(src="/javascripts/modules/sweetalert.js")
 		script(src="/javascripts/catalogApp.js")
-		script(src="/javascripts/controllers/catalogHeaderAppControllers.js")
-		script(src="/javascripts/controllers/catalogAppControllers.js")
+		script(src="/javascripts/services/catalogAppServices.js")
+		script(src="/javascripts/controllers/catalogAppController.js")
+		script(src="/javascripts/modules/sweetalert.js")
 		script(src="/javascripts/services.js")
 		script(src="/javascripts/globalscr.js")
 		script(src="/javascripts/directives.js")
