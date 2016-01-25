@@ -101,4 +101,21 @@ angular.module('catalogHome')
 				});
 			}
 		};
+	})
+
+	// =========================================================================
+	// SUBMENU TOGGLE
+	// =========================================================================
+	.directive('enableAffix', function(){
+
+		return {
+			restrict: 'A',
+			link: function(scope, element) {
+				element.affix({
+					offset: {
+						top: 450
+					}
+				});
+			}
+		};
 	});

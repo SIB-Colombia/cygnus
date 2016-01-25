@@ -32,12 +32,29 @@ angular.module('catalogHome')
 			}
 		};
 
+		/*$('#sidebar').affix({
+			offset: {
+				top: 450
+			}
+		});
+
+		$('#content').affix({
+			offset: {
+				top: 450
+			}
+		});*/
+
 	}])
 
 	//==============================================
 	// Header controller
 	//==============================================
-	.controller('headerController', ['$timeout', '$state', function($timeout, $state){
+	.controller('headerController', ['$timeout', '$state', '$stateParams', function($timeout, $state, $stateParams){
+
+		this.searchText = $stateParams.q;
+
+		//$scope.state = $state.current;
+		//$scope.params = $stateParams;
 
 		//Fullscreen View
 		this.fullScreen = function() {
@@ -72,15 +89,27 @@ angular.module('catalogHome')
 			}
 		};
 
+		// Search form submit
+		this.onSearchFormSubmit = function() {
+			$state.go('home', {q: this.searchText});
+		};
+
 	}])
 
 	//==============================================
 	// Content zone controller
 	//==============================================
-	.controller('contentController', ['$timeout', '$state', 'appDataService', function($timeout, $state, appDataService){
+	.controller('contentController', ['$timeout', '$state', 'appDataService', '$stateParams', function($timeout, $state, appDataService, $stateParams){
 
 		this.isSearchActive = false;
-		this.searchCondition = '';
+		this.searchText = $stateParams.q;
+
+		console.log($stateParams.q);
+		console.log(this.isSearchActive);
+
+		if(typeof this.searchText !== 'undefined') {
+			this.isSearchActive = true;
+		}
 
 		this.totalRegisters = function() {
 			return appDataService.data.totalRegisters;
@@ -88,11 +117,6 @@ angular.module('catalogHome')
 
 		this.currentRegistersData = function() {
 			return appDataService.data.registersData.length;
-		};
-
-		this.onSearchFormSubmit = function() {
-			console.log("sopas");
-			$state.go('home', {q: this.searchCondition});
 		};
 
 	}]);
