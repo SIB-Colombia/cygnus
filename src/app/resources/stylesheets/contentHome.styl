@@ -8,7 +8,54 @@
 	#searchResultsHead
 		padding-bottom 30px
 		.search-filters-top
-			font-size 24px
+			font-size 16px
+			padding-bottom 5px
+		.search-filters-bottom
+			border-top 10px solid #FFF
+			border-bottom 5px solid #FFF
+			font-size 14px
+			a
+				color #333
+				&:active
+				&:hover
+					color #ec5244
+					text-decoration none
+			.search-filters-bottom-block
+				display inline-block
+				padding 2px 10px
+				span
+					padding-left 10px
+					border-left 1px solid #000
+					margin-left 10px
+					&:first-child
+						padding-left 0px
+						border-left none
+						margin-left 0px
+					&.no-padding
+						padding-left 0px
+				select
+					background transparent
+					padding 5px
+					font-size 16px
+					line-height 1
+					border 0
+					border-radius 0
+					height 34px
+					font-weight 700
+					box-shadow none
+			.middle-block
+				border-right 1px solid #000
+				border-left 1px solid #000
+
+@media (min-width: 768px)
+	.container
+		width calc(100% - 30px)
+	#content
+		#searchResultsHead
+			padding-bottom 30px
+			.search-filters-top
+				font-size 24px
+				padding-bottom 5px
 @media (min-width 1200px)
 	.container
 		width 1170px
@@ -18,9 +65,6 @@
 			& > .container
 				width calc(100% - 30px)
 @media (min-width: 992px)
-	.container
-		width calc(100% - 30px)
-@media (min-width: 768px)
 	.container
 		width calc(100% - 30px)
 #content.affix
