@@ -67,18 +67,23 @@ var config = module.exports = convict({
 			env: 'APPSECRET'
 		}
 	},
-	client: {
+	backend: {
 		api: {
 			path: {
-				doc: 'The client api url path (relative)',
+				doc: 'Backend API url path',
 				default: '/api',
-				env: 'CLIENT_API_PATH'
+				env: 'BACKEND_API_PATH'
+			},
+			server: {
+				doc: 'Backend API connection URL',
+				default: 'http://localhost',
+				env: 'BACKEND_API_SERVER'
+			},
+			port: {
+				doc: 'Backend API port',
+				default: '4000',
+				env: 'BACKEND_API_PORT'
 			}
-		},
-		domain: {
-			doc: 'The client domain (hostname)',
-			default: 'localhost',
-			env: 'CLIENT_DOMAIN'
 		}
 	},
 	assetsLocation: {
@@ -219,6 +224,29 @@ var config = module.exports = convict({
 				default: 'http://localhost:7000/auth/linkedin/callback',
 				env: 'LINKEDIN_CALLBACK_URL'
 			}
+		}
+	},
+	appConfig: {
+		validResultsByPage: {
+			doc: 'Valid values for results by page',
+			default: ['10', '20', '50', '100'],
+			env: 'APPCONFIG_VALID_RESULTS_BY_PAGE'
+		},
+		defaultResultsByPage: {
+			doc: 'Default result by page (format must be one of the values of validResultsByPage',
+			format: ['10', '20', '50', '100'],
+			default: '10',
+			env: 'APPCONFIG_DEFAULT_RESULTS_PAGE'
+		},
+		initialHomeRandomSpecies: {
+			doc: 'How many random species to show initially in home page.',
+			default: '5',
+			env: 'APPCONFIG_HOME_RANDOM_SPECIES'
+		},
+		initialHomeSpecies: {
+			doc: 'How many non random species to show initially in home page.',
+			default: '5',
+			env: 'APPCONFIG_HOME_SPECIES'
 		}
 	}
 });

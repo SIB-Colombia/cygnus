@@ -5,17 +5,13 @@
 		.search-filters-bottom
 			.search-filters-bottom-block
 				form.form-inline
-					span Resultados por página
-					select.form-control
-						option 10
-						option 20
-						option 50
-						option 100
+					span(data-ng-bind-html="'PaginationOptionsText' | translate")
+					select(data-ng-model='contentCtrl.resultsByPagesValues().value' data-ng-options='value for value in contentCtrl.resultsByPagesValues().values')
 					span.no-padding
 					select.form-control
 						option(value='asc') A/Z
 						option(value='desc') Z/A
-					span Ordenar por
+					span(data-ng-bind-html="'OrderByText' | translate")
 					select.form-control
 						option(value='better_match') Mejor coincidencia
 						option(value='scientific_name') Nombre científico

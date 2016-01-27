@@ -27,7 +27,7 @@ angular.module('catalogHome')
 		//------------------------------
 
 		.state('home', {
-			url: '/?q',
+			url: '/?q&pagesize',
 			views: {
 				'header': {
 					templateUrl: '/templates/header.html',
@@ -35,7 +35,7 @@ angular.module('catalogHome')
 				},
 				'topNavigation': {
 					templateUrl: '/templates/topNavigation.html',
-					controller: 'contentController as contentCtrl'
+					controller: 'topMenuController as topMenuCtrl'
 				},
 				'footer': {
 					templateUrl: '/templates/footer.html'

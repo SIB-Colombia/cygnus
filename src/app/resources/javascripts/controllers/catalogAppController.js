@@ -20,7 +20,7 @@ angular.module('catalogHome')
 			right: false
 		};
 
-		this.init = function(data) {
+		this.init = function(data, validResultsByPage, defaultResultByPage) {
 			// Initial full data load
 			appDataService.data.totalRegisters = data.total;
 			appDataService.data.registersData = data.hits;
@@ -30,26 +30,18 @@ angular.module('catalogHome')
 				this.layoutType = false;
 				this.sidebarToggle.left = false;
 			}
+
+			appDataService.resultsByPagesValues.values = validResultsByPage;
+			appDataService.resultsByPagesValues.value = defaultResultByPage.toString();
+
 		};
-
-		/*$('#sidebar').affix({
-			offset: {
-				top: 450
-			}
-		});
-
-		$('#content').affix({
-			offset: {
-				top: 450
-			}
-		});*/
 
 	}])
 
 	//==============================================
 	// Header controller
 	//==============================================
-	.controller('headerController', ['$timeout', '$state', '$stateParams', function($timeout, $state, $stateParams){
+	.controller('headerController', ['$timeout', '$state', '$stateParams', 'appDataService', function($timeout, $state, $stateParams, appDataService){
 
 		this.searchText = $stateParams.q;
 
@@ -91,7 +83,21 @@ angular.module('catalogHome')
 
 		// Search form submit
 		this.onSearchFormSubmit = function() {
-			$state.go('home', {q: this.searchText});
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value});
+		};
+
+	}])
+
+	//==============================================
+	// Top menu controller
+	//==============================================
+	.controller('topMenuController', ['$timeout', '$state', 'appDataService', function($timeout, $state, appDataService){
+		this.totalRegisters = function() {
+			return appDataService.data.totalRegisters;
+		};
+
+		this.currentRegistersData = function() {
+			return appDataService.data.registersData.length;
 		};
 
 	}])
@@ -103,6 +109,7 @@ angular.module('catalogHome')
 
 		this.isSearchActive = false;
 		this.searchText = $stateParams.q;
+		appDataService.resultsByPagesValues.value = $stateParams.pagesize;
 
 		console.log($stateParams.q);
 		console.log(this.isSearchActive);
@@ -117,6 +124,10 @@ angular.module('catalogHome')
 
 		this.currentRegistersData = function() {
 			return appDataService.data.registersData.length;
+		};
+
+		this.resultsByPagesValues = function() {
+			return appDataService.resultsByPagesValues;
 		};
 
 	}]);

@@ -53,4 +53,11 @@ angular.module('catalogHome')
 			totalRegisters: 0,
 			registersData: null
 		};
+
+		this.resultsByPagesValues = {
+			"type": "select",
+			"name": "Results by page",
+			"value": "10",
+			"values": ["10", "20", "50", "100"]
+		};
 	});
