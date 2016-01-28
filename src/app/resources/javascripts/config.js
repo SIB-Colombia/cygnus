@@ -29,21 +29,24 @@ angular.module('catalogHome')
 		.state('home', {
 			url: '/?q&pagesize',
 			views: {
-				'header': {
+				'@': {
+					templateUrl: '/templates/home.html'
+				},
+				'header@home': {
 					templateUrl: '/templates/header.html',
 					controller: 'headerController as hCtrl'
 				},
-				'topNavigation': {
+				'topNavigation@home': {
 					templateUrl: '/templates/topNavigation.html',
 					controller: 'topMenuController as topMenuCtrl'
 				},
 				'footer': {
 					templateUrl: '/templates/footer.html'
 				},
-				'filterSideMenu': {
+				'filterSideMenu@home': {
 					templateUrl: '/templates/filterMenu.html'
 				},
-				'content': {
+				'content@home': {
 					templateUrl: '/templates/contentHome.html',
 					controller: 'contentController as contentCtrl'
 				}

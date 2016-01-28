@@ -2,11 +2,6 @@ extends ../../layouts/home/final/layout
 
 block content
 	#wrapper(ui-view)
-		header#top-zone(ui-view='header')
-		nav#content-zone(ui-view='topNavigation')
-		section#main
-			aside#sidebar(data-ng-class="{ 'toggled': initCtrl.sidebarToggle.left === true }" ui-view='filterSideMenu' data-enable-affix)
-			section#content(ui-view='content' data-enable-affix)
 		//-footer#footer-zone(ui-view="footer")
 
 //-block footer
