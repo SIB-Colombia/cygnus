@@ -86,7 +86,7 @@ angular.module('catalogHome')
 
 		// Search form submit
 		this.onSearchFormSubmit = function() {
-			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, location: true, notify: false, reload: false});
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection, sort: appDataService.orderBy.value});
 		};
 
 	}])
@@ -116,6 +116,12 @@ angular.module('catalogHome')
 		if(typeof $stateParams.pagesize !== 'undefined') {
 			appDataService.resultsByPagesValues.value = $stateParams.pagesize;
 		}
+		if(typeof $stateParams.order !== 'undefined') {
+			appDataService.orderDirection.value = $stateParams.order;
+		}
+		if(typeof $stateParams.sort !== 'undefined') {
+			appDataService.orderBy.value = $stateParams.sort;
+		}
 
 		//console.log($stateParams.q);
 		//console.log(this.isSearchActive);
@@ -136,9 +142,24 @@ angular.module('catalogHome')
 			return appDataService.resultsByPagesValues;
 		};
 
+		this.orderDirection = function() {
+			return appDataService.orderDirection;
+		}
+
+		this.orderBy = function() {
+			return appDataService.orderBy;
+		}
+
 		this.newSelectedPaginationSize = function() {
-			console.log(appDataService.resultsByPagesValues.value);
-			$state.go('home', {location: true, notify: false, reload: false, pagesize: appDataService.resultsByPagesValues.value});
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
+		};
+
+		this.newSelectedOrderDirection = function() {
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
+		};
+
+		this.newSelectedOrderBy = function() {
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
 		};
 
 	}]);

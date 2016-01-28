@@ -20,5 +20,10 @@
 	"totalFoundSheets": "mostrando <strong>{{current}}</strong> de <strong>{{total}}</strong> fichas",
 	"SearchAndTotalFoundSheets": "Su búsqueda por <strong>{{searchCondition}}</strong> retornó <strong>{{total}}</strong> resultados",
 	"PaginationOptionsText": "Resultados por página",
-	"OrderByText": "Ordenar por"
+	"OrderByText": "Ordenar por",
+	"betterMatch": "Mejor coincidencia",
+	"scientificName": "Nombre científico",
+	"commonName": "Nombre común",
+	"asc": "A/Z",
+	"desc": "Z/A"
 }

@@ -6,16 +6,11 @@
 			.search-filters-bottom-block
 				form.form-inline
 					span(data-ng-bind-html="'PaginationOptionsText' | translate")
-					select(data-ng-model='contentCtrl.resultsByPagesValues().value' data-ng-options='value for value in contentCtrl.resultsByPagesValues().values' ng-change='contentCtrl.newSelectedPaginationSize()')
+					select.form-control(data-ng-model='contentCtrl.resultsByPagesValues().value' data-ng-options='value for value in contentCtrl.resultsByPagesValues().values' ng-change='contentCtrl.newSelectedPaginationSize()')
 					span.no-padding
-					select.form-control
-						option(value='asc') A/Z
-						option(value='desc') Z/A
+					select.form-control(data-ng-model='contentCtrl.orderDirection().value' data-ng-options='value | translate for value in contentCtrl.orderDirection().values' ng-change='contentCtrl.newSelectedOrderDirection()')
 					span(data-ng-bind-html="'OrderByText' | translate")
-					select.form-control
-						option(value='better_match') Mejor coincidencia
-						option(value='scientific_name') Nombre científico
-						option(value='common_name') Nombre común
+					select.form-control(data-ng-model='contentCtrl.orderBy().value' data-ng-options='value | translate for value in contentCtrl.orderBy().values' ng-change='contentCtrl.newSelectedOrderBy()')
 
 	p sdfasdfsd fjsdhfg akjsfkjasfkajflkjflskjalsfkj hlskfh akljsflkjsafl kjasdhfl kajhsflkj askfjhals kfjhlkasjdhf lkajsdhfl kajsdhfl kasjfkjasfkjhsadf lkjaflskjaslkjfh askfjhlaskjdflkjsahf lkasjflkjsf ljksafNano-j-pop DIY bicycle drone rebar refrigerator digital human dead skyscraper computer futurity lights carbon tanto car. Free-market decay rain augmented reality assassin sprawl Tokyo systemic nodal point face forwards. Denim systema range-rover voodoo god apophenia rebar corporation knife advert j-pop girl pre. Industrial grade alcohol crypto-rain hotdog woman footage free-market. Garage geodesic face forwards ablative singularity gang lights uplink nodal point. Skyscraper decay realism tanto katana bomb denim woman RAF lights futurity. Semiotics numinous franchise disposable knife rain city footage boy wonton soup.
 	p BASE jump courier cartel tank-traps saturation point math-j-pop receding sensory garage sign-space nodal point sub-orbital systemic. Engine apophenia systemic savant convenience store cardboard pistol receding man 8-bit sub-orbital. Assault footage euro-pop otaku cartel urban pre-boy garage cyber-sensory. Vinyl rebar Chiba BASE jump grenade pre-cartel. Sign grenade Legba decay 3D-printed engine industrial grade neon order-flow towards pistol woman Shibuya franchise disposable geodesic.

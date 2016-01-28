@@ -60,4 +60,19 @@ angular.module('catalogHome')
 			"value": "10",
 			"values": ["10", "20", "50", "100"]
 		};
+
+		this.orderDirection = {
+			"type": "select",
+			"name": "Order direction",
+			"value": "asc",
+			"values": ["asc", "desc"]
+		};
+
+		this.orderBy = {
+			"type": "select",
+			"name": "Order by element name",
+			"value": "betterMatch",
+			"values": ["betterMatch", "scientificName", "commonName"]
+		};
+
 	});

@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 angular.module('catalogHome')
 	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
@@ -14,7 +14,7 @@ angular.module('catalogHome')
 		// remember language
 		$translateProvider.useLocalStorage();
 		// Sanitize translation text
-		$translateProvider.useSanitizeValueStrategy('sanitize');
+		//$translateProvider.useSanitizeValueStrategy('sanitize');
 
 		$urlRouterProvider.otherwise("/");
 
@@ -27,7 +27,7 @@ angular.module('catalogHome')
 		//------------------------------
 
 		.state('home', {
-			url: '/?q&pagesize',
+			url: '/?q&pagesize&sort&order',
 			views: {
 				'@': {
 					templateUrl: '/templates/home.html'
@@ -52,4 +52,5 @@ angular.module('catalogHome')
 				}
 			}
 		});
+
 	}]);
