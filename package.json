@@ -86,7 +86,7 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.10.0",
+    "browser-sync": "^2.11.1",
     "debug": "^2.2.0",
     "del": "^2.2.0",
     "errorhandler": "^1.4.2",
@@ -119,12 +119,12 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-mocha": "^0.2.1",
     "karma-phantomjs-launcher": "^0.2.1",
+    "karma-requirejs": "^0.2.2",
     "mocha": "^2.3.4",
     "phantomjs": "^1.9.19",
-    "stylus": "^0.52.4",
-    "karma-requirejs": "^0.2.2",
     "requirejs": "^2.1.22",
     "should": "^8.0.1",
+    "stylus": "^0.52.4",
     "supertest": "^1.1.0",
     "wiredep": "^3.0.0-beta",
     "wrench": "^1.5.8"

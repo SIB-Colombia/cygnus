@@ -6,7 +6,7 @@
 			.search-filters-bottom-block
 				form.form-inline
 					span(data-ng-bind-html="'PaginationOptionsText' | translate")
-					select(data-ng-model='contentCtrl.resultsByPagesValues().value' data-ng-options='value for value in contentCtrl.resultsByPagesValues().values')
+					select(data-ng-model='contentCtrl.resultsByPagesValues().value' data-ng-options='value for value in contentCtrl.resultsByPagesValues().values' ng-change='contentCtrl.newSelectedPaginationSize()')
 					span.no-padding
 					select.form-control
 						option(value='asc') A/Z

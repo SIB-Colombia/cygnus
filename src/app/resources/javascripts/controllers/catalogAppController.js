@@ -21,6 +21,9 @@ angular.module('catalogHome')
 		};
 
 		this.init = function(data, validResultsByPage, defaultResultByPage) {
+
+			console.log("Initialization run");
+
 			// Initial full data load
 			appDataService.data.totalRegisters = data.total;
 			appDataService.data.registersData = data.hits;
@@ -83,7 +86,7 @@ angular.module('catalogHome')
 
 		// Search form submit
 		this.onSearchFormSubmit = function() {
-			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value});
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, location: true, notify: false, reload: false});
 		};
 
 	}])
@@ -109,10 +112,13 @@ angular.module('catalogHome')
 
 		this.isSearchActive = false;
 		this.searchText = $stateParams.q;
-		appDataService.resultsByPagesValues.value = $stateParams.pagesize;
 
-		console.log($stateParams.q);
-		console.log(this.isSearchActive);
+		if(typeof $stateParams.pagesize !== 'undefined') {
+			appDataService.resultsByPagesValues.value = $stateParams.pagesize;
+		}
+
+		//console.log($stateParams.q);
+		//console.log(this.isSearchActive);
 
 		if(typeof this.searchText !== 'undefined') {
 			this.isSearchActive = true;
@@ -128,6 +134,11 @@ angular.module('catalogHome')
 
 		this.resultsByPagesValues = function() {
 			return appDataService.resultsByPagesValues;
+		};
+
+		this.newSelectedPaginationSize = function() {
+			console.log(appDataService.resultsByPagesValues.value);
+			$state.go('home', {location: true, notify: false, reload: false, pagesize: appDataService.resultsByPagesValues.value});
 		};
 
 	}]);
