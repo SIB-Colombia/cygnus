@@ -86,7 +86,7 @@ angular.module('catalogHome')
 
 		// Search form submit
 		this.onSearchFormSubmit = function() {
-			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection, sort: appDataService.orderBy.value});
+			$state.go('home', {q: this.searchText, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
 		};
 
 	}])
