@@ -75,4 +75,6 @@ angular.module('catalogHome')
 			"values": ["betterMatch", "scientificName", "commonName"]
 		};
 
+		this.page = 1;
+
 	});

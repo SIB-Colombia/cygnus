@@ -30,8 +30,20 @@
 					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterfilterGeographicZonesBadlands' | translate")
 				li
 					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterfilterGeographicZonesWetlands' | translate")
-
 		li.sub-menu.toggled
+			a(toggle-submenu)
+				i
+					img(src='images//ico-colecciones.svg')
+				span(data-ng-bind-html="'filterCollections' | translate")
+			ul(style='display: block;')
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsBadlands' | translate")
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsWetlands' | translate")
+				li
+					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsInvasive' | translate")
+
+		//-li.sub-menu.toggled
 			a(toggle-submenu)
 				i
 					img(src='images/ico-colecciones.svg')

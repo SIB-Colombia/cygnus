@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 angular.module('catalogHome')
 	.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
@@ -27,7 +27,7 @@ angular.module('catalogHome')
 		//------------------------------
 
 		.state('home', {
-			url: '/?q&pagesize&sort&order',
+			url: '/?q&pagesize&sort&order&page',
 			views: {
 				'@': {
 					templateUrl: '/templates/home.html'

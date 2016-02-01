@@ -5,6 +5,105 @@
 	padding-right 15px
 #content
 	padding 30px 0
+	#list-results
+		.details
+			em
+				font-weight bold
+		.specie-list
+			padding-bottom 20px
+			border-bottom 1px solid #ccc
+			padding-top 20px
+			#polaroid
+				line-height 12px
+				a
+					background #fff
+					display inline
+					float left
+					margin 0 0 27px 30px
+					width auto
+					padding 10px 10px 15px
+					text-align center
+					text-decoration: none
+					color #333
+					font-size 18px
+					-webkit-box-shadow 0 3px 6px rgba(0,0,0,.25)
+					-moz-box-shadow 0 3px 6px rgba(0,0,0,.25)
+					-webkit-transform rotate(-2deg)
+					-webkit-transition -webkit-transform .15s linear
+					-moz-transform rotate(-2deg)
+					-ms-transform rotate(-2deg)
+					transform rotate(-2deg)
+					&:hover
+						-webkit-transform scale(1.5)
+						-moz-transform scale(1.5)
+						position relative
+						z-index 5
+					&:after
+						content attr(title)
+						font-size 0.6em
+			&:first-child
+				padding-top 0px
+			&:nth-child(even)
+				#polaroid
+					a
+						-webkit-transform rotate(2deg)
+						-moz-transform rotate(2deg)
+						-ms-transform rotate(2deg)
+						transform rotate(2deg)
+						&:hover
+							-webkit-transform scale(1.5)
+							-moz-transform scale(1.5)
+							position relative
+							z-index 5
+			&:nth-child(3n)
+				#polaroid
+					a
+						-webkit-transform none
+						-moz-transform none
+						-ms-transform none
+						transform none
+						top -5px
+						&:hover
+							-webkit-transform scale(1.5)
+							-moz-transform scale(1.5)
+							position relative
+							z-index 5
+			&:nth-child(5n)
+				#polaroid
+					a
+						-webkit-transform rotate(5deg)
+						-moz-transform rotate(5deg)
+						-ms-transform rotate(5deg)
+						transform rotate(5deg)
+						position relative
+						right 5px
+						&:hover
+							-webkit-transform scale(1.5)
+							-moz-transform scale(1.5)
+							position relative
+							z-index 5
+			&:nth-child(8n)
+				#polaroid
+					a
+						position relative
+						top 8px
+						right 5px
+						&:hover
+							-webkit-transform scale(1.5)
+							-moz-transform scale(1.5)
+							position relative
+							z-index 5
+			&:nth-child(11n)
+				#polaroid
+					a
+						position relative
+						top 3px
+						left -5px
+						&:hover
+							-webkit-transform scale(1.5)
+							-moz-transform scale(1.5)
+							position relative
+							z-index 5
 	#searchResultsHead
 		padding-bottom 30px
 		.search-filters-top
@@ -70,3 +169,5 @@
 #content.affix
 	top 50px
 	position relative
+.img-adaptative
+	margin 0 auto

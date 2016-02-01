@@ -235,17 +235,17 @@ var config = module.exports = convict({
 		defaultResultsByPage: {
 			doc: 'Default result by page (format must be one of the values of validResultsByPage',
 			format: ['10', '20', '50', '100'],
-			default: '10',
+			default: '20',
 			env: 'APPCONFIG_DEFAULT_RESULTS_PAGE'
 		},
 		initialHomeRandomSpecies: {
 			doc: 'How many random species to show initially in home page.',
-			default: '5',
+			default: '10',
 			env: 'APPCONFIG_HOME_RANDOM_SPECIES'
 		},
 		initialHomeSpecies: {
 			doc: 'How many non random species to show initially in home page.',
-			default: '5',
+			default: '10',
 			env: 'APPCONFIG_HOME_SPECIES'
 		}
 	}
