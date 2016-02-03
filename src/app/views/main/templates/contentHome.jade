@@ -17,9 +17,8 @@
 			row.visible-xs
 				.col-md-12.col-sm-12
 					a(data-ng-href='http://www.biodiversidad.co/fichas/{{specie._source.catalogoEspeciesId}}')
-						span(data-ng-bind ='specie._source.taxonNombre' target='_blank')
-					span(data-ng-hide='!specie._source.autor') &nbsp;-&nbsp;
-					span(data-ng-bind='specie._source.autor' data-ng-hide='!specie._source.autor')
+						span.ficha-taxonnombre(data-ng-bind ='specie._source.taxonNombre' target='_blank')
+					span.ficha-autor(data-ng-bind='" - "+specie._source.autor' data-ng-hide='!specie._source.autor')
 			.row
 				.col-md-3.col-sm-3#polaroid
 					a(title='{{specie._source.selectedImage.rightsHolder}}' data-ng-href='http://www.biodiversidad.co/fichas/{{specie._source.catalogoEspeciesId}}' target='_blank')
@@ -30,31 +29,30 @@
 							.row
 								.col-md-8.col-sm-8
 									a(data-ng-href='http://www.biodiversidad.co/fichas/{{specie._source.catalogoEspeciesId}}')
-										span(data-ng-bind ='specie._source.taxonNombre' target='_blank')
-									span(data-ng-hide='!specie._source.autor') &nbsp;-&nbsp;
-									span(data-ng-bind='specie._source.autor' data-ng-hide='!specie._source.autor')
+										span.ficha-taxonnombre(data-ng-bind ='specie._source.taxonNombre' target='_blank')
+									span.ficha-autor(data-ng-bind='" - "+specie._source.autor' data-ng-hide='!specie._source.autor')
 								.col-md-4.col-sm-4
 									a(data-ng-href='http://www.biodiversidad.co/fichas/{{specie._source.catalogoEspeciesId}}' target='_blank')
-										span.pull-right(data-ng-bind='specie._source.catalogoEspeciesId')
+										span.ficha-id.pull-right(data-ng-bind='specie._source.catalogoEspeciesId')
 					.row(data-ng-hide='!specie._source.listaNombresComunes')
 						.col-md-12
-							span(data-ng-bind-html="'commonNames' | translate")
+							span.ficha-title(data-ng-bind-html="'commonNames' | translate")
 					.row(data-ng-hide='!specie._source.listaNombresComunes')
 						.col-md-12
-							span.list-common-names(data-ng-bind='specie._source.listaNombresComunes | fixCommonNames')
+							span.specie-details(data-ng-bind='specie._source.listaNombresComunes | fixCommonNames')
 					.row
 						.col-md-12
-							span(data-ng-bind-html="'details' | translate")
+							span.ficha-title(data-ng-bind-html="'details' | translate")
 					.row(data-ng-hide='contentCtrl.isSearchActive === true')
 						.col-md-12
-							span.details(data-ng-bind-html='contentCtrl.attributesResume(specie._source.atributos)')
+							span.specie-details(data-ng-bind-html='contentCtrl.attributesResume(specie._source.atributos)+" "')
 							a(data-ng-href='http://www.biodiversidad.co/fichas/{{specie._source.catalogoEspeciesId}}' target='_blank')
-								span &nbsp;Más información.
+								span.specie-details Más información.
 					.row(data-ng-hide='contentCtrl.isSearchActive === false')
 						.col-md-12
-							span.details(data-ng-bind-html='specie.foundText')
+							span.specie-details(data-ng-bind-html='specie.foundText+" "')
 							a(data-ng-href='http://www.biodiversidad.co/fichas/{{specie._source.catalogoEspeciesId}}' target='_blank')
-								span &nbsp;Más información.
+								span.specie-details Más información.
 
 				//-Ecologia
 				//-Concateno geográfica y reproducción

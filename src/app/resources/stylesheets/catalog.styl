@@ -18,7 +18,7 @@
 	-o-transition all 0.4s ease
 	transition all 0.4s ease
 	outline none !important
-  -webkit-tap-highlight-color rgba(0, 0, 0, 0) !important
+	-webkit-tap-highlight-color rgba(0, 0, 0, 0) !important
 	//border red 1px solid
 	:focus
 		outline 0
@@ -32,8 +32,7 @@ button
 input
 i
 a
-	-webkit-font-smoothing: antialiased
-
+	-webkit-font-smoothing antialiased
 *
 	&:active
 	&:hover
@@ -41,17 +40,20 @@ a
 		-webkit-tap-highlight-color rgba(0, 0, 0, 0) !important
 
 body
-	background #f2eee3 url("/images/noise1.png") repeat 0 0 !important
+	//background #f2eee3 url("/images/noise1.png") repeat 0 0 !important
 	font-family 'Open Sans', Helvetica, sans-serif
+	background-color #E6E6E6
 a
 	-webkit-transition all 0.5s ease-in-out
 	-moz-transition all 0.5s ease-in-out
-    -ms-transition all 0.5s ease-in-out
-    -o-transition all 0.5s ease-in-out
+	-ms-transition all 0.5s ease-in-out
+	-o-transition all 0.5s ease-in-out
 	transition all 0.5s ease-in-out
+	color #ec5244
+	text-decoration none
 	&:hover
-		color #00a0ff
-		text-decoration none
+		color #ec5244
+		text-decoration underline
 	&:focus
 		outline thin dotted
 		outline 5px auto -webkit-focus-ring-color
