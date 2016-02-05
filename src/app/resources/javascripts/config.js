@@ -27,7 +27,7 @@ angular.module('catalogHome')
 		//------------------------------
 
 		.state('home', {
-			url: '/?q&pagesize&sort&order&page',
+			url: '/?q&pagesize&sort&order&page&taxonomy&department&collection',
 			views: {
 				'@': {
 					templateUrl: '/templates/home.html'
@@ -44,7 +44,8 @@ angular.module('catalogHome')
 					templateUrl: '/templates/footer.html'
 				},
 				'filterSideMenu@home': {
-					templateUrl: '/templates/filterMenu.html'
+					templateUrl: '/templates/filterMenu.html',
+					controller: 'filterMenuController as filterMenuCtrl'
 				},
 				'content@home': {
 					templateUrl: '/templates/contentHome.html',

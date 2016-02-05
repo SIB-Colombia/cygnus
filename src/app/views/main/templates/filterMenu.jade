@@ -7,19 +7,19 @@
 				span(data-ng-bind-html="'filterBiologicalGroups' | translate")
 			ul(style='display: block;')
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsInsects' | translate")
+					a(data-group-name="'insects'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('insects') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsInsects' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsBirds' | translate")
+					a(data-group-name="'birds'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('birds') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsBirds' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsPlants' | translate")
+					a(data-group-name="'plants'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('plants') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsPlants' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsMammals' | translate")
+					a(data-group-name="'mammals'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('mammals') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsMammals' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsReptiles' | translate")
+					a(data-group-name="'reptiles'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('reptiles') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsReptiles' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsAmphibians' | translate")
+					a(data-group-name="'amphibians'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('amphibians') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsAmphibians' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterBiologicalGroupsMushrooms' | translate")
+					a(data-group-name="'mushrooms'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('mushrooms') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterBiologicalGroupsMushrooms' | translate")
 		li.sub-menu.toggled
 			a(toggle-submenu)
 				i
@@ -27,71 +27,71 @@
 				span(data-ng-bind-html="'filterGeographicZones' | translate")
 			ul(style='display: block;')
 				li
-					a(data-department-name='Amazonas' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Amazonas
+					a(data-department-name="'amazonas'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('amazonas') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Amazonas
 				li
-					a(data-department-name='Antioquia' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Antioquia
+					a(data-department-name="'antioquia'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('antioquia') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Antioquia
 				li
-					a(data-department-name='Arauca' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Arauca
+					a(data-department-name="'arauca'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('arauca') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Arauca
 				li
-					a(data-department-name='Atlántico' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Atlántico
+					a(data-department-name="'atlántico'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('atlántico') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Atlántico
 				li
-					a(data-department-name='Bolívar' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Bolívar
+					a(data-department-name="'bolívar'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('bolívar') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Bolívar
 				li
-					a(data-department-name='Boyacá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Boyacá
+					a(data-department-name="'boyacá'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('boyacá') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Boyacá
 				li
-					a(data-department-name='Caldas' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Caldas
+					a(data-department-name="'caldas'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('caldas') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Caldas
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Caquetá
+					a(data-department-name="'caquetá'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('caquetá') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Caquetá
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Casanare
+					a(data-department-name="'casanare'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('casanare') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Casanare
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Cauca
+					a(data-department-name="'cauca'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('cauca') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Cauca
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Cesar
+					a(data-department-name="'cesar'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('cesar') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Cesar
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Chocó
+					a(data-department-name="'chocó'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('chocó') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Chocó
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Córdoba
+					a(data-department-name="'córdoba'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('córdoba') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Córdoba
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Cundinamarca
+					a(data-department-name="'cundinamarca'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('cundinamarca') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Cundinamarca
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Bogotá D.C.
+					a(data-department-name="'bogotá D.C.'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('bogotá D.C.') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Bogotá D.C.
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Guainía
+					a(data-department-name="'guainía'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('guainía') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Guainía
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Guaviare
+					a(data-department-name="'guajira'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('guajira') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Guajira
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Huila
+					a(data-department-name="'guaviare'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('guaviare') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Guaviare
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') La Guajira
+					a(data-department-name="'huila'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('huila') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Huila
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Magdalena
+					a(data-department-name="'magdalena'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('magdalena') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Magdalena
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Meta
+					a(data-department-name="'meta'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('meta') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Meta
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Nariño
+					a(data-department-name="'nariño'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('nariño') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Nariño
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Norte de Santander
+					a(data-department-name="'norte de santander'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('norte de santander') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Norte de Santander
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Putumayo
+					a(data-department-name="'putumayo'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('putumayo') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Putumayo
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Quindío
+					a(data-department-name="'quindío'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('quindío') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Quindío
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Risaralda
+					a(data-department-name="'risaralda'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('risaralda') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Risaralda
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Santander
+					a(data-department-name="'santander'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('santander') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Santander
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') San Andrés, Providencia y Santa Catalina
+					a(data-department-name="'san andrés y providencia'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('san andrés y providencia') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) San Andrés, Providencia y Santa Catalina
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Sucre
+					a(data-department-name="'sucre'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('sucre') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Sucre
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Tolima
+					a(data-department-name="'tolima'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('tolima') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Tolima
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Valle del Cauca
+					a(data-department-name="'valle del cauca'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('valle del cauca') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Valle del Cauca
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Vaupés
+					a(data-department-name="'vaupés'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('vaupés') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Vaupés
 				li
-					a(data-department-name='Caquetá' data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates') Vichada
+					a(data-department-name="'vichada'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('vichada') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Vichada
 
 			//-ul(style='display: block;')
 				li
@@ -105,8 +105,8 @@
 				span(data-ng-bind-html="'filterCollections' | translate")
 			ul(style='display: block;')
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsBadlands' | translate")
+					a(data-collection-name="'paramo'" data-ng-class="{'selected': filterMenuCtrl.collectionFilters.indexOf('paramo') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'collection'" data-collection-filters='filterMenuCtrl.collectionFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterCollectionsBadlands' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsWetlands' | translate")
+					a(data-collection-name="'humedal'" data-ng-class="{'selected': filterMenuCtrl.collectionFilters.indexOf('humedal') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'collection'" data-collection-filters='filterMenuCtrl.collectionFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterCollectionsWetlands' | translate")
 				li
-					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterCollectionsInvasive' | translate")
+					a(data-collection-name="'invasora'" data-ng-class="{'selected': filterMenuCtrl.collectionFilters.indexOf('invasora') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'collection'" data-collection-filters='filterMenuCtrl.collectionFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="'filterCollectionsInvasive' | translate")

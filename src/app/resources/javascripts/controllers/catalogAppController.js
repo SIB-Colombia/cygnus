@@ -156,6 +156,50 @@ angular.module('catalogHome')
 	}])
 
 	//==============================================
+	// Filter menu controller
+	//==============================================
+	.controller('filterMenuController', ['$timeout', '$state', 'appDataService', '$stateParams', function($timeout, $state, appDataService, $stateParams){
+		this.taxonomyFilters = [];
+		if(typeof $stateParams.taxonomy !== 'undefined') {
+			if(typeof $stateParams.taxonomy === 'string') {
+				this.taxonomyFilters.push($stateParams.taxonomy);
+			} else {
+				this.taxonomyFilters = $stateParams.taxonomy;
+			}
+		}
+		this.departmentFilters = [];
+		if(typeof $stateParams.department !== 'undefined') {
+			if(typeof $stateParams.department === 'string') {
+				this.departmentFilters.push($stateParams.department);
+			} else {
+				this.departmentFilters = $stateParams.department;
+			}
+		}
+		this.collectionFilters = [];
+		if(typeof $stateParams.collection !== 'undefined') {
+			if(typeof $stateParams.collection === 'string') {
+				this.collectionFilters.push($stateParams.collection);
+			} else {
+				this.collectionFilters = $stateParams.collection;
+			}
+		}
+		this.selectedFilters = [];
+
+		this.totalRegisters = function() {
+			return appDataService.data.totalRegisters;
+		};
+
+		this.currentRegistersData = function() {
+			return appDataService.data.registersData.length;
+		};
+
+		this.newFilterSelection = function() {
+			$state.go('home', {q: $stateParams.q, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value, taxonomy: this.taxonomyFilters, department: this.departmentFilters, collection: this.collectionFilters});
+		};
+
+	}])
+
+	//==============================================
 	// Content zone controller
 	//==============================================
 	.controller('contentController', ['$timeout', '$state', 'appDataService', '$stateParams', 'SpecieFactory', '$sce', function($timeout, $state, appDataService, $stateParams, SpecieFactory, $sce){
@@ -191,9 +235,11 @@ angular.module('catalogHome')
 		//console.log($stateParams.q);
 		//console.log(this.isSearchActive);
 
-		if(typeof this.searchText !== 'undefined') {
-			this.isSearchActive = true;
-			SpecieFactory.get({q:this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, sort: sortType, order: appDataService.orderDirection.value}, function(data) {
+		if((typeof this.searchText !== 'undefined') || (typeof $stateParams.page !== 'undefined')) {
+			if(typeof this.searchText !== 'undefined') {
+				this.isSearchActive = true;
+			}
+			SpecieFactory.get({q:this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, sort: sortType, order: appDataService.orderDirection.value, taxonomy: $stateParams.taxonomy, department: $stateParams.department, collection: $stateParams.collection}, function(data) {
 				// Select a random image from available specie images
 				for(var i = 0; i<data.hits.length; i++) {
 					var imagen = null;
