@@ -1,4 +1,9 @@
 .sidebar-inner.c-overflow
+	.active-filters
+		ul.tags
+			li.tag(data-ng-repeat='filter in filterMenuCtrl.selectedFilters')
+				span.selection-choice-remove(data-ng-click='filterMenuCtrl.removeFilterFromTags(filter.value, filter.type)') x
+				span(data-ng-bind-html="filter.value | translate")
 	ul.main-menu
 		li.sub-menu.toggled.slide
 			a(toggle-submenu)
