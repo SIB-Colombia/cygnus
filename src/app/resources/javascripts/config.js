@@ -40,7 +40,7 @@ angular.module('catalogHome')
 					templateUrl: '/templates/topNavigation.html',
 					controller: 'topMenuController as topMenuCtrl'
 				},
-				'footer': {
+				'footer@home': {
 					templateUrl: '/templates/footer.html'
 				},
 				'filterSideMenu@home': {

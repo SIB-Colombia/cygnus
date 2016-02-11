@@ -104,10 +104,39 @@ angular.module('catalogHome')
 	})
 
 	// =========================================================================
-	// SUBMENU TOGGLE
+	// PARTNERS TOGGLE
+	// =========================================================================
+	.directive('togglePartners', function(){
+
+		return {
+			restrict: 'A',
+			link: function(scope, element, attrs) {
+				element.click(function(){
+					angular.element('#modal-socios').toggleClass("display-footer-modal");
+				});
+			}
+		};
+	})
+
+	// =========================================================================
+	// PARTNERS TOGGLE
+	// =========================================================================
+	.directive('toggleTerms', function(){
+
+		return {
+			restrict: 'A',
+			link: function(scope, element, attrs) {
+				element.click(function(){
+					angular.element('#modal-terminos').toggleClass("display-footer-modal");
+				});
+			}
+		};
+	})
+
+	// =========================================================================
+	// AFFIX CONFIGURATION
 	// =========================================================================
 	.directive('enableAffix', function(){
-
 		return {
 			restrict: 'A',
 			link: function(scope, element) {

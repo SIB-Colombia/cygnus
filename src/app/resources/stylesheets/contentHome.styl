@@ -1,8 +1,9 @@
-.container
-	margin-right auto
-	margin-left auto
-	padding-left 15px
-	padding-right 15px
+#content
+	.container
+		margin-right auto
+		margin-left auto
+		padding-left 15px
+		padding-right 15px
 #content
 	padding 30px 0
 	#list-results
@@ -182,8 +183,6 @@
 				border-left 1px solid #000
 
 @media (min-width: 768px)
-	.container
-		width calc(100% - 30px)
 	#content
 		#searchResultsHead
 			padding-bottom 30px
@@ -191,22 +190,26 @@
 				font-size 24px
 				padding-bottom 5px
 @media (min-width 1200px)
-	.container
-		width 1170px
 	.sw-toggled
 		#content
 			padding 30px 0 30px 280px
-			& > .container
-				width calc(100% - 30px)
-@media (min-width: 992px)
-	.container
-		width calc(100% - 30px)
+			//& > .container
+				//width calc(100% - 30px)
+			.container
+				width calc(1170px - 280px)
+				margin-right initial
+				margin-left initial
+				padding-right 0px
+@media (min-width 1520px)
+	.sw-toggled
+		#content
+			.container
+				width calc(1170px - 80px)
 #content.affix
 	top 50px
 	position relative
 .img-adaptative
 	margin 0 auto
-	//width 100%
 	max-width 100%
 	max-height 220px
 	width 100%
