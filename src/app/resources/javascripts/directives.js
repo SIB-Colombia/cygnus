@@ -112,6 +112,7 @@ angular.module('catalogHome')
 			restrict: 'A',
 			link: function(scope, element, attrs) {
 				element.click(function(){
+					angular.element('#modal-terminos').removeClass("display-footer-modal");
 					angular.element('#modal-socios').toggleClass("display-footer-modal");
 				});
 			}
@@ -127,6 +128,7 @@ angular.module('catalogHome')
 			restrict: 'A',
 			link: function(scope, element, attrs) {
 				element.click(function(){
+					angular.element('#modal-socios').removeClass("display-footer-modal");
 					angular.element('#modal-terminos').toggleClass("display-footer-modal");
 				});
 			}
