@@ -51,7 +51,8 @@ angular.module('catalogHome')
 	.service('appDataService', function(){
 		this.data = {
 			totalRegisters: 0,
-			registersData: null
+			registersData: null,
+			facets: null
 		};
 
 		this.resultsByPagesValues = {

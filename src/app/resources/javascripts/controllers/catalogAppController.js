@@ -20,7 +20,7 @@ angular.module('catalogHome')
 			right: false
 		};
 
-		this.init = function(data, validResultsByPage, defaultResultByPage) {
+		this.init = function(data, validResultsByPage, defaultResultByPage, facets) {
 
 			console.log("Initialization run");
 
@@ -77,6 +77,7 @@ angular.module('catalogHome')
 			// Initial full data load
 			appDataService.data.totalRegisters = data.total;
 			appDataService.data.registersData = data.hits;
+			appDataService.data.facets = facets.groups.buckets;
 
 			// Set initial configuration for small screens
 			if($window.innerWidth < 1200) {
@@ -254,7 +255,12 @@ angular.module('catalogHome')
 					break;
 			}
 			$state.go('home', {q: $stateParams.q, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value, taxonomy: this.taxonomyFilters, department: this.departmentFilters, collection: this.collectionFilters});
-		}
+		};
+
+		this.getFacetsData = function() {
+			console.log(appDataService.data.facets);
+			return appDataService.data.facets;
+		};
 
 	}])
 
@@ -364,6 +370,11 @@ angular.module('catalogHome')
 				// New data load
 				appDataService.data.totalRegisters = data.total;
 				appDataService.data.registersData = data.hits;
+			});
+
+			// Get facets data
+			SpecieFactory.get({q:this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, sort: sortType, order: appDataService.orderDirection.value, taxonomy: $stateParams.taxonomy, department: $stateParams.department, collection: $stateParams.collection, facets: 'true'}, function(data) {
+				appDataService.data.facets = data.groups.buckets;
 			});
 		}
 
