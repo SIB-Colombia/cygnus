@@ -8,6 +8,7 @@ dump.rdb
 run.sh
 dist/
 src/app/layouts/home/final
+src/app/layouts/specieDetail/final
 src/public/bower_components
 src/public/javascripts
 src/public/stylesheets

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('catalogHome')
+angular.module('catalogApp')
 
 	// =========================================================================
 	// Acces to catalog of biodiversity api

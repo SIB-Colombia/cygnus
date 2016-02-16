@@ -42,7 +42,8 @@ gulp.task('clean', function (done) {
 	$.del([path.join(conf.paths.src, '/public/fonts')], done);
 	$.del([path.join(conf.paths.src, '/public/javascripts')], done);
 	$.del([path.join(conf.paths.src, '/public/stylesheets/style.css')], done);
-	$.del([path.join(conf.paths.src, '/app/layouts/final')], done);
+	$.del([path.join(conf.paths.src, '/app/layouts/home/final')], done);
+	$.del([path.join(conf.paths.src, '/app/layouts/specieDetail/final')], done);
 	$.del([path.join(conf.paths.src, '/public/views')], done);
 	$.del([path.join(conf.paths.src, '/public/templates')], done);
 });

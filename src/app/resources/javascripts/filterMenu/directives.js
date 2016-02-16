@@ -1,40 +1,6 @@
 'use strict';
 
-angular.module('catalogHome')
-
-	.directive('changeLayout', function(){
-		return {
-			restrict: 'A',
-			scope: {
-				changeLayout: '='
-			},
-
-			link: function(scope, element, attr) {
-
-				//Default State
-				if(scope.changeLayout === '1') {
-					element.prop('checked', true);
-				}
-
-				//Change State
-				element.on('change', function(){
-					if(element.is(':checked')) {
-						localStorage.setItem('ma-layout-status', 1);
-						scope.$apply(function(){
-							scope.changeLayout = '1';
-						});
-					}
-					else {
-						localStorage.setItem('ma-layout-status', 0);
-						scope.$apply(function(){
-							scope.changeLayout = '0';
-						});
-					}
-				});
-			}
-		};
-	})
-
+angular.module('catalogApp')
 	// =========================================================================
 	// MAINMENU COLLAPSE
 	// =========================================================================
@@ -49,7 +15,7 @@ angular.module('catalogHome')
 				modelLayoutType: '='
 			},
 
-			link: function(scope, element, attr) {
+			link: function(scope, element) {
 				element.on('click', function(){
 
 					if (element.data('target') === 'mainmenu') {
@@ -89,63 +55,14 @@ angular.module('catalogHome')
 	// =========================================================================
 	// SUBMENU TOGGLE
 	// =========================================================================
-
 	.directive('toggleSubmenu', function(){
 
 		return {
 			restrict: 'A',
-			link: function(scope, element, attrs) {
+			link: function(scope, element) {
 				element.click(function(){
 					element.next().slideToggle(200);
 					element.parent().toggleClass('toggled');
-				});
-			}
-		};
-	})
-
-	// =========================================================================
-	// PARTNERS TOGGLE
-	// =========================================================================
-	.directive('togglePartners', function(){
-
-		return {
-			restrict: 'A',
-			link: function(scope, element, attrs) {
-				element.click(function(){
-					angular.element('#modal-terminos').removeClass("display-footer-modal");
-					angular.element('#modal-socios').toggleClass("display-footer-modal");
-				});
-			}
-		};
-	})
-
-	// =========================================================================
-	// PARTNERS TOGGLE
-	// =========================================================================
-	.directive('toggleTerms', function(){
-
-		return {
-			restrict: 'A',
-			link: function(scope, element, attrs) {
-				element.click(function(){
-					angular.element('#modal-socios').removeClass("display-footer-modal");
-					angular.element('#modal-terminos').toggleClass("display-footer-modal");
-				});
-			}
-		};
-	})
-
-	// =========================================================================
-	// AFFIX CONFIGURATION
-	// =========================================================================
-	.directive('enableAffix', function(){
-		return {
-			restrict: 'A',
-			link: function(scope, element) {
-				element.affix({
-					offset: {
-						top: 450
-					}
 				});
 			}
 		};
@@ -167,7 +84,7 @@ angular.module('catalogHome')
 				collectionFilters: '=',
 				selectedFilters: '='
 			},
-			link: function(scope, element, attrs) {
+			link: function(scope, element) {
 				element.on('click', function() {
 					if(element.hasClass('selected')) {
 						switch(scope.type) {

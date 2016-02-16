@@ -1,0 +1,47 @@
+doctype html
+html(data-ng-app="specieDetail" data-ng-controller="initController as initCtrl")
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		title #{__("pageTitle")}
+		meta(name='viewport', content='width=device-width,initial-scale=1')
+		meta(name='description', content='Acceso libre a la información sobre biodiversidad de Colombia! Open access to Colombian biodiversity information!')
+		meta(property='og:title', content='#{ogTitle}')
+		meta(property='og:type', content='website')
+		meta(property='og:description', content='Acceso libre a la información sobre biodiversidad de Colombia! Open access to Colombian biodiversity information!')
+		meta(property='og:url', content='#{registerURL}')
+		meta(property='og:image', content='')
+		meta(property='og:site_name', content='Catalogo de especies de la biodiversidad de Colombia')
+		meta(property='og:locale', content='es_ES')
+		meta(name="google-site-verification" content="nm1-g-rVHscAi_K7O9e-s3EE7rEDorSu9OFagozmx3Q")
+
+		base(href="/")
+
+		<!-- build:css(src/public) stylesheets/final/vendor.css -->
+		//- bower:css
+		//- run `gulp inject` to automatically populate bower styles dependencies
+		//- endbower
+		<!-- endbuild -->
+
+		<!-- build:css(src/public) stylesheets/final/app.css -->
+		//- home:css
+		//- css files will be automatically insert here
+		//- endinject
+		<!-- endbuild -->
+
+	body(data-ng-class="{'sw-toggled': initCtrl.layoutType === true}")
+		block content
+
+		<!-- build:js(src/public) javascripts/final/vendor.js -->
+		//- bower:js
+		//- run `gulp inject` to automatically populate bower script dependencies
+		//- endbower
+		<!-- endbuild -->
+
+		<!-- build:js(src/public) javascripts/final/app.js -->
+		//- specieDetail:js
+		//- js files will be automatically insert here
+		//- endinject
+		<!-- endbuild -->
+
+		block scripts
