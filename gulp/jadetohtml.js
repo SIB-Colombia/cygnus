@@ -7,7 +7,9 @@ var conf = require('./config');
 var $ = require('gulp-load-plugins')();
 
 gulp.task('jadetohtml', function () {
-	gulp.src([path.join(conf.paths.src, '/app/views/main/templates/*.jade')])
+	gulp.src([
+			path.join(conf.paths.src, '/app/views/main/templates/*.jade'),
+			path.join(conf.paths.src, '/app/views/fichas/templates/*.jade')])
 		.pipe($.jade({
 			pretty: true
 		}))

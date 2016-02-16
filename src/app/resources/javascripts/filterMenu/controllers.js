@@ -103,7 +103,6 @@ angular.module('catalogApp')
 		};
 
 		this.getFacetsData = function() {
-			console.log(appDataService.data.facets);
 			return appDataService.data.facets;
 		};
 

@@ -16,7 +16,16 @@ gulp.task('inject', ['scripts', 'styles'], function () {
 
 	var injectScriptsHome = gulp.src([
 		path.join(conf.paths.src, '/public/javascripts/modules/*.js'),
-		path.join(conf.paths.src, '/public/javascripts/home/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/initialization/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/services/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/homeHeader/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/homeTopMenu/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/filterMenu/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/homeContent/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/footer/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/catalogApp.js'),
+		path.join(conf.paths.src, '/public/javascripts/config.js'),
+		path.join(conf.paths.src, '/public/javascripts/app.js'),
 		path.join('!' + conf.paths.src, '/public/**/*.spec.js'),
 		path.join('!' + conf.paths.src, '/public/**/*.mock.js')
 	])
@@ -24,7 +33,11 @@ gulp.task('inject', ['scripts', 'styles'], function () {
 
 	var injectScriptsSpeciesDetail = gulp.src([
 		path.join(conf.paths.src, '/public/javascripts/modules/*.js'),
-		path.join(conf.paths.src, '/public/javascripts/specieDetail/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/services/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/initialization/**/*.js'),
+		path.join(conf.paths.src, '/public/javascripts/catalogApp.js'),
+		path.join(conf.paths.src, '/public/javascripts/config.js'),
+		path.join(conf.paths.src, '/public/javascripts/app.js'),
 		path.join('!' + conf.paths.src, '/public/**/*.spec.js'),
 		path.join('!' + conf.paths.src, '/public/**/*.mock.js')
 	])

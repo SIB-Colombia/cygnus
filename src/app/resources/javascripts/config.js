@@ -58,26 +58,10 @@ angular.module('catalogApp')
 			url: '/fichas/:specieId',
 			views: {
 				'@': {
-					templateUrl: '/templates/home.html'
+					templateUrl: '/templates/homeSpecieDetail.html'
 				},
-				'header@home': {
-					templateUrl: '/templates/header.html',
-					controller: 'headerController as hCtrl'
-				},
-				'topNavigation@home': {
-					templateUrl: '/templates/topNavigation.html',
-					controller: 'topMenuController as topMenuCtrl'
-				},
-				'footer@home': {
-					templateUrl: '/templates/footer.html'
-				},
-				'filterSideMenu@home': {
-					templateUrl: '/templates/filterMenu.html',
-					controller: 'filterMenuController as filterMenuCtrl'
-				},
-				'content@home': {
-					templateUrl: '/templates/contentHome.html',
-					controller: 'contentController as contentCtrl'
+				'header@details': {
+					templateUrl: '/templates/header.html'
 				}
 			}
 		});

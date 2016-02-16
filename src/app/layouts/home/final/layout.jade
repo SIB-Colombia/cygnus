@@ -1,5 +1,5 @@
 doctype html
-html(data-ng-app="catalogHome" data-ng-controller="initController as initCtrl" data-ng-init="initCtrl.init(#{data}, #{validResultsByPage}, #{defaultResultByPage}, #{facets})")
+html(data-ng-app="catalogApp" data-ng-controller="initController as initCtrl" data-ng-init="initCtrl.init(#{data}, #{validResultsByPage}, #{defaultResultByPage}, #{facets})")
 	head
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -93,13 +93,20 @@ html(data-ng-app="catalogHome" data-ng-controller="initController as initCtrl" d
 
 		<!-- build:js(src/public) javascripts/final/app.js -->
 		//- home:js
-		script(src="/javascripts/home/catalogApp.js")
-		script(src="/javascripts/home/services/catalogAppServices.js")
-		script(src="/javascripts/home/filters/contentListFilters.js")
-		script(src="/javascripts/home/factories/contentList.js")
-		script(src="/javascripts/home/directives/directives.js")
-		script(src="/javascripts/home/controllers/catalogAppController.js")
-		script(src="/javascripts/home/config.js")
+		script(src="/javascripts/app.js")
+		script(src="/javascripts/catalogApp.js")
+		script(src="/javascripts/config.js")
+		script(src="/javascripts/footer/directives.js")
+		script(src="/javascripts/homeContent/filters.js")
+		script(src="/javascripts/homeContent/factories.js")
+		script(src="/javascripts/homeContent/controllers.js")
+		script(src="/javascripts/filterMenu/directives.js")
+		script(src="/javascripts/filterMenu/controllers.js")
+		script(src="/javascripts/homeTopMenu/controllers.js")
+		script(src="/javascripts/homeHeader/controllers.js")
+		script(src="/javascripts/services/catalogAppServices.js")
+		script(src="/javascripts/initialization/directives.js")
+		script(src="/javascripts/initialization/controllers.js")
 		script(src="/javascripts/modules/sweetalert.js")
 		//- endinject
 		<!-- endbuild -->
