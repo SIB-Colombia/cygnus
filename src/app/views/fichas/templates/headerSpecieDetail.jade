@@ -1,0 +1,38 @@
+header.cat-header#header
+	.top-bar
+		.container
+			.row
+				.col-sm-6.col-xs-6
+					.logo-cont
+						a(class="brand", title="Catálogo de la Biodiversidad", href="/")
+							img.logo-sib(src='images/logo-cbc.png', alt='Catalogo SiB')
+				.col-sm-6.col-xs-6
+					ul.top-menu.sm-cont.pull-right
+						li
+							a.hidden-xs(href='https://www.facebook.com/SibColombia', target='_blank')
+								img(src='images/ico-fb.svg', alt='Facebook')
+						li
+							a.hidden-xs(href='https://twitter.com/sibcolombia', target='_blank')
+								img(src='images/ico-tw.svg', alt='Twitter')
+						li
+							a.hidden-xs(href='http://www.youtube.com/user/sibcolombia', target='_blank')
+								img(src='images/ico-yt.svg', alt='YouTube')
+						li.hide
+							a(href='#', target='_blank', data-toggle='modal', data-target='#loginModal')
+								img(src='images/ico-user.svg', alt='User account')
+						li.dropdown.hide(uib-dropdown='')
+							a.tm-settings(uib-dropdown-toggle='', href='')
+							ul.dm-icon.pull-right.dropdown-menu
+								li.hidden-xs
+									a(data-ng-click='hCtrl.fullScreen()', href='')
+										i.zmdi.zmdi-fullscreen
+										| {{'toggleFullScreen' | translate}}
+								li.visible-xs
+									a(href='https://www.facebook.com/SibColombia', target='_blank')
+										img(src='images/ico-fb.svg', alt='Facebook')
+								li.visible-xs
+									a(href='https://twitter.com/sibcolombia', target='_blank')
+										img(src='images/ico-tw.svg', alt='Twitter')
+								li.visible-xs
+									a(href='http://www.youtube.com/user/sibcolombia', target='_blank')
+										img(src='images/ico-yt.svg', alt='YouTube')
