@@ -61,7 +61,20 @@ angular.module('catalogApp')
 					templateUrl: '/templates/homeSpecieDetail.html'
 				},
 				'header@details': {
-					templateUrl: '/templates/header.html'
+					templateUrl: '/templates/headerSpecieDetail.html'
+				},
+				'topNavigation@details': {
+					templateUrl: '/templates/topNavigationSpecieDetail.html',
+					controller: 'topMenuController as topMenuCtrl'
+				},
+				'specieDetailSideMenu@details': {
+					templateUrl: '/templates/sideMenuSpecieDetail.html'
+				},
+				'specieDetailContent@details': {
+					templateUrl: '/templates/contentSpecieDetail.html'
+				},
+				'footer@details': {
+					templateUrl: '/templates/footer.html'
 				}
 			}
 		});

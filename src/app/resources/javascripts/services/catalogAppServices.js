@@ -55,6 +55,8 @@ angular.module('catalogApp')
 			facets: null
 		};
 
+		this.specieDetail = null;
+
 		this.resultsByPagesValues = {
 			"type": "select",
 			"name": "Results by page",

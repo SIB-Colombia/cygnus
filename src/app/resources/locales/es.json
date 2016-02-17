@@ -20,6 +20,7 @@
 	"filterfilterGeographicZonesWetlands": "Humedales",
 	"filterCollectionsSheetsWithPhoto": "Fichas con foto",
 	"toggleFilterMenu": "FILTROS",
+	"specieDetailNavegationItems": "NAVEGACIÓN",
 	"totalFoundSheets": "mostrando <strong>{{current}}</strong> de <strong>{{total}}</strong> fichas",
 	"searchAndTotalFoundSheets": "Su búsqueda por <strong>{{searchCondition}}</strong> retornó <strong>{{total}}</strong> especies",
 	"paginationOptionsText": "Resultados por página",

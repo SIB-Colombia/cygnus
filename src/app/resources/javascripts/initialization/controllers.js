@@ -15,6 +15,22 @@ angular.module('catalogApp')
 			right: false
 		};
 
+		this.initSpecieDetail = function(data) {
+			console.log("Initialization specie data");
+			console.log(data);
+			appDataService.specieDetail = data;
+
+			// Set initial configuration for small screens
+			if($window.innerWidth < 1200) {
+				this.layoutType = false;
+				this.sidebarToggle.left = false;
+			}
+		};
+
+		this.specieDetail = function() {
+			return appDataService.specieDetail;
+		};
+
 		this.init = function(data, validResultsByPage, defaultResultByPage, facets) {
 
 			console.log("Initialization run");

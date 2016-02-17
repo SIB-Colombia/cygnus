@@ -37,6 +37,7 @@ gulp.task('inject', ['scripts', 'styles'], function () {
 		path.join(conf.paths.src, '/public/javascripts/initialization/**/*.js'),
 		path.join(conf.paths.src, '/public/javascripts/catalogApp.js'),
 		path.join(conf.paths.src, '/public/javascripts/config.js'),
+		path.join(conf.paths.src, '/public/javascripts/homeTopMenu/**/*.js'),
 		path.join(conf.paths.src, '/public/javascripts/app.js'),
 		path.join('!' + conf.paths.src, '/public/**/*.spec.js'),
 		path.join('!' + conf.paths.src, '/public/**/*.mock.js')
