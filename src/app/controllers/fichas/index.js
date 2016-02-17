@@ -9,12 +9,15 @@ var debug = require('debug')('catalog:specieDetailsController');
 var async = require('async');
 var request = require('request');
 
+// config and setup helpers
+var config = require('application-config');
+
 exports.show = function() {
 	return function(req, res) {
 		async.series({
 			specieData: function(callback) {
 				request({
-					url: 'http://localhost:4000/api/fichas/'+req.params._specieId,
+					url: config.get('backend.api.server')+':'+config.get('backend.api.port')+config.get('backend.api.path')+'/fichas/'+req.params._specieId,
 					method: 'GET',
 					json: true
 				}, function(error, response, body) {
