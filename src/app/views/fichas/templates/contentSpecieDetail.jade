@@ -24,7 +24,8 @@
 						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.genero')
 					div
 						strong Especie
-						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.especie')
+						span
+							em(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.especie')
 				.sep-div#nombres
 				h1 Nombre común
 				.info-wrapper
