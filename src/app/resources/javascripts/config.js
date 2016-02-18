@@ -71,7 +71,8 @@ angular.module('catalogApp')
 					templateUrl: '/templates/sideMenuSpecieDetail.html'
 				},
 				'specieDetailContent@details': {
-					templateUrl: '/templates/contentSpecieDetail.html'
+					templateUrl: '/templates/contentSpecieDetail.html',
+					controller: 'specieDetailController as specieDetailCtrl'
 				},
 				'footer@details': {
 					templateUrl: '/templates/footer.html'

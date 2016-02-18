@@ -47,4 +47,20 @@ angular.module('catalogApp')
 				});
 			}
 		};
+	})
+
+	// =========================================================================
+	// AFFIX CONFIGURATION
+	// =========================================================================
+	.directive('enableAffixSpecieDetail', function(){
+		return {
+			restrict: 'A',
+			link: function(scope, element) {
+				element.affix({
+					offset: {
+						top: 81
+					}
+				});
+			}
+		};
 	});
