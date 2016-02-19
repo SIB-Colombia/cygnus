@@ -36,7 +36,7 @@
 						span.content(data-ng-bind-html='commonName.idioma')
 						img(src='../images/ico-region.svg' data-ng-show='commonName.regionesGeograficas !== ""')
 						span.content(data-ng-bind-html='commonName.regionesGeograficas')
-				.sep-div#historia
+				.sep-div#distribucion
 				h1 Distribución
 				.info-wrapper
 					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal') Distribución altitudinal
@@ -158,7 +158,7 @@
 						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.otrosRecursosEnInternet') Otros recursos en Internet
 						div(data-ng-repeat='otrosRecursosEnInternet in specieDetailCtrl.specieDetail().atributos.otrosRecursosEnInternet')
 							span(data-ng-bind-html='otrosRecursosEnInternet')
-				div
+				#info-basic-specie
 					.sep-div
 					.basicInfoRecord
 						div

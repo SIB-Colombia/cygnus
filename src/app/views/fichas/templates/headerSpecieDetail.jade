@@ -36,3 +36,19 @@ header.cat-header#header
 								li.visible-xs
 									a(href='http://www.youtube.com/user/sibcolombia', target='_blank')
 										img(src='images/ico-yt.svg', alt='YouTube')
+section#images-scroll
+	.container
+		.row
+			.col-sm-12.col-xs-12
+				.recordPictures
+					#gallery-container
+						ul.rslides(itemscope='' itemtype='http://schema.org/ImageGallery' enable-photo-slider)
+							li(data-ng-repeat='image in headerDetailCtrl.specieDetail().imagenes')
+								figure(itemprop='associatedMedia', itemscope='', itemtype='http://schema.org/ImageObject')
+									a(data-ng-href='{{image.url}}' itemprop='contentUrl')
+										img(data-ng-src='{{image.url}}')
+									figcaption(itemprop='caption description')
+										span(data-ng-bind='"&copy;"+image.rightsHolder+"&nbsp;"')
+										a(data-ng-href='{{image.license}}', target="_blank") Licencia
+										| ,&nbsp;
+										a(data-ng-href='{{image.source}}', target="_blank") Fuente

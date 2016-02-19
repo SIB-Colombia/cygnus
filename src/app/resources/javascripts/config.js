@@ -61,7 +61,8 @@ angular.module('catalogApp')
 					templateUrl: '/templates/homeSpecieDetail.html'
 				},
 				'header@details': {
-					templateUrl: '/templates/headerSpecieDetail.html'
+					templateUrl: '/templates/headerSpecieDetail.html',
+					controller: 'headerDetailController as headerDetailCtrl'
 				},
 				'topNavigation@details': {
 					templateUrl: '/templates/topNavigationSpecieDetail.html',

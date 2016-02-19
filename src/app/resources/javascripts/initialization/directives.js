@@ -58,7 +58,7 @@ angular.module('catalogApp')
 			link: function(scope, element) {
 				element.affix({
 					offset: {
-						top: 81
+						top: 410
 					}
 				});
 			}

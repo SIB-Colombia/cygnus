@@ -29,7 +29,7 @@ html(data-ng-app="catalogApp" data-ng-controller="initController as initCtrl" da
 		//- endinject
 		<!-- endbuild -->
 
-	body(data-ng-class="{'sw-toggled': initCtrl.layoutType === true}")
+	body(data-ng-class="{'sw-toggled': initCtrl.layoutType === true}" data-spy="scroll" data-target="#side-nav")
 		block content
 
 		<!-- build:js(src/public) javascripts/final/vendor.js -->
