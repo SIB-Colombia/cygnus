@@ -25,12 +25,12 @@
 					a(data-group-name="'amphibians'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('amphibians') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="('filterBiologicalGroupsAmphibians' | translate) + ' (' + filterMenuCtrl.getFacetsData().amphibians.doc_count + ')'")
 				li
 					a(data-group-name="'mushrooms'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('mushrooms') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="('filterBiologicalGroupsMushrooms' | translate) + ' (' + filterMenuCtrl.getFacetsData().mushrooms.doc_count + ')'")
-		li.sub-menu.toggled
+		li.sub-menu
 			a(toggle-submenu)
 				i
 					img(src='images/ico-zonas.svg')
 				span(data-ng-bind-html="'filterGeographicZones' | translate")
-			ul(style='display: block;')
+			ul(style='display: none;')
 				li
 					a(data-department-name="'amazonas'" data-ng-class="{'selected': filterMenuCtrl.departmentFilters.indexOf('amazonas') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'department'" data-department-filters='filterMenuCtrl.departmentFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter) Amazonas ({{filterMenuCtrl.getFacetsData().amazonas.doc_count}})
 				li
@@ -103,12 +103,12 @@
 					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterfilterGeographicZonesBadlands' | translate")
 				li
 					a(data-ui-sref-active='active' data-ui-sref='widgets.widget-templates' data-ng-click='mactrl.sidebarStat($event)' href='#/widgets/widget-templates' data-ng-bind-html="'filterfilterGeographicZonesWetlands' | translate")
-		li.sub-menu.toggled
+		li.sub-menu
 			a(toggle-submenu)
 				i
 					img(src='images//ico-colecciones.svg')
 				span(data-ng-bind-html="'filterCollections' | translate")
-			ul(style='display: block;')
+			ul(style='display: none;')
 				li
 					a(data-collection-name="'paramo'" data-ng-class="{'selected': filterMenuCtrl.collectionFilters.indexOf('paramo') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'collection'" data-collection-filters='filterMenuCtrl.collectionFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="('filterCollectionsBadlands' | translate) + ' (' + filterMenuCtrl.getFacetsData().paramo.doc_count + ')'")
 				li
