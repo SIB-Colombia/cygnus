@@ -1,8 +1,8 @@
 .container#specie-detail
 	.row
 		.col-md-12
-			#arbol.recordContent
-				h1 Árbol taxonómico
+			.recordContent(data-spy='scroll' data-target='#side-nav')
+				h1#arbol Árbol taxonómico
 				.taxonComplete
 					div
 						strong Reino
@@ -26,18 +26,19 @@
 						strong Especie
 						span
 							em(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.especie')
-				.sep-div#nombres
-				h1 Nombre común
-				.info-wrapper
-					.commonName(data-ng-repeat='commonName in specieDetailCtrl.specieDetail().nombresComunes')
-						span.name(data-ng-bind-html='commonName.tesauroNombre')
-						br
-						img(src='../images/ico-idioma.svg' data-ng-show='commonName.idioma !== ""')
-						span.content(data-ng-bind-html='commonName.idioma')
-						img(src='../images/ico-region.svg' data-ng-show='commonName.regionesGeograficas !== ""')
-						span.content(data-ng-bind-html='commonName.regionesGeograficas')
-				.sep-div#distribucion
-				h1 Distribución
+				div(data-ng-show='specieDetailCtrl.specieDetail().nombresComunes')
+					.sep-div#nombres
+					h1 Nombre común
+					.info-wrapper
+						.commonName(data-ng-repeat='commonName in specieDetailCtrl.specieDetail().nombresComunes')
+							span.name(data-ng-bind-html='commonName.tesauroNombre')
+							br
+							img(src='../images/ico-idioma.svg' data-ng-show='commonName.idioma !== ""')
+							span.content(data-ng-bind-html='commonName.idioma')
+							img(src='../images/ico-region.svg' data-ng-show='commonName.regionesGeograficas !== ""')
+							span.content(data-ng-bind-html='commonName.regionesGeograficas')
+				.sep-div
+				h1#distribucion Distribución
 				.info-wrapper
 					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal') Distribución altitudinal
 					div(data-ng-repeat='distribucionAltitudinal in specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal')
@@ -57,8 +58,8 @@
 					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.registrosBiologicos') Registros biológicos
 					div(data-ng-repeat='registrosBiologicos in specieDetailCtrl.specieDetail().atributos.registrosBiologicos')
 						span(data-ng-bind-html='registrosBiologicos')
-				.sep-div#historia
-				h1 Historia natural
+				.sep-div
+				h1#historia Historia natural
 				.info-wrapper
 					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.alimentacion') Alimentación
 					div(data-ng-repeat='alimentacion in specieDetailCtrl.specieDetail().atributos.alimentacion')
@@ -85,8 +86,8 @@
 					div(data-ng-repeat='ecologia in specieDetailCtrl.specieDetail().atributos.ecologia')
 						span(data-ng-bind-html='ecologia')
 				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.descripcionTaxonomica || specieDetailCtrl.specieDetail().atributos.clavesTaxonomicas || specieDetailCtrl.specieDetail().atributos.etimologiaNombreCientifico || specieDetailCtrl.specieDetail().atributos.informacionTipos')
-					.sep-div#taxonomia
-					h1 Taxonomía
+					.sep-div
+					h1#taxonomia Taxonomía
 					.info-wrapper
 						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.descripcionTaxonomica') Descripción taxonómica
 						div(data-ng-repeat='descripcionTaxonomica in specieDetailCtrl.specieDetail().atributos.descripcionTaxonomica')
@@ -100,53 +101,54 @@
 						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.informacionTipos') Información de tipos
 						div(data-ng-repeat='informacionTipos in specieDetailCtrl.specieDetail().atributos.informacionTipos')
 							span(data-ng-bind-html='informacionTipos')
-				.sep-div#estado
-				h1 Estado de conservación
-				.info-wrapper
-					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo || estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia') Estado de amenaza según categorías UICN
-					div(data-ng-repeat='estadoDeAmenazaSegunCategoriaUICNMundo in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo')
-						.amenaza
-							div
-								.wrapper
-									.ribbon-threat-status
-										.ribbon-threat.threat-red(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "CR (en peligro crítico)"') CR
-										.ribbon-threat.threat-orange(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "EN (en peligro)"') EN
-										.ribbon-threat.threat-yellow(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "VU (vulnerable)"') VU
-							div
-								span
-									h3 En el mundo
-									span(data-ng-bind-html='estadoDeAmenazaSegunCategoriaUICNMundo')
-					div(data-ng-repeat='estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia')
-						.amenaza
-							div
-								.wrapper
-									.ribbon-threat-status
-										.ribbon-threat.threat-red(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "CR (en peligro crítico)"') CR
-										.ribbon-threat.threat-orange(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "EN (en peligro)"') EN
-										.ribbon-threat.threat-yellow(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "VU (vulnerable)"') VU
-							div
-								span
-									h3 En Colombia
-									span(data-ng-bind-html='estadoDeAmenazaSegunCategoriaUICNColombia')
-					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.factoresAmenaza') Factores de amenaza
-					div(data-ng-repeat='factoresAmenaza in specieDetailCtrl.specieDetail().atributos.factoresAmenaza')
-						span(data-ng-bind-html='factoresAmenaza')
-					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion') Estado actual de la población
-					div(data-ng-repeat='estadoActualPoblacion in specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion')
-						span(data-ng-bind-html='estadoActualPoblacion')
-					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.medidasConservacion') Medidas de conservación
-					div(data-ng-repeat='medidasConservacion in specieDetailCtrl.specieDetail().atributos.medidasConservacion')
-						span(data-ng-bind-html='medidasConservacion')
+				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo || estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia || specieDetailCtrl.specieDetail().atributos.factoresAmenaza || specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion || specieDetailCtrl.specieDetail().atributos.medidasConservacion')
+				.sep-div
+					h1#estado Estado de conservación
+					.info-wrapper
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo || estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia') Estado de amenaza según categorías UICN
+						div(data-ng-repeat='estadoDeAmenazaSegunCategoriaUICNMundo in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo')
+							.amenaza
+								div
+									.wrapper
+										.ribbon-threat-status
+											.ribbon-threat.threat-red(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "CR (en peligro crítico)"') CR
+											.ribbon-threat.threat-orange(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "EN (en peligro)"') EN
+											.ribbon-threat.threat-yellow(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "VU (vulnerable)"') VU
+								div
+									span
+										h3 En el mundo
+										span(data-ng-bind-html='estadoDeAmenazaSegunCategoriaUICNMundo')
+						div(data-ng-repeat='estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia')
+							.amenaza
+								div
+									.wrapper
+										.ribbon-threat-status
+											.ribbon-threat.threat-red(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "CR (en peligro crítico)"') CR
+											.ribbon-threat.threat-orange(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "EN (en peligro)"') EN
+											.ribbon-threat.threat-yellow(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "VU (vulnerable)"') VU
+								div
+									span
+										h3 En Colombia
+										span(data-ng-bind-html='estadoDeAmenazaSegunCategoriaUICNColombia')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.factoresAmenaza') Factores de amenaza
+						div(data-ng-repeat='factoresAmenaza in specieDetailCtrl.specieDetail().atributos.factoresAmenaza')
+							span(data-ng-bind-html='factoresAmenaza')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion') Estado actual de la población
+						div(data-ng-repeat='estadoActualPoblacion in specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion')
+							span(data-ng-bind-html='estadoActualPoblacion')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.medidasConservacion') Medidas de conservación
+						div(data-ng-repeat='medidasConservacion in specieDetailCtrl.specieDetail().atributos.medidasConservacion')
+							span(data-ng-bind-html='medidasConservacion')
 				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.informacionUsos')
-					.sep-div#uso
-					h1 Uso y tráfico
+					.sep-div
+					h1#uso Uso y tráfico
 					.info-wrapper
 						h2 Información de usos
 						div(data-ng-repeat='informacionUsos in specieDetailCtrl.specieDetail().atributos.informacionUsos')
 							span(data-ng-bind-html='informacionUsos')
 				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.creditosEspecificos || specieDetailCtrl.specieDetail().atributos.referenciasBibliograficas || specieDetailCtrl.specieDetail().atributos.otrosRecursosEnInternet')
-					.sep-div#info
-					h1 Más información
+					.sep-div
+					h1#info Más información
 					.info-wrapper
 						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.creditosEspecificos') Créditos específicos
 						div(data-ng-repeat='creditosEspecificos in specieDetailCtrl.specieDetail().atributos.creditosEspecificos')

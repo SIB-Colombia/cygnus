@@ -52,15 +52,23 @@ angular.module('catalogApp')
 	// =========================================================================
 	// AFFIX CONFIGURATION
 	// =========================================================================
-	.directive('enableAffixSpecieDetail', function(){
+	.directive('enableAffixSpecieDetail', ['appDataService', function(appDataService){
 		return {
 			restrict: 'A',
 			link: function(scope, element) {
-				element.affix({
-					offset: {
-						top: 410
-					}
-				});
+				if(appDataService.specieDetail.imagenes) {
+					element.affix({
+						offset: {
+							top: 410
+						}
+					});
+				} else {
+					element.affix({
+						offset: {
+							top: 81
+						}
+					});
+				}
 			}
 		};
-	});
+	}]);
