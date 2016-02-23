@@ -5,12 +5,12 @@
 				span.selection-choice-remove(data-ng-click='filterMenuCtrl.removeFilterFromTags(filter.value, filter.type)') x
 				span(data-ng-bind-html="filter.value | translate")
 	ul.main-menu
-		li.sub-menu.toggled.slide
+		li.sub-menu
 			a(toggle-submenu)
 				i
 					img(src='images/ico-grupos.svg')
 				span(data-ng-bind-html="'filterBiologicalGroups' | translate")
-			ul(style='display: block;')
+			ul(style='display: none;')
 				li
 					a(data-group-name="'insects'" data-ng-class="{'selected': filterMenuCtrl.taxonomyFilters.indexOf('insects') !== -1}" data-ng-click='filterMenuCtrl.newFilterSelection()' data-type="'taxonomy'" data-taxonomy-filters='filterMenuCtrl.taxonomyFilters' data-selected-filters='filterMenuCtrl.selectedFilters' data-toggle-filter data-ng-bind-html="('filterBiologicalGroupsInsects' | translate) + ' (' + filterMenuCtrl.getFacetsData().insects.doc_count + ')'")
 				li
