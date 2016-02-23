@@ -33,16 +33,15 @@
     "photo.swipe": "~4.0.7"
   },
   "overrides": {
-    "outlayer": {
+    "leaflet.markercluster": {
       "main": [
-        "item.js",
-        "outlayer.js"
-      ]
-    },
-    "get-style-property": {
-      "main": [
-        "get-style-property.js"
-      ]
+        "./dist/leaflet.markercluster.js",
+        "./dist/MarkerCluster.css",
+        "./dist/MarkerCluster.Default.css"
+      ],
+      "dependencies": {
+      	"mapbox.js": "~2.1.9"
+      }
     }
   },
   "resolutions": {

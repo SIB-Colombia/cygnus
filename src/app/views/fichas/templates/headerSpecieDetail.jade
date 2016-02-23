@@ -48,7 +48,7 @@ section#images-scroll(data-ng-show='headerDetailCtrl.specieDetail().imagenes')
 									a(data-ng-href='{{image.url}}' itemprop='contentUrl')
 										img(data-ng-src='{{image.url}}')
 									figcaption(itemprop='caption description')
-										span(data-ng-bind='"&copy;"+image.rightsHolder+"&nbsp;"')
+										span(data-ng-bind-html='"&copy;"+image.rightsHolder+"&nbsp;"')
 										a(data-ng-href='{{image.license}}', target="_blank") Licencia
 										| ,&nbsp;
 										a(data-ng-href='{{image.source}}', target="_blank") Fuente

@@ -1,7 +1,7 @@
 .container#specie-detail
 	.row
 		.col-md-12
-			.recordContent(data-spy='scroll' data-target='#side-nav')
+			.recordContent
 				h1#arbol Jerarquía taxonómica
 				.taxonComplete
 					div
@@ -40,6 +40,13 @@
 				.sep-div
 				h1#distribucion Distribución
 				.info-wrapper
+					h2 Mapa de Registros publicados
+					div
+						div(id='distributionmap' load-map-data style='width: 90%; height: 400px; margin: 0 auto')
+							div(class='spinner')
+						div(style='width: 90%; margin: 0 auto')
+							span(ng-if="mensaje" ng-bind ="mensaje")
+							span(ng-if ="masRegistros" ng-bind-html="masRegistros")
 					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal') Distribución altitudinal
 					div(data-ng-repeat='distribucionAltitudinal in specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal')
 						span(data-ng-bind-html='distribucionAltitudinal')
