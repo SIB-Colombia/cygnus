@@ -79,6 +79,25 @@ angular.module('catalogApp')
 					templateUrl: '/templates/footer.html'
 				}
 			}
+		})
+
+		.state('terms', {
+			url: '/terms',
+			views: {
+				'@': {
+					templateUrl: '/templates/homeTerms.html'
+				},
+				'header@terms': {
+					templateUrl: '/templates/headerSpecieDetail.html',
+					controller: 'headerDetailController as headerDetailCtrl'
+				},
+				'termsContent@terms': {
+					templateUrl: '/templates/termsContent.html'
+				},
+				'footer@terms': {
+					templateUrl: '/templates/footer.html'
+				}
+			}
 		});
 
 	}]);

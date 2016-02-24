@@ -23,4 +23,20 @@ angular.module('catalogApp')
 				});
 			}
 		};
-	}]);
+	}])
+
+	// =========================================================================
+	// AFFIX CONFIGURATION
+	// =========================================================================
+	.directive('enableAffixHeader', function(){
+		return {
+			restrict: 'A',
+			link: function(scope, element) {
+				element.affix({
+					offset: {
+						top: 0
+					}
+				});
+			}
+		};
+	});

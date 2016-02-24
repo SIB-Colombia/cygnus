@@ -66,3 +66,9 @@ exports.index = function() {
 		});
 	};
 };
+
+exports.terms = function() {
+	return function(req, res) {
+		res.render('terms');
+	};
+};
