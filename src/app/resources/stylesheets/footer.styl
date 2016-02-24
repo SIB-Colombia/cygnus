@@ -75,3 +75,51 @@ footer
 			color #fff
 			padding 10px
 			height 35px
+
+
+.content-block
+	background #FFFFFF
+	padding 20px 200px
+	height 400px
+	overflow-y scroll
+	overflow-x hidden
+.title-wrapper
+	margin-left -200px
+	h3
+		padding-left 173px
+		padding-bottom 12px
+		display inline-block
+		margin-bottom 32px
+		border-bottom 2px solid #48A8B8
+		font-size 24px
+		font-weight 300
+		cursor pointer
+.display-arrow
+	display inline-block
+	color #48A8B8
+	font-size 24px
+	padding 12px
+.content-wrapper
+	overflow hidden
+	height 0
+	visibility hidden
+	opacity 0
+.content-wrapper.collapse-visible
+	height auto
+	visibility visible
+	opacity 1
+.content-wrapper blockquote
+	font-size 14px
+@media screen and (max-width 1000px)
+	.content-block
+		background #FFFFFF
+		padding 65px 50px
+	.title-wrapper
+		margin-left -50px
+		h3
+			padding-left 35px
+			font-size 16px
+@media screen and (max-width 600px)
+	.title-wrapper
+		h3
+			max-width 195px
