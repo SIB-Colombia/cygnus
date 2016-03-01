@@ -75,7 +75,11 @@ module.exports = function(parent, services, options) {
 					break;
 				case 'show':
 					method = 'get';
-					path = '/' + name + '/:' + '_id';
+					path = '/' + name + '/:' + '_specieId';
+					break;
+				case 'terms':
+					method = 'get';
+					path = '/terms';
 					break;
 				default:
 					throw new Error('unrecognized route: ' + name + '.' + key);

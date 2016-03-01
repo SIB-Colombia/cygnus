@@ -36,7 +36,7 @@ var app = setup.createExpressApp({
 	viewEngine: 'jade',
 	dir: __dirname,
 	publicLocation: '/src/public',
-	favicon: '/src/public/images/favicon.ico',
+	favicon: '/src/public/images/favicon.png',
 	stylesLocation: '/src/public/stylesheets',
 	cookieParser: cookieParser,
 	session: session,

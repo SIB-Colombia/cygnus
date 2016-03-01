@@ -1,0 +1,187 @@
+.container#specie-detail
+	.row
+		.col-md-12
+			.recordContent
+				h1#arbol Jerarquía taxonómica
+				.taxonComplete
+					div
+						strong Reino
+						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.reino')
+					div
+						strong Phylum
+						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.filo')
+					div
+						strong Clase
+						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.clase')
+					div
+						strong Orden
+						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.orden')
+					div
+						strong Familia
+						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.familia')
+					div
+						strong Género
+						span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.genero')
+					div
+						strong Especie
+						span
+							em(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonomia.especie')
+				div(data-ng-show='specieDetailCtrl.specieDetail().nombresComunes')
+					.sep-div#nombres
+					h1 Nombre común
+					.info-wrapper
+						.commonName(data-ng-repeat='commonName in specieDetailCtrl.specieDetail().nombresComunes')
+							span.name(data-ng-bind-html='commonName.tesauroNombre')
+							br
+							img(src='../images/ico-idioma.svg' data-ng-show='commonName.idioma !== ""')
+							span.content(data-ng-bind-html='commonName.idioma')
+							img(src='../images/ico-region.svg' data-ng-show='commonName.regionesGeograficas !== ""')
+							span.content(data-ng-bind-html='commonName.regionesGeograficas')
+				.sep-div
+				h1#distribucion Distribución
+				.info-wrapper
+					h2 Mapa de Registros publicados
+					div
+						div(id='distributionmap' load-map-data style='width: 90%; height: 400px; margin: 0 auto')
+							div(class='spinner')
+						div(style='width: 90%; margin: 0 auto')
+							span(ng-if="mensaje" ng-bind ="mensaje")
+							span(ng-if ="masRegistros" ng-bind-html="masRegistros")
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal') Distribución altitudinal
+					div(data-ng-repeat='distribucionAltitudinal in specieDetailCtrl.specieDetail().atributos.distribucionAltitudinal')
+						span(data-ng-bind-html='distribucionAltitudinal')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.distribucionGeograficaEnColombia') Distribución geográfica en Colombia
+					div(data-ng-repeat='distribucionGeograficaEnColombia in specieDetailCtrl.specieDetail().atributos.distribucionGeograficaEnColombia')
+						span(data-ng-bind-html='distribucionGeograficaEnColombia')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.ecosistema') Ecosistema
+					div(data-ng-repeat='ecosistema in specieDetailCtrl.specieDetail().atributos.ecosistema')
+						span(data-ng-bind-html='ecosistema')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.regionesNaturales') Región natural
+					div(data-ng-repeat='regionNatural in specieDetailCtrl.specieDetail().atributos.regionesNaturales')
+						span(data-ng-bind-html='regionNatural')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.distribucionGeograficaEnMundo') Distribución geográfica en el mundo
+					div(data-ng-repeat='distribucionGeograficaEnMundo in specieDetailCtrl.specieDetail().atributos.distribucionGeograficaEnMundo')
+						span(data-ng-bind-html='distribucionGeograficaEnMundo')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.registrosBiologicos') Registros biológicos
+					div(data-ng-repeat='registrosBiologicos in specieDetailCtrl.specieDetail().atributos.registrosBiologicos')
+						span(data-ng-bind-html='registrosBiologicos')
+				.sep-div
+				h1#historia Historia natural
+				.info-wrapper
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.alimentacion') Alimentación
+					div(data-ng-repeat='alimentacion in specieDetailCtrl.specieDetail().atributos.alimentacion')
+						span(data-ng-bind-html='alimentacion')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.comportamiento') Comportamiento
+					div(data-ng-repeat='comportamiento in specieDetailCtrl.specieDetail().atributos.comportamiento')
+						span(data-ng-bind-html='comportamiento')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.habitat') Hábitat
+					div(data-ng-repeat='habitat in specieDetailCtrl.specieDetail().atributos.habitat')
+						span(data-ng-bind-html='habitat')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.habito') Hábito
+					div(data-ng-repeat='habito in specieDetailCtrl.specieDetail().atributos.habito')
+						span(data-ng-bind-html='habito')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.vocalizaciones') Vocalizaciones
+					div(data-ng-repeat='vocalizaciones in specieDetailCtrl.specieDetail().atributos.vocalizaciones')
+						span(data-ng-bind-html='vocalizaciones')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.reproduccion') Reproducción
+					div(data-ng-repeat='reproduccion in specieDetailCtrl.specieDetail().atributos.reproduccion')
+						span(data-ng-bind-html='reproduccion')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.descripcionGeneral') Descripción general
+					div(data-ng-repeat='descripcionGeneral in specieDetailCtrl.specieDetail().atributos.descripcionGeneral')
+						span(data-ng-bind-html='descripcionGeneral')
+					h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.ecologia') Ecología
+					div(data-ng-repeat='ecologia in specieDetailCtrl.specieDetail().atributos.ecologia')
+						span(data-ng-bind-html='ecologia')
+				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.descripcionTaxonomica || specieDetailCtrl.specieDetail().atributos.clavesTaxonomicas || specieDetailCtrl.specieDetail().atributos.etimologiaNombreCientifico || specieDetailCtrl.specieDetail().atributos.informacionTipos')
+					.sep-div
+					h1#taxonomia Taxonomía
+					.info-wrapper
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.descripcionTaxonomica') Descripción taxonómica
+						div(data-ng-repeat='descripcionTaxonomica in specieDetailCtrl.specieDetail().atributos.descripcionTaxonomica')
+							span(data-ng-bind-html='descripcionTaxonomica')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.clavesTaxonomicas') Claves taxonómicas
+						div(data-ng-repeat='clavesTaxonomicas in specieDetailCtrl.specieDetail().atributos.clavesTaxonomicas')
+							span(data-ng-bind-html='clavesTaxonomicas')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.etimologiaNombreCientifico') Etimología del nombre científico
+						div(data-ng-repeat='etimologiaNombreCientifico in specieDetailCtrl.specieDetail().atributos.etimologiaNombreCientifico')
+							span(data-ng-bind-html='etimologiaNombreCientifico')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.informacionTipos') Información de tipos
+						div(data-ng-repeat='informacionTipos in specieDetailCtrl.specieDetail().atributos.informacionTipos')
+							span(data-ng-bind-html='informacionTipos')
+				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo || estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia || specieDetailCtrl.specieDetail().atributos.factoresAmenaza || specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion || specieDetailCtrl.specieDetail().atributos.medidasConservacion')
+				.sep-div
+					h1#estado Estado de conservación
+					.info-wrapper
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo || estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia') Estado de amenaza según categorías UICN
+						div(data-ng-repeat='estadoDeAmenazaSegunCategoriaUICNMundo in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNMundo')
+							.amenaza
+								div
+									.wrapper
+										.ribbon-threat-status
+											.ribbon-threat.threat-red(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "CR (en peligro crítico)"') CR
+											.ribbon-threat.threat-orange(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "EN (en peligro)"') EN
+											.ribbon-threat.threat-yellow(data-ng-show='estadoDeAmenazaSegunCategoriaUICNMundo === "VU (vulnerable)"') VU
+								div
+									span
+										h3 En el mundo
+										span(data-ng-bind-html='estadoDeAmenazaSegunCategoriaUICNMundo')
+						div(data-ng-repeat='estadoDeAmenazaSegunCategoriaUICNColombia in specieDetailCtrl.specieDetail().atributos.estadoDeAmenazaSegunCategoriaUICNColombia')
+							.amenaza
+								div
+									.wrapper
+										.ribbon-threat-status
+											.ribbon-threat.threat-red(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "CR (en peligro crítico)"') CR
+											.ribbon-threat.threat-orange(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "EN (en peligro)"') EN
+											.ribbon-threat.threat-yellow(data-ng-show='estadoDeAmenazaSegunCategoriaUICNColombia === "VU (vulnerable)"') VU
+								div
+									span
+										h3 En Colombia
+										span(data-ng-bind-html='estadoDeAmenazaSegunCategoriaUICNColombia')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.factoresAmenaza') Factores de amenaza
+						div(data-ng-repeat='factoresAmenaza in specieDetailCtrl.specieDetail().atributos.factoresAmenaza')
+							span(data-ng-bind-html='factoresAmenaza')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion') Estado actual de la población
+						div(data-ng-repeat='estadoActualPoblacion in specieDetailCtrl.specieDetail().atributos.estadoActualPoblacion')
+							span(data-ng-bind-html='estadoActualPoblacion')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.medidasConservacion') Medidas de conservación
+						div(data-ng-repeat='medidasConservacion in specieDetailCtrl.specieDetail().atributos.medidasConservacion')
+							span(data-ng-bind-html='medidasConservacion')
+				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.informacionUsos')
+					.sep-div
+					h1#uso Uso y tráfico
+					.info-wrapper
+						h2 Información de usos
+						div(data-ng-repeat='informacionUsos in specieDetailCtrl.specieDetail().atributos.informacionUsos')
+							span(data-ng-bind-html='informacionUsos')
+				div(data-ng-show='specieDetailCtrl.specieDetail().atributos.creditosEspecificos || specieDetailCtrl.specieDetail().atributos.referenciasBibliograficas || specieDetailCtrl.specieDetail().atributos.otrosRecursosEnInternet')
+					.sep-div
+					h1#info Más información
+					.info-wrapper
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.creditosEspecificos') Créditos específicos
+						div(data-ng-repeat='creditosEspecificos in specieDetailCtrl.specieDetail().atributos.creditosEspecificos')
+							span(data-ng-bind-html='creditosEspecificos')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.referenciasBibliograficas') Referencias bibliográficas
+						ul.bib-references(data-ng-repeat='referenciasBibliograficas in specieDetailCtrl.specieDetail().atributos.referenciasBibliograficas')
+							li(data-ng-bind-html='referenciasBibliograficas.autor+" ("+referenciasBibliograficas.fecha+") "+referenciasBibliograficas.documentoTitulo+" "+referenciasBibliograficas.lugarPublicacion' data-ng-show='referenciasBibliograficas.fecha')
+							li(data-ng-bind-html='referenciasBibliograficas.autor+" "+referenciasBibliograficas.documentoTitulo+" "+referenciasBibliograficas.lugarPublicacion' data-ng-hide='referenciasBibliograficas.fecha')
+						h2(data-ng-show='specieDetailCtrl.specieDetail().atributos.otrosRecursosEnInternet') Otros recursos en Internet
+						div(data-ng-repeat='otrosRecursosEnInternet in specieDetailCtrl.specieDetail().atributos.otrosRecursosEnInternet')
+							span(data-ng-bind-html='otrosRecursosEnInternet')
+				#info-basic-specie
+					.sep-div
+					.basicInfoRecord
+						div
+							h1 Información básica de la ficha
+							.info-wrapper
+								div
+									.title Fecha de elaboración
+									span(data-ng-bind-html='specieDetailCtrl.specieDetail().fechaElaboracion')
+								div
+									.title Fecha de actualización
+									span(data-ng-bind-html='specieDetailCtrl.specieDetail().fechaActualizacion')
+								div
+									.title Nombre científico
+									span(data-ng-bind-html='specieDetailCtrl.specieDetail().taxonNombre')
+								div(data-ng-show='specieDetailCtrl.specieDetail().licenciaInfo')
+									.title Información adicional
+									span(data-ng-bind-html='specieDetailCtrl.specieDetail().licenciaInfo')

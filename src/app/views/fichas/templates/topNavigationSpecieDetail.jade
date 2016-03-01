@@ -1,0 +1,13 @@
+.site-navigation#topNavigation(data-enable-affix-specie-detail)
+	.sidebar-display(data-ng-class="{ 'open': initCtrl.sidebarToggle.left === true }")
+		#menu-trigger(data-target='mainmenu' data-toggle-sidebar data-model-left='initCtrl.sidebarToggle.left' data-model-layout-type='initCtrl.layoutType')
+			.line-wrap
+				.line.top
+				.line.center
+				.line.bottom
+		.filter-display {{ 'specieDetailNavegationItems' | translate }}
+	.right-display
+		.taxonNameContainer
+			.taxonName
+				span.taxonNameContainer(data-ng-bind="initCtrl.specieDetail().taxonNombre")
+				span.authorContainer(data-ng-bind="initCtrl.specieDetail().autor")

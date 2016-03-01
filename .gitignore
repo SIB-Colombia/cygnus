@@ -8,6 +8,7 @@ dump.rdb
 run.sh
 dist/
 src/app/layouts/home/final
+src/app/layouts/specieDetail/final
 src/public/bower_components
 src/public/javascripts
 src/public/stylesheets
@@ -27,3 +28,5 @@ src/public/imagen
 src/public/video
 src/public/sonido
 src/public/mapa
+
+src/app/resources/stylesheets/topMenu.styl

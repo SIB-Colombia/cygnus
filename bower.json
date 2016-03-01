@@ -7,7 +7,6 @@
     "lodash": "~3.10.1",
     "angular": "~1.4.9",
     "angular-animate": "~1.4.9",
-    "angular-bootstrap": "~0.14.3",
     "angular-resource": "~1.4.9",
     "angular-ui": "~0.4.0",
     "angular-ui-router": "~0.2.15",
@@ -29,19 +28,20 @@
     "angular-translate-storage-cookie": "~2.8.1",
     "angular-translate-storage-local": "~2.8.1",
     "angular-translate-loader-static-files": "~2.8.1",
-    "malihu-custom-scrollbar-plugin": "~3.1.3"
+    "malihu-custom-scrollbar-plugin": "~3.1.3",
+    "angular-bootstrap": "^1.1.2",
+    "photo.swipe": "~4.0.7"
   },
   "overrides": {
-    "outlayer": {
+    "leaflet.markercluster": {
       "main": [
-        "item.js",
-        "outlayer.js"
-      ]
-    },
-    "get-style-property": {
-      "main": [
-        "get-style-property.js"
-      ]
+        "./dist/leaflet.markercluster.js",
+        "./dist/MarkerCluster.css",
+        "./dist/MarkerCluster.Default.css"
+      ],
+      "dependencies": {
+      	"mapbox.js": "~2.1.9"
+      }
     }
   },
   "resolutions": {

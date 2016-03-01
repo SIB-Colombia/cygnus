@@ -1,0 +1,6 @@
+header#top-zone(ui-view='header')
+nav#content-zone(ui-view='topNavigation')
+section#main
+	aside#sidebar(data-ng-class="{ 'toggled': initCtrl.sidebarToggle.left === true }" ui-view='specieDetailSideMenu' data-enable-affix-specie-detail)
+	section#content(ui-view='specieDetailContent' data-enable-affix-specie-detail)
+section#footer-zone(ui-view='footer' data-enable-affix-specie-detail)

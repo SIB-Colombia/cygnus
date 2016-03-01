@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('catalogHome')
+angular.module('catalogApp')
 
 	//==============================================
 	// BOOTSTRAP GROWL
@@ -51,8 +51,11 @@ angular.module('catalogHome')
 	.service('appDataService', function(){
 		this.data = {
 			totalRegisters: 0,
-			registersData: null
+			registersData: null,
+			facets: null
 		};
+
+		this.specieDetail = null;
 
 		this.resultsByPagesValues = {
 			"type": "select",

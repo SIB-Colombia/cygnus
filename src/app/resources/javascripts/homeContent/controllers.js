@@ -1,160 +1,6 @@
 'use strict';
 
-angular.module('catalogHome')
-	//==============================================
-	// Initialization controller
-	//==============================================
-	.controller('initController', ['$timeout', '$state', 'growlService', '$translate', '$window', 'appDataService', function($timeout, $state, growlService, $translate, $window, appDataService){
-
-		// Default status of left sidebar always active = true (always true for width >= 1200px)
-		this.layoutType = true;
-
-		//Welcome Message
-		$translate('welcomeMessage').then(function (welcomeMessage) {
-			growlService.growl(welcomeMessage, 'inverse');
-		});
-
-		// By default Sidbars are hidden in boxed layout and in wide layout only the right sidebar is hidden.
-		this.sidebarToggle = {
-			left: true,
-			right: false
-		};
-
-		this.init = function(data, validResultsByPage, defaultResultByPage) {
-
-			console.log("Initialization run");
-
-			// Select a random image from available specie images
-			for(var i = 0; i<data.hits.length; i++) {
-				var imagen = null;
-				if((typeof data.hits[i]._source.imagenesExternas !== 'undefined') || (typeof data.hits[i]._source.imagenes !== 'undefined')) {
-					// This specie has external or local images for showing
-					if(typeof data.hits[i]._source.imagenesExternas !== 'undefined') {
-						// We have external images
-						var imagen = data.hits[i]._source.imagenesExternas[Math.floor(Math.random()*data.hits[i]._source.imagenesExternas.length)];
-					} else {
-						// We have local images
-						var imagen = data.hits[i]._source.imagenes[Math.floor(Math.random()*data.hits[i]._source.imagenes.length)];
-					}
-					data.hits[i]._source.selectedImage = {
-						url: imagen.url,
-						rightsHolder: ((imagen.rightsHolder !== 'undefined') && ((typeof imagen.rightsHolder) !== 'undefined'))?imagen.rightsHolder:null
-					};
-				} else {
-					// Check kind of taxonomy for anonymous image
-					//console.log(data.hits[i]);
-					switch(data.hits[i]._source.taxonomia.reino.toLowerCase()) {
-						case 'plantae':
-							data.hits[i]._source.selectedImage = {
-								url: '/images/taxonomy_generic/plantas.png',
-								rightsHolder: null
-							};
-							break;
-						case 'fungi':
-							data.hits[i]._source.selectedImage = {
-								url: '/images/taxonomy_generic/hongos.png',
-								rightsHolder: null
-							};
-							break;
-					}
-					switch(data.hits[i]._source.taxonomia.clase.toLowerCase()) {
-						case 'insecta':
-							data.hits[i]._source.selectedImage = {
-								url: '/images/taxonomy_generic/insectos.png',
-								rightsHolder: null
-							};
-							break;
-						case 'amphibia':
-							data.hits[i]._source.selectedImage = {
-								url: '/images/taxonomy_generic/anfibios.png',
-								rightsHolder: null
-							};
-							break;
-					}
-				}
-			}
-
-			// Initial full data load
-			appDataService.data.totalRegisters = data.total;
-			appDataService.data.registersData = data.hits;
-
-			// Set initial configuration for small screens
-			if($window.innerWidth < 1200) {
-				this.layoutType = false;
-				this.sidebarToggle.left = false;
-			}
-
-			appDataService.resultsByPagesValues.values = validResultsByPage;
-			appDataService.resultsByPagesValues.value = defaultResultByPage.toString();
-
-		};
-
-	}])
-
-	//==============================================
-	// Header controller
-	//==============================================
-	.controller('headerController', ['$timeout', '$state', '$stateParams', 'appDataService', function($timeout, $state, $stateParams, appDataService){
-
-		this.searchText = $stateParams.q;
-
-		//$scope.state = $state.current;
-		//$scope.params = $stateParams;
-
-		//Fullscreen View
-		this.fullScreen = function() {
-			//Launch
-			function launchIntoFullscreen(element) {
-				if(element.requestFullscreen) {
-					element.requestFullscreen();
-				} else if(element.mozRequestFullScreen) {
-					element.mozRequestFullScreen();
-				} else if(element.webkitRequestFullscreen) {
-					element.webkitRequestFullscreen();
-				} else if(element.msRequestFullscreen) {
-					element.msRequestFullscreen();
-				}
-			}
-
-			//Exit
-			function exitFullscreen() {
-				if(document.exitFullscreen) {
-					document.exitFullscreen();
-				} else if(document.mozCancelFullScreen) {
-					document.mozCancelFullScreen();
-				} else if(document.webkitExitFullscreen) {
-					document.webkitExitFullscreen();
-				}
-			}
-
-			if (exitFullscreen()) {
-				launchIntoFullscreen(document.documentElement);
-			} else {
-				launchIntoFullscreen(document.documentElement);
-			}
-		};
-
-		// Search form submit
-		this.onSearchFormSubmit = function() {
-			$state.go('home', {q: this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
-		};
-
-	}])
-
-	//==============================================
-	// Top menu controller
-	//==============================================
-	.controller('topMenuController', ['$timeout', '$state', 'appDataService', function($timeout, $state, appDataService){
-		this.totalRegisters = function() {
-			return appDataService.data.totalRegisters;
-		};
-
-		this.currentRegistersData = function() {
-			return appDataService.data.registersData.length;
-		};
-
-	}])
-
+angular.module('catalogApp')
 	//==============================================
 	// Content zone controller
 	//==============================================
@@ -162,10 +8,13 @@ angular.module('catalogHome')
 
 		this.isSearchActive = false;
 		this.searchText = $stateParams.q;
+		this.currentPage = 1;
+		this.itemsPerPage = 20;
 		var sortType = null;
 
 		if(typeof $stateParams.pagesize !== 'undefined') {
 			appDataService.resultsByPagesValues.value = $stateParams.pagesize;
+			this.itemsPerPage = $stateParams.pagesize;
 		}
 		if(typeof $stateParams.order !== 'undefined') {
 			appDataService.orderDirection.value = $stateParams.order;
@@ -186,14 +35,17 @@ angular.module('catalogHome')
 		}
 		if(typeof $stateParams.page !== 'undefined') {
 			appDataService.page = parseInt($stateParams.page);
+			this.currentPage = parseInt($stateParams.page);
 		}
 
 		//console.log($stateParams.q);
 		//console.log(this.isSearchActive);
 
-		if(typeof this.searchText !== 'undefined') {
-			this.isSearchActive = true;
-			SpecieFactory.get({q:this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, sort: sortType, order: appDataService.orderDirection.value}, function(data) {
+		if((typeof this.searchText !== 'undefined') || (typeof $stateParams.page !== 'undefined')) {
+			if(typeof this.searchText !== 'undefined') {
+				this.isSearchActive = true;
+			}
+			SpecieFactory.get({q:this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, sort: sortType, order: appDataService.orderDirection.value, taxonomy: $stateParams.taxonomy, department: $stateParams.department, collection: $stateParams.collection}, function(data) {
 				// Select a random image from available specie images
 				for(var i = 0; i<data.hits.length; i++) {
 					var imagen = null;
@@ -201,10 +53,10 @@ angular.module('catalogHome')
 						// This specie has external or local images for showing
 						if(typeof data.hits[i]._source.imagenesExternas !== 'undefined') {
 							// We have external images
-							var imagen = data.hits[i]._source.imagenesExternas[Math.floor(Math.random()*data.hits[i]._source.imagenesExternas.length)];
+							imagen = data.hits[i]._source.imagenesExternas[Math.floor(Math.random()*data.hits[i]._source.imagenesExternas.length)];
 						} else {
 							// We have local images
-							var imagen = data.hits[i]._source.imagenes[Math.floor(Math.random()*data.hits[i]._source.imagenes.length)];
+							imagen = data.hits[i]._source.imagenes[Math.floor(Math.random()*data.hits[i]._source.imagenes.length)];
 						}
 						data.hits[i]._source.selectedImage = {
 							url: imagen.url,
@@ -256,6 +108,11 @@ angular.module('catalogHome')
 				appDataService.data.totalRegisters = data.total;
 				appDataService.data.registersData = data.hits;
 			});
+
+			// Get facets data
+			SpecieFactory.get({q:this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, sort: sortType, order: appDataService.orderDirection.value, taxonomy: $stateParams.taxonomy, department: $stateParams.department, collection: $stateParams.collection, facets: 'true'}, function(data) {
+				appDataService.data.facets = data.groups.buckets;
+			});
 		}
 
 		this.totalRegisters = function() {
@@ -272,7 +129,7 @@ angular.module('catalogHome')
 
 		this.orderDirection = function() {
 			return appDataService.orderDirection;
-		}
+		};
 
 		this.orderBy = function() {
 			return appDataService.orderBy;
@@ -319,6 +176,10 @@ angular.module('catalogHome')
 
 		this.newSelectedOrderBy = function() {
 			$state.go('home', {q: this.searchText, page: appDataService.page, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
+		};
+
+		this.changePage = function() {
+			$state.go('home', {q: this.searchText, page: this.currentPage, pagesize: appDataService.resultsByPagesValues.value, order: appDataService.orderDirection.value, sort: appDataService.orderBy.value});
 		};
 
 	}]);

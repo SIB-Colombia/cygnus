@@ -5,68 +5,25 @@ footer.footer-wrapper
 				.footer-left
 					ul.footer-menu
 						li
-							a.toggle-partners Red de socios
+							a.toggle-partners(data-toggle-partners) Sobre este portal
 						li
-							a(href='http://www.sibcolombia.net/', target='_blank') Sib Colombia
+							a(href='http://www.sibcolombia.net/' target='_blank') SiB Colombia
 						li
-							a.toggle-terms Términos
+							a(href='/terms' target='_blank') Términos y condiciones
+							//-a.toggle-terms(data-toggle-terms) Términos y condiciones
 			.col-md-6
-				.footer-right.align-right Creative Commons 4.0 · 2015
+				.footer-right.align-right Creative Commons 4.0 · 2015. v1.3.1
+
 	#modal-socios.footer-modal
 		.footer-content
 			.footer-content-top
 				.row
 					.col-md-6
 						.footer-content-top-wr
-							h3 Comité directivo y técnico
+							h3 Sobre este portal
 					.col-md-6
 						.footer-content-top-wr.align-right
-							a.toggle-partners
-								img(src='../images/ico-close-modal.svg')
+							a.toggle-partners(data-toggle-partners)
+								img(src='/images/ico-close-modal.svg')
 			.footer-content-content
-				| Te enim magna in laborum quo incididunt fore minim ubi quae. De cernantur do
-				| quamquam. Ex quorum commodo cupidatat, ita quid admodum do quamquam fore et
-				| possumus voluptatibus iis eu legam officia vidisse ab minim qui proident et
-				| amet, aut noster noster aliqua laborum, excepteur ne ipsum non o sint ipsum ab
-				| admodum. Iis dolore laboris offendit, amet eruditionem probant quae consequat.
-				| Fabulas quo laborum, o veniam quid quem cupidatat. Aute ut pariatur te eram.
-	#modal-terminos.footer-modal
-		.footer-content
-			.footer-content-top
-				.row
-					.col-md-6
-						.footer-content-top-wr
-							h3 Términos y condiciones
-					.col-md-6
-						.footer-content-top-wr.align-right
-							a.toggle-terms
-								img(src='../images/ico-close-modal.svg')
-			.footer-content-content
-				| Te enim magna in laborum quo incididunt fore minim ubi quae. De cernantur do
-				| quamquam. Ex quorum commodo cupidatat, ita quid admodum do quamquam fore et
-				| possumus voluptatibus iis eu legam officia vidisse ab minim qui proident et
-				| amet, aut noster noster aliqua laborum, excepteur ne ipsum non o sint ipsum ab
-				| admodum. Iis dolore laboris offendit, amet eruditionem probant quae consequat.
-				| Fabulas quo laborum, o veniam quid quem cupidatat. Aute ut pariatur te eram.
-	// Modal LOGIN
-	#loginModal.modal.fade(role='dialog')
-	.modal-dialog.modal-sm.login-modal
-		// Modal content
-		.modal-content
-			.modal-header
-				button.close(type='button', data-dismiss='modal') ×
-				h4.modal-title Ingreso
-			.modal-body
-				.align-center.login-panel
-					img(src='../images/login-fb.svg', alt='Facebook')
-					img(src='../images/login-in.svg', alt='Linkedin')
-					img(src='../images/login-go.svg', alt='Google')
-			.align-center.login-panel ó
-			.align-center.login-panel
-				input(type='email', placeholder='Correo electrónico')
-				input(type='password', placeholder='Clave')
-			.align-right.login-panel
-				input(type='submit', value='Acceder')
-			.align-right.login-panel
-				a(href='#', style='margin-right: 10px;') Registro
-				a(href='#') Cambio de clave
+				span El Catálogo de la Biodiversidad de Colombia recopila información sobre las especies de fauna y flora que habitan en nuestro país. Está diseñado para ser una herramienta colaborativa en la que participen la mayor cantidad posible de organizaciones y personas, con el fin de tener la más completa red de información sobre la biodiversidad que sea de acceso libre y que ayude a la construcción de una sociedad sostenible, consciente e informada.

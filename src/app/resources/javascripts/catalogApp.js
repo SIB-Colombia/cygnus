@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('catalogHome', [
+angular.module('catalogApp', [
 	'ngAnimate',
 	'ngResource',
 	'ui.router',

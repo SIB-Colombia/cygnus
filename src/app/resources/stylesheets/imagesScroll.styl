@@ -1,0 +1,78 @@
+#images-scroll
+	.container
+		.recordPictures
+			text-align center
+			#gallery-container
+				margin 0 auto
+				//width 360px
+				height 310px
+				.rslides
+					position relative
+					list-style none
+					overflow hidden
+					padding 0
+					margin 10px auto
+					display table
+					li
+						-webkit-backface-visibility hidden
+						position absolute
+						display none
+						width 360px
+						height 310px
+						//width 450px
+						//height 450px
+						text-align center
+						vertical-align middle
+						line-height 310px
+						&:first-child
+							position relative
+							display block
+					img
+						max-width 360px
+						max-height 310px
+						//max-width 450px
+						//max-height 450px
+						width auto
+						height auto
+						border 0
+						margin 0 auto
+					figcaption
+						position absolute
+						top 130px
+						margin-left 5px
+						font-size .9em
+						text-shadow 0 0 3px #fff,0 0 5px #fff
+						font-weight 700
+						height 50px
+			img
+				-webkit-box-shadow 3px 3px 3px rgba(34,25,25,.4)
+				-moz-box-shadow 3px 3px 3px rgba(34,25,25,.4)
+				box-shadow 3px 3px 3px rgba(34,25,25,.4)
+				margin-bottom 10px
+				display inline
+				transition all .6s
+
+.rslides_tabs
+	float left
+	padding 0
+	display table
+	margin 10px auto
+	width 100%
+	li.rslides_here
+		img
+			max-width 50px
+			max-height 50px
+			width auto
+			height auto
+			border 1px solid
+			padding 2px
+			background-color black
+	li
+		display inline
+		margin 2px
+		img
+			max-width 50px
+			max-height 50px
+			width auto
+			height auto
+			padding 2px

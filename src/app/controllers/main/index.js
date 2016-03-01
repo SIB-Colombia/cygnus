@@ -41,6 +41,19 @@ exports.index = function() {
 						callback(error);
 					}
 				});
+			},
+			dataFacets: function(callback) {
+				request({
+					url: config.get('backend.api.server')+':'+config.get('backend.api.port')+config.get('backend.api.path')+'/fichas/search?q=&facets=true',
+					method: 'GET',
+					json: true
+				}, function(error, response, body) {
+					if (!error && response.statusCode === 200) {
+						callback(error, body);
+					} else {
+						callback(error);
+					}
+				});
 			}
 		}, function(err, results) {
 			if(err) {
@@ -48,8 +61,14 @@ exports.index = function() {
 			} else {
 				console.log("Catalog API data successfully received.");
 				results.dataRandom.hits = results.dataRandom.hits.concat(results.dataNonRandom.hits);
-				res.render('index', { data: JSON.stringify(results.dataRandom), validResultsByPage: JSON.stringify(config.get('appConfig.validResultsByPage')), defaultResultByPage: config.get('appConfig.defaultResultsByPage') });
+				res.render('index', { data: JSON.stringify(results.dataRandom), validResultsByPage: JSON.stringify(config.get('appConfig.validResultsByPage')), defaultResultByPage: config.get('appConfig.defaultResultsByPage'), facets: JSON.stringify(results.dataFacets) });
 			}
 		});
+	};
+};
+
+exports.terms = function() {
+	return function(req, res) {
+		res.render('terms');
 	};
 };
